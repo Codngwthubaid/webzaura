@@ -16,7 +16,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="container w-full">
+    <section className="container w-full px-10">
       <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
         <div className="text-center space-y-8">
           <Badge variant="outline" className="text-sm py-2">
@@ -66,7 +66,7 @@ export const HeroSection = () => {
           <Image
             width={1200}
             height={1200}
-            className="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-secondary  border-t-primary/30"
+            className="w-full object-cover md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-secondary  border-t-primary/30"
             src={
               theme === "light"
                 ? "/hero-image-light.png"

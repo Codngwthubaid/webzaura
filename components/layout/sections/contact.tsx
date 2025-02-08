@@ -67,7 +67,7 @@ export const ContactSection = () => {
   }
 
   if (!mounted) {
-    return null; // Return nothing while waiting for the component to mount
+    return null; 
   }
 
   return (

@@ -171,7 +171,7 @@ export const PricingSection = () => {
 
   return (
     <section className="container py-24 sm:py-32 relative px-10">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
         <div>
           <h2 className="text-lg text-primary mb-2 tracking-wider">Pricing</h2>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get unlimited access</h2>
