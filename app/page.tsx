@@ -9,6 +9,7 @@ import { PricingSection } from '@/components/layout/sections/pricing'
 import { ContactSection } from '@/components/layout/sections/contact'
 import { FooterSection } from '@/components/layout/sections/footer'
 import { FAQSection } from '@/components/layout/sections/faq'
+import { TeamSection } from '../components/layout/sections/team'
 
 export const metadata = {
   title: "Agency - Landing template",
@@ -24,6 +25,7 @@ const page = () => {
         <FeaturesSection />
         <ServicesSection />
         <TestimonialSection />
+        <TeamSection />
         <PricingSection />
         <ContactSection />
         <FAQSection />

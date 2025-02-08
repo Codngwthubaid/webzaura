@@ -15,6 +15,9 @@ export const HeroSection = () => {
     setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return null; 
+  }
   return (
     <section className="container w-full px-10">
       <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">

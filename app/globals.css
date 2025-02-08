@@ -153,3 +153,15 @@ html {
     @apply bg-background text-foreground;
   }
 }
+:root {
+  --faq-bg-light: #f9f9f9;
+  --faq-bg-dark: #161412;
+}
+
+[data-theme="dark"] {
+  --faq-bg: var(--faq-bg-dark);
+}
+
+[data-theme="light"] {
+  --faq-bg: var(--faq-bg-light);
+}
