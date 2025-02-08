@@ -5,6 +5,10 @@ import { BenefitSection } from '@/components/layout/sections/benefits'
 import { FeaturesSection } from '@/components/layout/sections/features'
 import { ServicesSection } from '@/components/layout/sections/services'
 import { TestimonialSection } from '@/components/layout/sections/testimonial'
+import { PricingSection } from '@/components/layout/sections/pricing'
+import { ContactSection } from '@/components/layout/sections/contact'
+import { FooterSection } from '@/components/layout/sections/footer'
+import { FAQSection } from '@/components/layout/sections/faq'
 
 export const metadata = {
   title: "Agency - Landing template",
@@ -20,7 +24,10 @@ const page = () => {
         <FeaturesSection />
         <ServicesSection />
         <TestimonialSection />
-       
+        <PricingSection />
+        <ContactSection />
+        <FAQSection />
+        <FooterSection />
       </main>
     </>
   )
