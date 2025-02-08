@@ -5,7 +5,6 @@ import { BenefitSection } from '@/components/layout/sections/benefits'
 import { FeaturesSection } from '@/components/layout/sections/features'
 import { ServicesSection } from '@/components/layout/sections/services'
 import { TestimonialSection } from '@/components/layout/sections/testimonial'
-import { TeamSection } from '@/components/layout/sections/team'
 
 export const metadata = {
   title: "Agency - Landing template",
@@ -21,7 +20,7 @@ const page = () => {
         <FeaturesSection />
         <ServicesSection />
         <TestimonialSection />
-        <TeamSection />
+       
       </main>
     </>
   )
