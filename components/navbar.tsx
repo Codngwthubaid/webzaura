@@ -16,11 +16,27 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-} from "../components/ui/navigation-menu";  
+} from "../components/ui/navigation-menu";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
 import { ToggleTheme } from "./toogle-theme";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+
 
 interface RouteProps {
   href: string;
@@ -51,20 +67,21 @@ const routeList: RouteProps[] = [
   },
 ];
 
-const featureList: FeatureProps[] = [
-  {
-    title: "Title 1",
-    description: "Voluptatem, iure distinctio laborum maxime adipisci laboriosam quibusdam dolore labore. Ab, possimus.",
+const drawerContent = {
+  billing: {
+    title: "Billing Information",
+    description: "Manage your billing details and payment methods.",
   },
-  {
-    title: "Title 2",
-    description: "Voluptatem, iure distinctio laborum maxime adipisci laboriosam quibusdam dolore labore. Ab, possimus.",
+  team: {
+    title: "Team Management",
+    description: "Add or remove team members and manage permissions.",
   },
-  {
-    title: "Title 3",
-    description: "Voluptatem, iure distinctio laborum maxime adipisci laboriosam quibusdam dolore labore. Ab, possimus.",
+  subscription: {
+    title: "Subscription Details",
+    description: "View and update your subscription plan.",
   },
-];
+};
+
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -99,6 +116,7 @@ export const Navbar = () => {
               </SheetHeader>
 
               <div className="flex flex-col gap-2">
+                <Link href={"#services"} className="ml-4 cursor-pointer lg:hidden" onClick={() => setIsOpen(!isOpen)}>Services</Link>
                 {routeList.map(({ href, label }) => (
                   <Button
                     key={href}
@@ -110,6 +128,7 @@ export const Navbar = () => {
                     <Link href={href}>{label}</Link>
                   </Button>
                 ))}
+
               </div>
             </div>
 
@@ -126,28 +145,97 @@ export const Navbar = () => {
       <NavigationMenu className="hidden lg:block mx-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-card text-base">
-              Services
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="grid w-[400px] grid-cols-2 gap-5 p-4">
-                <ul className="flex flex-col gap-2">
-                  {featureList.map(({ title, description }) => (
-                    <li
-                      key={title}
-                      className="rounded-md p-3 text-sm hover:bg-muted"
-                    >
-                      <p className="mb-1 font-semibold leading-none text-foreground">
-                        {title}
-                      </p>
-                      <p className="line-clamp-2 text-muted-foreground">
-                        {description}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </NavigationMenuContent>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="outline-none">Services</DropdownMenuTrigger>
+              <DropdownMenuContent>
+
+                {/* Drawer for Billing */}
+                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Button variant="ghost" className="w-full justify-start">Web Development</Button>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <DrawerHeader>
+                        <DrawerTitle>{drawerContent.billing.title}</DrawerTitle>
+                        <DrawerDescription>
+                          {drawerContent.billing.description}
+                        </DrawerDescription>
+                      </DrawerHeader>
+                    </DrawerContent>
+                  </Drawer>
+                </DropdownMenuItem>
+
+                {/* Drawer for Team */}
+                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Button variant="ghost" className="w-full justify-start">Digital Marketing</Button>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <DrawerHeader>
+                        <DrawerTitle>{drawerContent.team.title}</DrawerTitle>
+                        <DrawerDescription>
+                          {drawerContent.team.description}
+                        </DrawerDescription>
+                      </DrawerHeader>
+                    </DrawerContent>
+                  </Drawer>
+                </DropdownMenuItem>
+
+                {/* Drawer for Subscription */}
+                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Button variant="ghost" className="w-full justify-start">App Development</Button>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <DrawerHeader>
+                        <DrawerTitle>{drawerContent.subscription.title}</DrawerTitle>
+                        <DrawerDescription>
+                          {drawerContent.subscription.description}
+                        </DrawerDescription>
+                      </DrawerHeader>
+                    </DrawerContent>
+                  </Drawer>
+                </DropdownMenuItem>
+
+                {/* Drawer for Subscription */}
+                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Button variant="ghost" className="w-full justify-start">UI/UX & Graphic Designing</Button>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <DrawerHeader>
+                        <DrawerTitle>{drawerContent.subscription.title}</DrawerTitle>
+                        <DrawerDescription>
+                          {drawerContent.subscription.description}
+                        </DrawerDescription>
+                      </DrawerHeader>
+                    </DrawerContent>
+                  </Drawer>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <Drawer>
+                    <DrawerTrigger asChild>
+                      <Button variant="ghost" className="w-full justify-start">AI Chatbot Integration</Button>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <DrawerHeader>
+                        <DrawerTitle>{drawerContent.subscription.title}</DrawerTitle>
+                        <DrawerDescription>
+                          {drawerContent.subscription.description}
+                        </DrawerDescription>
+                      </DrawerHeader>
+                    </DrawerContent>
+                  </Drawer>
+                </DropdownMenuItem>
+
+
+              </DropdownMenuContent>
+            </DropdownMenu>
           </NavigationMenuItem>
 
           <NavigationMenuItem>

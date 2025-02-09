@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -5,6 +6,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ChevronRight } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+
 
 enum ProService {
   YES = 1,
@@ -15,28 +27,61 @@ interface ServiceProps {
   pro: ProService;
   description: string;
 }
+interface DetailServiceProps {
+  title: string;
+  description: string;
+}
 const serviceList: ServiceProps[] = [
   {
-    title: "Custom Domain Integration",
+    title: "Website Development",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
     pro: 0,
   },
   {
-    title: "Social Media Integrations",
+    title: "Digital Marketing",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
     pro: 0,
   },
   {
-    title: "Email Marketing Integrations",
-    description: "Lorem dolor sit amet adipisicing.",
+    title: "UI/UX & Graphic Design",
+    description: "Lorem ipsum dolor sit amet consectetur.",
     pro: 0,
   },
   {
-    title: "SEO Optimization",
+    title: "AI Chatbot Integration",
     description: "Lorem ipsum dolor sit amet consectetur.",
     pro: 1,
+  },
+  {
+    title: "App Development",
+    description: "Lorem dolor sit amet adipisicing.",
+    pro: 1,
+  },
+];
+const detailServiceList: DetailServiceProps[] = [
+  {
+    title: "Website Development",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
+  },
+  {
+    title: "Digital Marketing",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
+  },
+  {
+    title: "UI/UX & Graphic Design",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    title: "AI Chatbot Integration",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    title: "App Development",
+    description: "Lorem dolor sit amet adipisicing.",
   },
 ];
 
@@ -62,8 +107,21 @@ export const ServicesSection = () => {
             key={title}
             className="bg-muted/60 dark:bg-card h-full relative"
           >
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
+            <CardHeader >
+              <div className="flex items-center hover:text-primary">
+                <CardTitle>{title}</CardTitle>
+                <Dialog>
+                  <DialogTrigger><ChevronRight /></DialogTrigger>
+                  <DialogContent className="w-80 sm:w-auto">
+                    <DialogHeader>
+                      <DialogTitle>{title}</DialogTitle>
+                      <DialogDescription>
+                        {description}
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+              </div>
               <CardDescription>{description}</CardDescription>
             </CardHeader>
             <Badge
