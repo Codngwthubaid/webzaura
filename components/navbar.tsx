@@ -121,22 +121,22 @@ export const Navbar = () => {
               <DropdownMenuTrigger className="outline-none">Services</DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem>
-                  <Link href="/webDevelopment">Web Development </Link>
+                  <Link href={"/webDevelopment"}>Web Development </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"#"}>Digital Marketing </Link>
+                  <Link href={"/digitalMarketing"}>Digital Marketing </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"#"}>UI/UX & Graphic Design </Link>
+                  <Link href={"/uiuxGD"}>UI/UX & Graphic Design </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"#"}>Social Media Management </Link>
+                  <Link href={"/socialMediaManagement"}>Social Media Management </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"#"}>Ai Chatbot Integration </Link>
+                  <Link href={"/aiChatbot"}>Ai Chatbot Integration </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"#"}>App Development </Link>  
+                  <Link href={"/appDevelopment"}>App Development </Link>  
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
