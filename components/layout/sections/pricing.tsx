@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const plans = [
   {
@@ -17,7 +18,7 @@ const plans = [
     popular: 0,
     price: 99,
     description: "A perfect plan for small businesses and startups.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "3 team members",
       "5 GB storage",
@@ -32,7 +33,7 @@ const plans = [
     popular: 1,
     price: 199,
     description: "Best for growing businesses.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "6 team members",
       "15 GB storage",
@@ -47,7 +48,7 @@ const plans = [
     popular: 0,
     price: 99,
     description: "A perfect plan for small businesses and startups.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "3 team members",
       "5 GB storage",
@@ -62,7 +63,7 @@ const plans = [
     popular: 0,
     price: 79,
     description: "Ideal for individuals and freelancers.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Social media management",
       "Content marketing",
@@ -77,7 +78,7 @@ const plans = [
     popular: 1,
     price: 199,
     description: "Ideal for growing businesses.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Advanced social media strategy",
       "SEO & content optimization",
@@ -92,7 +93,7 @@ const plans = [
     popular: 0,
     price: 79,
     description: "Ideal for individuals and freelancers.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Comprehensive marketing strategy",
       "Influencer marketing",
@@ -107,7 +108,7 @@ const plans = [
     popular: 0,
     price: 79,
     description: "Ideal for individuals and freelancers.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Wireframing & prototyping",
       "Basic UI design",
@@ -122,7 +123,7 @@ const plans = [
     popular: 1,
     price: 199,
     description: "Ideal for growing businesses.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Advanced UX research",
       "High-fidelity UI design",
@@ -137,7 +138,7 @@ const plans = [
     popular: 0,
     price: 79,
     description: "Ideal for individuals and freelancers.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Comprehensive design system",
       "Interactive prototypes",
@@ -152,7 +153,7 @@ const plans = [
     popular: 0,
     price: 79,
     description: "Ideal for small businesses and startups.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Pre-built chatbot templates",
       "Basic NLP capabilities",
@@ -167,7 +168,7 @@ const plans = [
     popular: 1,
     price: 199,
     description: "Ideal for growing businesses.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Advanced AI & NLP",
       "Multi-platform support",
@@ -182,7 +183,7 @@ const plans = [
     popular: 0,
     price: 79,
     description: "Ideal for enterprises requiring automation.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "Conversational AI & ML models",
       "API integrations",
@@ -197,7 +198,7 @@ const plans = [
     popular: 0,
     price: 299,
     description: "A solid plan for new mobile applications.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "iOS & Android support",
       "API integration",
@@ -212,7 +213,7 @@ const plans = [
     popular: 1,
     price: 299,
     description: "A solid plan for new mobile applications.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "iOS & Android support",
       "API integration",
@@ -227,7 +228,7 @@ const plans = [
     popular: 0,
     price: 299,
     description: "A solid plan for new mobile applications.",
-   buttonText : "Buy Now",
+    buttonText: "Buy Now",
     benefitList: [
       "iOS & Android support",
       "API integration",
@@ -285,7 +286,9 @@ export const PricingSection = () => {
                       variant={popular === 1 ? "default" : "secondary"}
                       className="w-full"
                     >
+                      <Link href={"#contact"}>
                       {buttonText}
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>

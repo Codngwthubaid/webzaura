@@ -1,10 +1,9 @@
-"use client";
+"use client"
+import { toast } from "sonner"
 import { useState, useEffect } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -48,6 +47,7 @@ export const TestimonialSection = () => {
       setName("");
       setComment("");
       setRating(0);
+      toast("We apprieciate your feedback! Thanks ❤️");
     }
   };
 
@@ -97,14 +97,14 @@ export const TestimonialSection = () => {
         <Textarea placeholder="Your Feedback" value={comment} onChange={(e) => setComment(e.target.value)} className="mb-4" />
         <div className="flex gap-1 mb-4">
           {[1, 2, 3, 4, 5].map((star) => (
-            <Star
-              key={star}
-              className={`size-5 cursor-pointer ${rating >= star ? "fill-primary text-primary" : "text-gray-400"}`}
-              onClick={() => setRating(star)}
-            />
+        <Star
+          key={star}
+          className={`size-5 cursor-pointer ${rating >= star ? "fill-primary text-primary" : "text-gray-400"}`}
+          onClick={() => setRating(star)}
+        />
           ))}
         </div>
-        <Button onClick={handleSubmit} className="w-full">Submit Feedback</Button>
+        <Button onClick={handleSubmit} className="w-full" disabled={!rating}>Submit Feedback</Button>
       </div>
 
       {/* Testimonials Carousel */}

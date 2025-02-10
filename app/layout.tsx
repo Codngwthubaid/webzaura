@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: "Agency - Landing template",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
 
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
