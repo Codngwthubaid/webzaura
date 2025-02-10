@@ -12,7 +12,6 @@ import {
 import { Separator } from "../components/ui/separator";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -26,17 +25,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
-
 
 interface RouteProps {
   href: string;
@@ -66,22 +54,6 @@ const routeList: RouteProps[] = [
     label: "FAQ",
   },
 ];
-
-const drawerContent = {
-  billing: {
-    title: "Billing Information",
-    description: "Manage your billing details and payment methods.",
-  },
-  team: {
-    title: "Team Management",
-    description: "Add or remove team members and manage permissions.",
-  },
-  subscription: {
-    title: "Subscription Details",
-    description: "View and update your subscription plan.",
-  },
-};
-
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -148,92 +120,24 @@ export const Navbar = () => {
             <DropdownMenu>
               <DropdownMenuTrigger className="outline-none">Services</DropdownMenuTrigger>
               <DropdownMenuContent>
-
-                {/* Drawer for Billing */}
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <Drawer>
-                    <DrawerTrigger asChild>
-                      <Button variant="ghost" className="w-full justify-start">Web Development</Button>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <DrawerHeader>
-                        <DrawerTitle>{drawerContent.billing.title}</DrawerTitle>
-                        <DrawerDescription>
-                          {drawerContent.billing.description}
-                        </DrawerDescription>
-                      </DrawerHeader>
-                    </DrawerContent>
-                  </Drawer>
+                <DropdownMenuItem>
+                  <Link href="/webDevelopment">Web Development </Link>
                 </DropdownMenuItem>
-
-                {/* Drawer for Team */}
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <Drawer>
-                    <DrawerTrigger asChild>
-                      <Button variant="ghost" className="w-full justify-start">Digital Marketing</Button>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <DrawerHeader>
-                        <DrawerTitle>{drawerContent.team.title}</DrawerTitle>
-                        <DrawerDescription>
-                          {drawerContent.team.description}
-                        </DrawerDescription>
-                      </DrawerHeader>
-                    </DrawerContent>
-                  </Drawer>
+                <DropdownMenuItem>
+                  <Link href={"#"}>Digital Marketing </Link>
                 </DropdownMenuItem>
-
-                {/* Drawer for Subscription */}
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <Drawer>
-                    <DrawerTrigger asChild>
-                      <Button variant="ghost" className="w-full justify-start">App Development</Button>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <DrawerHeader>
-                        <DrawerTitle>{drawerContent.subscription.title}</DrawerTitle>
-                        <DrawerDescription>
-                          {drawerContent.subscription.description}
-                        </DrawerDescription>
-                      </DrawerHeader>
-                    </DrawerContent>
-                  </Drawer>
+                <DropdownMenuItem>
+                  <Link href={"#"}>UI/UX & Graphic Design </Link>
                 </DropdownMenuItem>
-
-                {/* Drawer for Subscription */}
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <Drawer>
-                    <DrawerTrigger asChild>
-                      <Button variant="ghost" className="w-full justify-start">UI/UX & Graphic Designing</Button>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <DrawerHeader>
-                        <DrawerTitle>{drawerContent.subscription.title}</DrawerTitle>
-                        <DrawerDescription>
-                          {drawerContent.subscription.description}
-                        </DrawerDescription>
-                      </DrawerHeader>
-                    </DrawerContent>
-                  </Drawer>
+                <DropdownMenuItem>
+                  <Link href={"#"}>Social Media Management </Link>
                 </DropdownMenuItem>
-
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <Drawer>
-                    <DrawerTrigger asChild>
-                      <Button variant="ghost" className="w-full justify-start">AI Chatbot Integration</Button>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <DrawerHeader>
-                        <DrawerTitle>{drawerContent.subscription.title}</DrawerTitle>
-                        <DrawerDescription>
-                          {drawerContent.subscription.description}
-                        </DrawerDescription>
-                      </DrawerHeader>
-                    </DrawerContent>
-                  </Drawer>
+                <DropdownMenuItem>
+                  <Link href={"#"}>Ai Chatbot Integration </Link>
                 </DropdownMenuItem>
-
-
+                <DropdownMenuItem>
+                  <Link href={"#"}>App Development </Link>  
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </NavigationMenuItem>

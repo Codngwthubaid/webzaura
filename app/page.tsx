@@ -1,35 +1,53 @@
+"use client"
 import React from 'react'
-import { HeroSection } from '@/components/layout/sections/hero'
-import { MarqueeDemo } from '@/components/layout/sections/sponsers'
-import { BenefitSection } from '@/components/layout/sections/benefits'
-import { FeaturesSection } from '@/components/layout/sections/features'
-import { ServicesSection } from '@/components/layout/sections/services'
-import { TestimonialSection } from '@/components/layout/sections/testimonial'
-import { PricingSection } from '@/components/layout/sections/pricing'
-import { ContactSection } from '@/components/layout/sections/contact'
-import { FooterSection } from '@/components/layout/sections/footer'
-import { FAQSection } from '@/components/layout/sections/faq'
-import { TeamSection } from '../components/layout/sections/team'
+import { AiChatBot } from '@/components/aiChatbot/page'
+import { AppDevelopment } from '@/components/appDevelopment/page'
+import { DigitalMarketing } from '@/components/digitalMarketing/page'
+import { SocialMediaManagement } from '@/components/socialMediaManagement'
+import { UIUXGD } from '@/components/uiuxGD'
+import { WebDevelopment } from '@/components/webDevelopment'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Home } from '@/components/Home'
+import { Navbar } from '@/components/navbar'
 
-export const metadata = {
-  title: "Agency - Landing template",
-  description: "Landing template for Agency",
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/webDevelopment",
+    element: <WebDevelopment />,
+  },
+  {
+    path: "/appDevelopment",
+    element: <AppDevelopment />,
+  },
+  {
+    path: "/smManagement",
+    element: <SocialMediaManagement />,
+  },
+  {
+    path: "/aiChatbot",
+    element: <AiChatBot />,
+  },
+  {
+    path: "/uiuxGD",
+    element: <UIUXGD />
+  },
+  {
+    path: "/digitalMarketing",
+    element: <DigitalMarketing />
+  }
+])
+
+
 const page = () => {
   return (
     <>
       <main className='mx-auto container'>
-        <HeroSection />
-        <MarqueeDemo />
-        <BenefitSection />
-        <FeaturesSection />
-        <ServicesSection />
-        <TestimonialSection />
-        <TeamSection />
-        <PricingSection />
-        <ContactSection />
-        <FAQSection />
-        <FooterSection />
+        <Navbar />
+        <RouterProvider router={router} />
       </main>
     </>
   )
