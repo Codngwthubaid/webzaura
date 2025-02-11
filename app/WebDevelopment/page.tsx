@@ -1,11 +1,16 @@
 import React from 'react'
+import ServicesLayout from "@/components/layout/sections/servicesLayout"
 
-const WebDevelopment = () => {
+const page = () => {
   return (
     <div>
-      Im WebDevelopment Page
+      <ServicesLayout
+        serviceName="Web Development"
+        headLineFirst="Disgned"
+        headLineSecond=" Your Digital Identity"
+      />
     </div>
   )
 }
 
-export default WebDevelopment
+export default page

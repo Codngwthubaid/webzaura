@@ -1,9 +1,14 @@
+import ServicesLayout from '@/components/layout/sections/servicesLayout';
 import React from 'react'
 
 const SocialMediaManagement = () => {
   return (
     <div>
-      Im Social Media Management Page
+        <ServicesLayout
+        serviceName="Social Media Management"
+        headLineFirst="Social"
+        headLineSecond="Expertise at Your Fingertips"
+      />
     </div>
   )
 }

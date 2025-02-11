@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ChevronRight } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -15,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import Link from "next/link";
 
 
 
@@ -26,38 +26,45 @@ interface ServiceProps {
   title: string;
   pro: ProService;
   description: string;
+  url: string;
 }
 interface DetailServiceProps {
   title: string;
   description: string;
 }
+
 const serviceList: ServiceProps[] = [
   {
     title: "Website Development",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
     pro: 0,
+    url: "/WebDevelopment",
   },
   {
     title: "Digital Marketing",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
     pro: 0,
+    url: "/DigitalMarketing",
   },
   {
     title: "UI/UX & Graphic Design",
     description: "Lorem ipsum dolor sit amet consectetur.",
     pro: 0,
+    url: "/UIUXGD",
   },
   {
     title: "AI Chatbot Integration",
     description: "Lorem ipsum dolor sit amet consectetur.",
     pro: 1,
+    url: "/AiChatBot",
   },
   {
     title: "App Development",
     description: "Lorem dolor sit amet adipisicing.",
     pro: 1,
+    url: "/AppDevelopment",
   },
 ];
 const detailServiceList: DetailServiceProps[] = [
@@ -102,16 +109,17 @@ export const ServicesSection = () => {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full lg:w-[60%] mx-auto">
-        {serviceList.map(({ title, description, pro }) => (
+        {serviceList.map(({ title, description, pro, url }) => (
           <Card
             key={title}
             className="bg-muted/60 dark:bg-card h-full relative"
           >
             <CardHeader >
               <div className="flex items-center hover:text-primary">
-                <CardTitle>{title}</CardTitle>
+                <CardTitle>
+                  <Link href={url}>{title}</Link>
+                </CardTitle>
                 <Dialog>
-                  <DialogTrigger><ChevronRight /></DialogTrigger>
                   <DialogContent className="w-80 sm:w-auto">
                     <DialogHeader>
                       <DialogTitle>{title}</DialogTitle>

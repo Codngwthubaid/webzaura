@@ -1,11 +1,16 @@
 import React from 'react'
+import ServicesLayout from '@/components/layout/sections/servicesLayout'
 
-const UIUXGD = () => {
+const page = () => {
   return (
     <div>
-      Im UI/UX GD Page
+      <ServicesLayout
+        serviceName="UI/UX & Graphic Designs"
+        headLineFirst="Designs"
+        headLineSecond="That Make a Lasting Impression"
+      />
     </div>
   )
 }
 
-export default UIUXGD;
+export default page

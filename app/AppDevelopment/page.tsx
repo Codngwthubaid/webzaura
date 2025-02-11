@@ -1,9 +1,14 @@
+import ServicesLayout from '@/components/layout/sections/servicesLayout'
 import React from 'react'
 
 const AppDevelopment = () => {
   return (
     <div>
-      Im App Development Page
+      <ServicesLayout 
+        serviceName="App Development"
+        headLineFirst='Unlocking'
+        headLineSecond='Digital Doors'
+        />
     </div>
   )
 }
