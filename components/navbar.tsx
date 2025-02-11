@@ -31,11 +31,6 @@ interface RouteProps {
   label: string;
 }
 
-interface FeatureProps {
-  title: string;
-  description: string;
-}
-
 const routeList: RouteProps[] = [
   {
     href: "#testimonials",
@@ -121,22 +116,22 @@ export const Navbar = () => {
               <DropdownMenuTrigger className="outline-none">Services</DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem>
-                  <Link href={"/webDevelopment"}>Web Development </Link>
+                  <Link href="/WebDevelopment">Web Development </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"/digitalMarketing"}>Digital Marketing </Link>
+                  <Link href="/DigitalMarketing">Digital Marketing </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"/uiuxGD"}>UI/UX & Graphic Design </Link>
+                  <Link href="/UIUXGD">UI/UX & Graphic Design </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"/socialMediaManagement"}>Social Media Management </Link>
+                  <Link href="/SocialMediaManagement">Social Media Management </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"/aiChatbot"}>Ai Chatbot Integration </Link>
+                  <Link href="/AiChatBot">Ai Chatbot Integration </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={"/appDevelopment"}>App Development </Link>  
+                  <Link href="/AppDevelopment">App Development </Link>  
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

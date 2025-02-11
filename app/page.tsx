@@ -1,64 +1,33 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-import { Home } from '@/components/Home';
-import { WebDevelopment } from '@/components/webDevelopment';
-import { AppDevelopment } from '@/components/appDevelopment';
-import { DigitalMarketing } from '@/components/digitalMarketing';
-import { SocialMediaManagement } from '@/components/socialMediaManagement';
-import { AiChatBot } from '@/components/aiChatbot';
-import { UIUXGD } from '@/components/uiuxGD';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Navbar } from '@/components/navbar';
+"use client"
+import React from 'react'
+import { BenefitSection } from '@/components/layout/sections/benefits'
+import { ContactSection } from '@/components/layout/sections/contact'
+import { FAQSection } from '@/components/layout/sections/faq'
+import { FeaturesSection } from '@/components/layout/sections/features'
+import { FooterSection } from '@/components/layout/sections/footer'
+import { HeroSection } from '@/components/layout/sections/hero'
+import { PricingSection } from '@/components/layout/sections/pricing'
+import { ServicesSection } from '@/components/layout/sections/services'
+import { MarqueeDemo } from '@/components/layout/sections/sponsers'
+import { TeamSection } from '@/components/layout/sections/team'
+import { TestimonialSection } from '@/components/layout/sections/testimonial'
 
 const Page = () => {
-  const [router, setRouter] = useState<any>(null);
+    return (
+        <>
+            <HeroSection /> 
+            <MarqueeDemo />
+            <BenefitSection />
+            <FeaturesSection />
+            <ServicesSection />
+            <TestimonialSection />
+            <TeamSection />
+            <PricingSection />
+            <ContactSection />
+            <FAQSection />
+            <FooterSection />
+        </>
+    )
+}
 
-  useEffect(() => {
-    // This code will only run on the client side
-    const router = createBrowserRouter([
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/webDevelopment",
-        element: <WebDevelopment />,
-      },
-      {
-        path: "/appDevelopment",
-        element: <AppDevelopment />,
-      },
-      {
-        path: "/socialMediaManagement",
-        element: <SocialMediaManagement />,
-      },
-      {
-        path: "/digitalMarketing",
-        element: <DigitalMarketing />,
-      },
-      {
-        path: "/uiuxGD",
-        element: <UIUXGD />,
-      },
-      {
-        path: "/aiChatBot",
-        element: <AiChatBot />,
-      },
-    ]);
-
-    setRouter(router);
-  }, []);
-
-  if (!router) {
-    return null; // or a loading spinner
-  }
-
-  return (
-    <div>
-      <Navbar />
-      <RouterProvider router={router} />
-    </div>
-  );
-};
-
-export default Page;
+export default Page

@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const SocialMediaManagement = () => {
+const SocialMediaManagement = () => {
   return (
     <div>
       Im Social Media Management Page
     </div>
   )
 }
+
+export default SocialMediaManagement;

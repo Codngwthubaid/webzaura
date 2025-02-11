@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const AppDevelopment = () => {
+const AppDevelopment = () => {
   return (
     <div>
       Im App Development Page
     </div>
   )
 }
+
+export default AppDevelopment

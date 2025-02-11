@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const DigitalMarketing = () => {
+const DigitalMarketing = () => {
   return (
     <div>
       Im Digital Marketing Page
     </div>
   )
 }
+
+export default DigitalMarketing;
