@@ -1,17 +1,21 @@
 "use client";
-import React from "react";
-import { Home } from "@/components/Home";
-import { Navbar } from "@/components/navbar";
-import { createBrowserRouter, RouterProvider, Router as ReactRouter } from "react-router-dom";
-import { WebDevelopment } from "@/components/webDevelopment";
-import { AppDevelopment } from "@/components/appDevelopment";
-import { SocialMediaManagement } from "@/components/socialMediaManagement";
-import { AiChatBot } from "@/components/aiChatbot";
-import { UIUXGD } from "@/components/uiuxGD";
-import { DigitalMarketing } from "@/components/digitalMarketing";
+import React, { useEffect, useState } from 'react';
+import { Home } from '@/components/Home';
+import { WebDevelopment } from '@/components/webDevelopment';
+import { AppDevelopment } from '@/components/appDevelopment';
+import { DigitalMarketing } from '@/components/digitalMarketing';
+import { SocialMediaManagement } from '@/components/socialMediaManagement';
+import { AiChatBot } from '@/components/aiChatbot';
+import { UIUXGD } from '@/components/uiuxGD';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Navbar } from '@/components/navbar';
 
 const Page = () => {
-  const router = createBrowserRouter([
+  const [router, setRouter] = useState<any>(null);
+
+  useEffect(() => {
+    // This code will only run on the client side
+    const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
@@ -29,26 +33,31 @@ const Page = () => {
         element: <SocialMediaManagement />,
       },
       {
-        path: "/aiChatbot",
-        element: <AiChatBot />,
+        path: "/digitalMarketing",
+        element: <DigitalMarketing />,
       },
       {
         path: "/uiuxGD",
         element: <UIUXGD />,
       },
       {
-        path: "/digitalMarketing",
-        element: <DigitalMarketing />,
+        path: "/aiChatBot",
+        element: <AiChatBot />,
       },
     ]);
 
+    setRouter(router);
+  }, []);
+
+  if (!router) {
+    return null; // or a loading spinner
+  }
+
   return (
-    <>
+    <div>
       <Navbar />
-      <main className="mx-auto container">
-        <RouterProvider router={router} />
-      </main>
-    </>
+      <RouterProvider router={router} />
+    </div>
   );
 };
 
