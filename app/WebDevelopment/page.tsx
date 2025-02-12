@@ -224,7 +224,38 @@ const page = () => {
       ],
     },
   ]
-
+  const Worksteps = [
+    {
+      title: "1. Research & Planning",
+      description:
+        "Understanding client requirements, market analysis, and setting project goals to ensure a strong foundation.",
+    },
+    {
+      title: "2. UI/UX Design",
+      description:
+        "Creating wireframes and prototypes with a focus on user experience, aesthetics, and brand consistency.",
+    },
+    {
+      title: "3. Development",
+      description:
+        "Building the website using modern technologies, ensuring performance, security, and best coding practices.",
+    },
+    {
+      title: "4. Testing & QA",
+      description:
+        "Conducting rigorous testing for responsiveness, cross-browser compatibility, and performance optimization.",
+    },
+    {
+      title: "5. Deployment",
+      description:
+        "Launching the website on a secure server with SEO optimizations and analytics integration.",
+    },
+    {
+      title: "6. Maintenance & Support",
+      description:
+        "Providing ongoing updates, security patches, and feature enhancements based on user feedback.",
+    },
+  ];
 
   return loading ? (
     <div className="flex justify-center items-center h-screen bg-[#0c0a09]">
@@ -295,6 +326,31 @@ const page = () => {
           </div>
         </div>
       </section>
+      <section className="bg-[#0c0a09] text-white py-16 px-6 md:px-12 lg:px-24">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-[#ea580c]">
+          Our Work Flow
+        </h2>
+        <p className="mt-4 text-lg text-gray-300">
+          A structured approach ensuring high-quality web solutions from start to finish.
+        </p>
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {Worksteps.map((step, index) => (
+          <div
+            key={index}
+            className="bg-white text-[#0c0a09] p-6 rounded-lg shadow-lg transition transform hover:scale-105"
+          >
+            <h3 className="text-xl font-semibold text-[#ea580c]">
+              {step.title}
+            </h3>
+            <p className="mt-2 text-gray-700">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
     </>
   );
 };
