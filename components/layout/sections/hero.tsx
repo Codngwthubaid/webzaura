@@ -31,11 +31,11 @@ export const HeroSection = () => {
 
           <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">
             <h1>
-              Experience with
+              Transform your ideas to digital 
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                Agency
+              perfection
               </span>
-              with AUZA
+              with WebZaura
             </h1>
           </div>
 
