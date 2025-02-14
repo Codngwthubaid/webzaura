@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useTheme } from "next-themes";
 
 interface FAQProps {
   question: string;
