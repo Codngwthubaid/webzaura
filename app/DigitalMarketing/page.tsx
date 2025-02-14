@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import ServicesLayout from "@/components/layout/sections/servicesLayout";
+import ServicesHeroSectionLayout from "@/components/layout/services/ServicesHeroSectionLayout";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const Page = () => {
           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
         </div>
       ) : (
-      <ServicesLayout
+      <ServicesHeroSectionLayout
         serviceName="Digital Marketing"
         headLineFirst="Aligning"
         headLineSecond="Strategy with Stories" 

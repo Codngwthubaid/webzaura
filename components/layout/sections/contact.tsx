@@ -56,15 +56,28 @@ export const ContactSection = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     const { firstName, lastName, email, subject, message } = values;
-    console.log(values);
+  
+    const googleSheetsURL = process.env.GOOGLE_APPS_SCRIPT_URL as string; 
+  // Deployment ID : AKfycby7SzuQGcolNPpLhdPC6jnPWUSeU69-CmLTP54I16_Q95EV1NWxDnk09dIEj9TPidMg
 
-    if (typeof window !== "undefined") {
-      const mailToLink = `mailto:codngwthubaid@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
-      window.location.href = mailToLink;
+    try {
+      await fetch(googleSheetsURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to send message.");
     }
   }
+  
+
 
   if (!mounted) {
     return null; 

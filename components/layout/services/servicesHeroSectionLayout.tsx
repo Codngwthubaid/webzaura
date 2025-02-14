@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const ServicesLayout = (
+const ServicesHeroSectionLayout = (
     {
         serviceName,
         headLineFirst,
@@ -61,4 +61,4 @@ const ServicesLayout = (
     )
 }
 
-export default ServicesLayout
+export default ServicesHeroSectionLayout

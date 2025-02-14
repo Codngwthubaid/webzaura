@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import ServicesLayout from "@/components/layout/sections/servicesLayout";
+import ServicesLayout from "@/components/layout/services/ServicesHeroSectionLayout";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
