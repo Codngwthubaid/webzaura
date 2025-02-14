@@ -29,7 +29,7 @@ export const HeroSection = () => {
             <span> Design your web right now! </span>
           </Badge>
 
-          <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">
+          <div className="max-w-screen-md mx-auto text-center text-2xl md:text-6xl font-bold">
             <h1>
               Transform your ideas to digital 
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
