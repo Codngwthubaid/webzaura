@@ -289,7 +289,7 @@ const socialMediaPlans = [
 
 export const PricingSection = () => {
   return (
-    <section className="container py-24 sm:py-32 relative px-10">
+    <section className="container py-24 sm:py-32 relative px-10 mx-auto">
       <h2 className="text-lg text-primary mb-2 tracking-wider">Pricing</h2>
       {[
         { category: "Web Development", plans: webDevelopmentPlans },

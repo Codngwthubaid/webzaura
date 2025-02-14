@@ -79,7 +79,7 @@ const ReviewCard = ({
 
 export const MarqueeDemo = () => {
     return (
-        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background px-10">
+        <div className="mx-auto container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background px-10">
             <h2 className="font-bold text-4xl mb-10">What we serve</h2>
             <Marquee pauseOnHover className="[--duration:20s]">
                 {firstRow.map((review) => (

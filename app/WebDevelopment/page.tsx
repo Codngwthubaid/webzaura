@@ -248,7 +248,7 @@ const Page = () => {
               <h3 className="text-xl font-semibold text-[#ea580c]">
                 {step.title}
               </h3>
-              <p className={`mt-2 text-white ${theme === "dark" ? "text-gray-300" : "text-black"}`}>{step.description}</p>
+              <p className={`mt-2 ${theme === "dark" ? "text-gray-300" : "text-black"}`}>{step.description}</p>
             </div>
           ))}
         </div>
@@ -257,7 +257,7 @@ const Page = () => {
       <section className={`bg-[#0c0a09] text-white py-16 px-4 sm:px-6 lg:px-8 ${theme === "dark" ? "text-white bg-black" : "text-black bg-white"}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#ea580c] text-center">Our Technology Stack</h2>
-          <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
+          <p className={`text-lg text-center mb-12 max-w-3xl mx-auto ${theme === "dark" ? "text-gray-300" : "text-black"}`}>
             We leverage cutting-edge technologies to build robust, scalable, and efficient web applications. Our carefully
             selected tech stack ensures we deliver high-performance solutions tailored to your needs.
           </p>

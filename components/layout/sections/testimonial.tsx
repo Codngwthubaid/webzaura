@@ -52,7 +52,7 @@ export const TestimonialSection = () => {
   };
 
   return (
-    <section id="testimonials" className="container py-24 sm:py-32 px-10">
+    <section id="testimonials" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-lg text-primary tracking-wider">Reviews</h2>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -61,7 +61,7 @@ export const TestimonialSection = () => {
       </div>
 
       {reviews.length > 0 && (
-        <Carousel className="relative w-[80%] sm:w-[90%] lg:max-w-screen-xl mx-auto">
+        <Carousel className="relative w-[80%] sm:w-[90%] lg:max-w-screen-xl">
           <CarouselContent>
             {reviews.map((review, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
