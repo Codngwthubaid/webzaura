@@ -1,23 +1,15 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useTheme } from "next-themes";
 
 const ServicesWorkFLowLayout = (
   {
-    wst1, wst2, wst3, wst4, wst5, wst6, wsd1, wsd2, wsd3, wsd4, wsd5, wsd6
+    wst1, wst2, wst3, wst4, wst5, wst6, wsd1, wsd2, wsd3, wsd4, wsd5, wsd6, desc
   }: {
-    wst1: string, wst2: string, wst3: string, wst4: string, wst5: string, wst6: string, wsd1: string, wsd2: string, wsd3: string, wsd4: string, wsd5: string, wsd6: string
+    wst1: string, wst2: string, wst3: string, wst4: string, wst5: string, wst6: string, wsd1: string, wsd2: string, wsd3: string, wsd4: string, wsd5: string, wsd6: string, desc: string
   }
 ) => {
-  const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const Worksteps = [
     {
@@ -53,7 +45,7 @@ const ServicesWorkFLowLayout = (
           Our Work Flow
         </h2>
         <p className={`mt-4 text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-          A structured approach to web development ensures high-quality web solutions from the initial planning stages to the final deployment and maintenance, focusing on organization, user experience, and clear objectives. This involves a systematic methodology that incorporates key elements such as defining goals, planning site structure, and employing agile practices. By prioritizing these aspects, developers can create websites that are both effective and user-friendly
+          {desc}
         </p>
       </div>
 

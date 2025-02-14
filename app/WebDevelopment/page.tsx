@@ -1,23 +1,13 @@
 "use client"
 import React, { useState, useEffect } from "react";
 
-import { FooterSection } from "@/components/layout/sections/footer";
 import { ContactSection } from "@/components/layout/sections/contact";
-import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import { Check } from "lucide-react";
-import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import ServicesHeroSectionLayout from "@/components/layout/services/servicesHeroSectionLayout";
 import ServicesWorkFLowLayout from "@/components/layout/services/servicesWorkFLowLayout";
 import ServicesTechStackLayout from "@/components/layout/services/servicesTechStackLayout";
+import ServicesHeroSectionLayout from "@/components/layout/services/servicesHeroSectionLayout";
+import ServicesPricingLayout from "@/components/layout/services/servicesPricingLayout";
+import { FooterSection } from "@/components/layout/sections/footer";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -30,50 +20,6 @@ const Page = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const webDevelopmentPlans = [
-    {
-      title: "Basic",
-      popular: 0,
-      price: 179,
-      description: "A perfect plan for small businesses and startups.",
-      buttonText: "Buy Now",
-      benefitList: [
-        "3 team members",
-        "5 GB storage",
-        "Upto 5 Pages",
-        "Community support",
-        "Basic SEO",
-      ],
-    },
-    {
-      title: "Enterprise",
-      popular: 1,
-      price: 299,
-      description: "Best for growing businesses.",
-      buttonText: "Buy Now",
-      benefitList: [
-        "6 team members",
-        "15 GB storage",
-        "Upto 10 Pages",
-        "Priority support",
-        "Advanced SEO",
-      ],
-    },
-    {
-      title: "Advanced",
-      popular: 0,
-      price: 599,
-      description: "A perfect plan for small businesses and startups.",
-      buttonText: "Buy Now",
-      benefitList: [
-        "3 team members",
-        "5 GB storage",
-        "Upto 5 Pages",
-        "Community support",
-        "Basic SEO",
-      ],
-    },
-  ];
   return loading ? (
     <div className={`flex justify-center items-center h-screen  ${theme === "dark" ? "bg-[#0c0a09]" : "bg-white"}`}>
       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
@@ -85,7 +31,7 @@ const Page = () => {
         headLineFirst="Designed"
         headLineSecond="Your Digital Identity"
       />
-
+      
       <ServicesWorkFLowLayout
         wst1="Research & Planning"
         wst2="UI/UX Design"
@@ -99,59 +45,42 @@ const Page = () => {
         wsd4="Conducting rigorous testing for responsiveness, cross-browser compatibility, and performance optimization."
         wsd5="Launching the website on a secure server with SEO optimizations and analytics integration."
         wsd6="Providing ongoing updates, security patches, and feature enhancements based on user feedback."
+        desc=" A structured approach to web development ensures high-quality web solutions from the initial planning stages to the final deployment and maintenance, focusing on organization, user experience, and clear objectives. This involves a systematic methodology that incorporates key elements such as defining goals, planning site structure, and employing agile practices. By prioritizing these aspects, developers can create websites that are both effective and user-friendly"
       />
+      
       <ServicesTechStackLayout />
 
-      <section className="container py-24 sm:py-32 relative px-10 mx-auto">
-        {[{ category: "Web Development", plans: webDevelopmentPlans }].map(({ category, plans }) => (
-          <div key={category} className="mt-2">
-            <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#ea580c]">Pricing</h2>
-              <h3 className="text-xl text-muted-foreground pb-4 mb-4">Choose the perfect plan for your needs.</h3>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {plans.map(({ title, popular, price, description, buttonText, benefitList }) => (
-                <Card
-                  key={title}
-                  className={`mb-20 ${popular === 1
-                    ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary transition-all hover:lg:scale-[1.1]"
-                    : ""}`}
-                >
-                  <CardHeader>
-                    <CardTitle className="pb-2">{title}</CardTitle>
-                    <CardDescription className="pb-4">{description}</CardDescription>
-                    <div>
-                      <span className="text-2xl font-bold">Starts from / </span>
-                      <span className="text-3xl font-bold">${price}</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {benefitList.map((benefit) => (
-                        <span key={benefit} className="flex">
-                          <Check className="text-primary mr-2" />
-                          <h3>{benefit}</h3>
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Button
-                      variant={popular === 1 ? "default" : "secondary"}
-                      className="w-full"
-                    >
-                      <Link href={"#contact"}>{buttonText}</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
+      <ServicesPricingLayout
+        wdt1="Basic"
+        wdpo1={0}
+        wdp1={179}
+        wdd1="A perfect plan for small businesses and startups."
+        wdt2="Enterprise"
+        wdpo2={0}
+        wdp2={299}
+        wdd2="Best for growing businesses."
+        wdt3="Advanced"
+        wdpo3={0}
+        wdp3={599}
+        wdd3="A perfect plan for small businesses and startups."
+        wdbl1_1="wdbl1_1"
+        wdbl1_2="wdbl1_2"
+        wdbl1_3="wdbl1_3"
+        wdbl1_4="wdbl1_4"
+        wdbl1_5="wdbl1_5"
+        wdbl2_1="wdbl2_1"
+        wdbl2_2="wdbl2_2"
+        wdbl2_3="wdbl2_3"
+        wdbl2_4="wdbl2_4"
+        wdbl2_5="wdbl2_5"
+        wdbl3_1="wdbl3_1"
+        wdbl3_2="wdbl3_2"
+        wdbl3_3="wdbl3_3"
+        wdbl3_4="wdbl3_4"
+        wdbl3_5="wdbl3_5"
+      />
       <ContactSection />
       <FooterSection />
-
     </>
   );
 };
