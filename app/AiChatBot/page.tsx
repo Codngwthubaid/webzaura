@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ServicesLayout from "@/components/layout/sections/servicesLayout";
 
-const page = () => {
+const Page = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,4 +29,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

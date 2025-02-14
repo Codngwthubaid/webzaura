@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import ServicesLayout from "@/components/layout/sections/servicesLayout";
-import { Server, Database, Cloud, Lock, Zap, Code, Workflow, Rocket, CheckCircle } from "lucide-react"
+import { Server, Database, Cloud, Lock, Zap, Code} from "lucide-react"
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,7 +17,7 @@ import { FooterSection } from "@/components/layout/sections/footer";
 import { useTheme } from "next-themes";
 
 
-const page = () => {
+const Page = () => {
   const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
 
@@ -183,7 +183,7 @@ const page = () => {
       benefitList: [
         "3 team members",
         "5 GB storage",
-        "Upto 5 pages",
+        "Upto 5 Pages",
         "Community support",
         "Basic SEO",
       ],
@@ -197,7 +197,7 @@ const page = () => {
       benefitList: [
         "6 team members",
         "15 GB storage",
-        "Upto 10 pages",
+        "Upto 10 Pages",
         "Priority support",
         "Advanced SEO",
       ],
@@ -211,7 +211,7 @@ const page = () => {
       benefitList: [
         "3 team members",
         "5 GB storage",
-        "Upto 5 pages",
+        "Upto 5 Pages",
         "Community support",
         "Basic SEO",
       ],
@@ -340,4 +340,4 @@ const page = () => {
 };
 
 
-export default page;
+export default Page;
