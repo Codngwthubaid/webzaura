@@ -27,10 +27,6 @@ interface ServiceProps {
   description: string;
   url: string;
 }
-interface DetailServiceProps {
-  title: string;
-  description: string;
-}
 
 const serviceList: ServiceProps[] = [
   {
@@ -64,30 +60,6 @@ const serviceList: ServiceProps[] = [
     description: "Lorem dolor sit amet adipisicing.",
     pro: 1,
     url: "/AppDevelopment",
-  },
-];
-const detailServiceList: DetailServiceProps[] = [
-  {
-    title: "Website Development",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
-  },
-  {
-    title: "Digital Marketing",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
-  },
-  {
-    title: "UI/UX & Graphic Design",
-    description: "Lorem ipsum dolor sit amet consectetur.",
-  },
-  {
-    title: "AI Chatbot Integration",
-    description: "Lorem ipsum dolor sit amet consectetur.",
-  },
-  {
-    title: "App Development",
-    description: "Lorem dolor sit amet adipisicing.",
   },
 ];
 
