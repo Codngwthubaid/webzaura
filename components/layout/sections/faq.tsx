@@ -42,7 +42,6 @@ const FAQList: FAQProps[] = [
 ];
 
 export const FAQSection = () => {
-  const { theme } = useTheme(); // Get the current theme
 
   return (
     <section id="faq" className="container md:w-[700px] py-24 px-10 sm:py-32 mx-auto">
