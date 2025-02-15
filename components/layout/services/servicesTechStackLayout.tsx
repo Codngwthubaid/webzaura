@@ -2,7 +2,7 @@
 import React from "react";
 import { Server, Database, Code } from "lucide-react";
 import { useTheme } from "next-themes";
-const servicesTechStackLayout = () => {
+const ServicesTechStackLayout = () => {
   const { theme } = useTheme();
 
   const technologies = [
@@ -113,4 +113,4 @@ const servicesTechStackLayout = () => {
   )
 }
 
-export default servicesTechStackLayout
+export default ServicesTechStackLayout
