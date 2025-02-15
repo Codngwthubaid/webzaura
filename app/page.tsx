@@ -13,6 +13,7 @@ import { TestimonialSection } from '@/components/layout/sections/testimonial'
 import { FooterSection } from '@/components/layout/sections/footer'
 import { useTheme } from 'next-themes'
 import { motion, useSpring, useScroll } from "motion/react"
+import Ballpit from '@/components/animations/bottomballs'
 
 const Page = () => {
     const { theme } = useTheme();
@@ -70,6 +71,7 @@ const Page = () => {
             <ContactSection />
             <FAQSection />
             <FooterSection />
+            <Ballpit />
         </>
     )
 }

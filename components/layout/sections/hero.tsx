@@ -7,11 +7,76 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { SparklesText } from "@/components/magicui/sparkles-text"
+import TitledImg from "@/components/animations/titledImg"
 
 
 export const HeroSection = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
+  // Define the type for dimensions state
+  interface Dimensions {
+    containerHeight: string;
+    containerWidth: string;
+    imageHeight: string;
+    imageWidth: string;
+  }
+
+  // State to store dynamic height and width
+  const [dimensions, setDimensions] = useState<Dimensions>({
+    containerHeight: "500px",
+    containerWidth: "1000px",
+    imageHeight: "500px",
+    imageWidth: "1000px",
+  });
+
+  // Function to update dimensions based on screen size
+  const updateDimensions = (): void => {
+    if (window.innerWidth < 640) {
+      // Mobile devices
+      setDimensions({
+        containerHeight: "300px",
+        containerWidth: "300px",
+        imageHeight: "300px",
+        imageWidth: "300px",
+      });
+    } else if (window.innerWidth < 768) {
+      // Small devices (tablets)
+      setDimensions({
+        containerHeight: "400px",
+        containerWidth: "400px",
+        imageHeight: "400px",
+        imageWidth: "400px",
+      });
+    } else if (window.innerWidth < 1024) {
+      // Medium devices (laptops)
+      setDimensions({
+        containerHeight: "500px",
+        containerWidth: "500px",
+        imageHeight: "500px",
+        imageWidth: "500px",
+      });
+    } else {
+      // Large devices (desktops)
+      setDimensions({
+        containerHeight: "600px",
+        containerWidth: "600px",
+        imageHeight: "600px",
+        imageWidth: "600px",
+      });
+    }
+  };
+
+
+  useEffect(() => {
+    updateDimensions(); // Set initial dimensions
+    window.addEventListener("resize", updateDimensions);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, []);
 
   useEffect(() => {
     setMounted(true);
@@ -58,16 +123,24 @@ export const HeroSection = () => {
 
         <div className="relative group mt-14">
           <div className="absolute top-2 lg:-top-8 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-24 lg:h-80 bg-primary/50 rounded-full blur-3xl"></div>
-          <Image
-            width={1200}
-            height={1200}
-            className="w-full object-cover md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-secondary  border-t-primary/30"
-            src={
+
+          <TitledImg
+            imageSrc={
               theme === "light"
                 ? "/hero-image-light.png"
                 : "/hero-image-dark.png"
             }
-            alt="dashboard"
+            altText="WebZaura - Web Agency"
+            captionText="WebZaura - Web Agency"
+            containerHeight={dimensions.containerHeight}
+            containerWidth={dimensions.containerWidth}
+            imageHeight={dimensions.imageHeight}
+            imageWidth={dimensions.imageWidth}
+            rotateAmplitude={12}
+            scaleOnHover={1.2}
+            showMobileWarning={true}
+            showTooltip={true}
+            displayOverlayContent={true}
           />
 
           <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
