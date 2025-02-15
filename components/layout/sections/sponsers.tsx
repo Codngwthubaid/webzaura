@@ -1,43 +1,44 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import Image from "next/image";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 
 const reviews = [
     {
         name: "Jack",
         username: "@jack",
         body: "I've never seen anything like this before. It's amazing. I love it.",
-        img : "/img/ubaidImg.jpg"    
+        img: "/img/ubaidImg.jpg"
     },
     {
         name: "Jill",
         username: "@jill",
         body: "I don't know what to say. I'm speechless. This is amazing.",
-        img : "/img/ubaidImg.jpg"    
+        img: "/img/ubaidImg.jpg"
     },
     {
         name: "John",
         username: "@john",
         body: "I'm at a loss for words. This is amazing. I love it.",
-        img : "/img/ubaidImg.jpg"    
+        img: "/img/ubaidImg.jpg"
     },
     {
         name: "Jane",
         username: "@jane",
         body: "I'm at a loss for words. This is amazing. I love it.",
-        img : "/img/ubaidImg.jpg"    
+        img: "/img/ubaidImg.jpg"
     },
     {
         name: "Jenny",
         username: "@jenny",
         body: "I'm at a loss for words. This is amazing. I love it.",
-        img : "/img/ubaidImg.jpg"    
+        img: "/img/ubaidImg.jpg"
     },
     {
         name: "James",
         username: "@james",
         body: "I'm at a loss for words. This is amazing. I love it.",
-        img : "/img/ubaidImg.jpg"    
+        img: "/img/ubaidImg.jpg"
     },
 ];
 
@@ -80,7 +81,7 @@ const ReviewCard = ({
 export const MarqueeDemo = () => {
     return (
         <div className="mx-auto container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background px-10">
-            <h2 className="font-bold text-4xl mb-10">What we serve</h2>
+            <SparklesText text="What we serve" className="mb-4 text-white" />
             <Marquee pauseOnHover className="[--duration:20s]">
                 {firstRow.map((review) => (
                     <ReviewCard key={review.username} {...review} />

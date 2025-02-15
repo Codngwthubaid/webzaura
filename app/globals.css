@@ -149,10 +149,12 @@ html {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
 :root {
   --faq-bg-light: #f9f9f9;
   --faq-bg-dark: #161412;
@@ -168,8 +170,13 @@ html {
 
 
 @keyframes scroll-horizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .animate-scroll-horizontal {

@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { SparklesText } from "@/components/magicui/sparkles-text"
+
 
 export const HeroSection = () => {
   const { theme } = useTheme();
@@ -35,7 +37,8 @@ export const HeroSection = () => {
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
                 perfection
               </span>
-              with WebZaura
+              
+              <SparklesText text="with WebZaura" className="text-white font-semibold"/>
             </h1>
           </div>
 
