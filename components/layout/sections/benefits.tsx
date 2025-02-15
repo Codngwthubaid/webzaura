@@ -1,3 +1,4 @@
+import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
@@ -41,8 +42,8 @@ export const BenefitSection = () => {
     <section id="benefits" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <div>
-          <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
-          
+          <SparklesText text="Benefits" className="mb-4 text-primary" />
+          {/* <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2> */}
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Your Shortcut to Success

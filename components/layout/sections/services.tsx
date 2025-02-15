@@ -1,4 +1,5 @@
 "use client";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -66,10 +67,8 @@ const serviceList: ServiceProps[] = [
 export const ServicesSection = () => {
   return (
     <section id="services" className="container py-24 sm:py-32 px-10 mx-auto">
-      <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Services
-      </h2>
-
+      {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">Services</h2> */}
+      <SparklesText text="Services" className="mb-4 text-center text-primary" />
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
         Grow Your Business
       </h2>

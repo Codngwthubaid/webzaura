@@ -18,6 +18,7 @@ import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 
 interface ReviewProps {
   name: string;
@@ -54,7 +55,8 @@ export const TestimonialSection = () => {
   return (
     <section id="testimonials" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-lg text-primary tracking-wider">Reviews</h2>
+        {/* <h2 className="text-lg text-primary tracking-wider">Reviews</h2> */}
+         <SparklesText text="Reviews" className="mb-4 text-center text-primary" />
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Hear What Our Clients Say
         </h2>

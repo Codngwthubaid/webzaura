@@ -1,4 +1,5 @@
 "use client";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -290,11 +291,12 @@ const socialMediaPlans = [
 export const PricingSection = () => {
   return (
     <section id="pricing" className="container py-24 sm:py-32 relative px-10 mx-auto">
-      <h2 className="text-lg text-primary mb-2 tracking-wider">Pricing</h2>
+      {/* <h2 className="text-lg text-primary mb-2 tracking-wider">Pricing</h2> */}
+      <SparklesText text="Pricing" className="mb-4 text-start text-primary" />
       {[
         { category: "Web Development", plans: webDevelopmentPlans },
         { category: "Digital Marketing", plans: digitalMarketingPlans },
-        { category: "Social Media Management", plans: socialMediaPlans},
+        { category: "Social Media Management", plans: socialMediaPlans },
         { category: "UI/UX & Graphic Design", plans: uiuxgdPlans },
         { category: "AI Chatbot Integration", plans: aiChatbotPlans },
         { category: "App Development", plans: appDevelopmentPlans },

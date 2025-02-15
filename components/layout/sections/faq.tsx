@@ -1,4 +1,5 @@
 "use client"
+import { SparklesText } from "@/components/magicui/sparkles-text";
 import {
   Accordion,
   AccordionContent,
@@ -45,10 +46,8 @@ export const FAQSection = () => {
   return (
     <section id="faq" className="container md:w-[700px] py-24 px-10 sm:py-32 mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-          FAQS
-        </h2>
-
+        {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">FAQS</h2> */}
+        <SparklesText text="FAQS" className="mb-4 text-center text-primary" />
         <h2 className="text-3xl md:text-4xl text-center font-bold">
           Common Questions
         </h2>

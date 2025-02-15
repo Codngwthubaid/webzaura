@@ -35,10 +35,10 @@ export const HeroSection = () => {
             <h1>
               Transform your ideas to digital
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                perfection
+                perfection with 
               </span>
               
-              <SparklesText text="with WebZaura" className="text-white font-semibold"/>
+              <SparklesText text="WebZaura" className="text-primary"/>
             </h1>
           </div>
 

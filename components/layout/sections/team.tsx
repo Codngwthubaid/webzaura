@@ -16,6 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { StaticImageData } from "next/image";
 import { Dot } from "lucide-react";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 
 interface TeamProps {
     imageUrl: StaticImageData;
@@ -117,7 +118,8 @@ export const TeamSection = () => {
     return (
         <section id="team" className="container lg:w-[75%] py-24 sm:py-32 mx-auto px-10">
             <div className="text-center mb-8">
-                <h2 className="text-lg text-primary text-center mb-2 tracking-wider">Team</h2>
+                {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">Team</h2> */}
+                <SparklesText text="Team" className="mb-4 text-center text-primary" />
                 <h2 className="text-3xl md:text-4xl text-center font-bold">A team above all</h2>
             </div>
 
