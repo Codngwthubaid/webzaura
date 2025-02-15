@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Card,
   CardContent,
@@ -30,16 +31,15 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
-  firstName: z.string().min(2).max(255),
-  lastName: z.string().min(2).max(255),
-  email: z.string().email(),
-  subject: z.string().min(2).max(255),
-  message: z.string(),
+  firstName: z.string().min(2, "First name must be at least 2 characters").max(255),
+  lastName: z.string().min(2, "Last name must be at least 2 characters").max(255),
+  email: z.string().email("Invalid email address"),
+  subject: z.string().min(2, "Please select a subject").max(255),
+  message: z.string().min(5, "Message must be at least 5 characters"),
 });
 
 export const ContactSection = () => {
   const [mounted, setMounted] = useState(false);
-  const [selectedSubject, setSelectedSubject] = useState("Web Development");
 
   useEffect(() => {
     setMounted(true);
@@ -57,190 +57,116 @@ export const ContactSection = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-  
-    const googleSheetsURL = process.env.GOOGLE_APPS_SCRIPT_URL as string; 
-
     try {
-      await fetch(googleSheetsURL, {
-        method: "POST",
+      const { data } = await axios.post("/api/FormDB", values, {
         headers: {
+          "Accept": "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
       });
-      alert("Message sent successfully!");
+      console.log("Success:", data);
+      alert(data.message);
+      form.reset();
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Failed to send message.");
+      if (axios.isAxiosError(error)) {
+        console.error("Error Response:", error.response?.data || error.message);
+        const errorMessage = axios.isAxiosError(error) ? error.response?.data || error.message : String(error);
+        alert(`Request failed: ${errorMessage}`);
+      } else {
+        console.error("Error:", error);
+        alert(`Request failed: ${error}`);
+      }
     }
   }
-  
 
 
   if (!mounted) {
-    return null; 
+    return null;
   }
 
   return (
     <section id="contact" className="container py-24 px-10 sm:py-32 mx-auto">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <div className="mb-4">
-            <h2 className="text-lg text-primary mb-2 tracking-wider">Contact</h2>
-            <h2 className="text-3xl md:text-4xl font-bold">Connect With Us</h2>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold">Connect With Us</h2>
           <p className="mb-8 text-muted-foreground lg:w-5/6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            ipsam sint enim exercitationem ex autem corrupti quas tenetur
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
-
-          <div className="flex flex-col gap-4">
-            <div>
-              <div className="flex gap-2 mb-1">
-                <Building2 />
-                <div className="font-bold">Find us</div>
-              </div>
-              <div>Uttar Pradesh, India</div>
-            </div>
-
-            <div>
-              <div className="flex gap-2 mb-1">
-                <Phone />
-                <div className="font-bold">Call us</div>
-              </div>
-              <div>+91 75350-05331</div>
-            </div>
-
-            <div>
-              <div className="flex gap-2 mb-1">
-                <Mail />
-                <div className="font-bold">Mail Us</div>
-              </div>
-              <div>codngwthubaid@gmail.com</div>
-            </div>
-          </div>
         </div>
 
         <Card className="bg-muted/60 dark:bg-card">
           <CardHeader className="text-primary text-2xl"></CardHeader>
           <CardContent>
             <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="grid w-full gap-4"
-              >
-                <div className="flex flex-col md:!flex-row gap-8">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormLabel>First Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Mohammad" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormLabel>Last Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Ubaid" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="grid w-full gap-4">
+                <FormField control={form.control} name="firstName" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>First Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Mohammad" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
 
-                <div className="flex flex-col gap-1.5">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
+                <FormField control={form.control} name="lastName" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Last Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Ubaid" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+
+                <FormField control={form.control} name="email" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="codngwthubaid@gmail.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Subject</FormLabel>
+                      <Select>
                         <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="codngwthubaid@gmail.com"
-                            {...field}
-                          />
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a subject" />
+                          </SelectTrigger>
                         </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                        <SelectContent>
+                          <SelectItem value="Web Development">Web Development</SelectItem>
+                          <SelectItem value="Mobile Development">Mobile Development</SelectItem>
+                          <SelectItem value="Figma Design">Figma Design</SelectItem>
+                          <SelectItem value="REST API">REST API</SelectItem>
+                          <SelectItem value="FullStack Project">FullStack Project</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-                <div className="flex flex-col gap-1.5">
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <Select
-                          value={selectedSubject}
-                          onValueChange={(value) => {
-                            setSelectedSubject(value);
-                            field.onChange(value);
-                          }}
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a subject" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="Web Development">
-                              Web Development
-                            </SelectItem>
-                            <SelectItem value="Mobile Development">
-                              Mobile Development
-                            </SelectItem>
-                            <SelectItem value="Figma Design">
-                              Figma Design
-                            </SelectItem>
-                            <SelectItem value="REST API">REST API</SelectItem>
-                            <SelectItem value="FullStack Project">
-                              FullStack Project
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                <FormField control={form.control} name="message" render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea rows={5} placeholder="Your message..." {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
 
-                <div className="flex flex-col gap-1.5">
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            rows={5}
-                            placeholder="Your message..."
-                            className="resize-none"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <Button className="mt-4">Send message</Button>
+                <Button type="submit" className="mt-4" disabled={form.formState.isSubmitting}>
+                  {form.formState.isSubmitting ? "Sending..." : "Send message"}
+                </Button>
               </form>
             </Form>
           </CardContent>
