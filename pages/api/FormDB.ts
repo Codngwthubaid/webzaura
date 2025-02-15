@@ -50,10 +50,11 @@ export default async function FormDB(
     } as sheets_v4.Params$Resource$Spreadsheets$Values$Append);
 
     return res.status(200).json({ message: "Success", data: response.data });
-  } catch (error: any) {
+  } catch (error) {
     console.log("Google Sheets API Error:", error);
+    const errorMessage = (error as Error).message;
     return res
       .status(500)
-      .json({ message: "Internal Server Error At Form-DB Route", error: error.message });
+      .json({ message: "Internal Server Error At Form-DB Route", error: errorMessage });
   }
 }

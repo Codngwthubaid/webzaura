@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Card,
@@ -34,7 +34,8 @@ const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters").max(255),
   lastName: z.string().min(2, "Last name must be at least 2 characters").max(255),
   email: z.string().email("Invalid email address"),
-  subject: z.string().min(2, "Please select a subject").max(255),
+  services: z.string().min(2, "Please select a services").max(255),
+  type: z.string().min(2, "Please select a services").max(255),
   message: z.string().min(5, "Message must be at least 5 characters"),
 });
 
@@ -51,7 +52,8 @@ export const ContactSection = () => {
       firstName: "",
       lastName: "",
       email: "",
-      subject: "Web Development",
+      services: "Web Development",
+      type: "Basic",
       message: "",
     },
   });
@@ -79,19 +81,52 @@ export const ContactSection = () => {
     }
   }
 
-
   if (!mounted) {
     return null;
   }
+
+
+  const contactList = [
+    {
+      title: "Email",
+      icon: <Mail />,
+      desc: "webzaura@gmail.com",
+    },
+    {
+      title: "Phone",
+      icon: <Phone />,
+      desc: "+91-90685-07572",
+    },
+    {
+      title: "Location",
+      icon: <Building2 />,
+      desc: "Uttar Pradesh, India",
+    },
+  ]
+
+
+
 
   return (
     <section id="contact" className="container py-24 px-10 sm:py-32 mx-auto">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
+          <p className="text-lg text-primary mb-2 tracking-wider">Contact</p>
           <h2 className="text-3xl md:text-4xl font-bold">Connect With Us</h2>
-          <p className="mb-8 text-muted-foreground lg:w-5/6">
+          <p className="my-8 text-muted-foreground lg:w-5/6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
+          <div>
+            {contactList.map(({ title, icon, desc }) => (
+              <div key={title} className="mb-5">
+                <div className="font-bold text-base flex gap-2">
+                  <span>{icon}</span>
+                  <span>{title}</span>
+                </div>
+                <div>{desc}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <Card className="bg-muted/60 dark:bg-card">
@@ -131,22 +166,47 @@ export const ContactSection = () => {
 
                 <FormField
                   control={form.control}
-                  name="subject"
+                  name="services"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <Select>
+                      <FormLabel>Services</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Select a subject" />
+                            <SelectValue placeholder="Select your services" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
                           <SelectItem value="Web Development">Web Development</SelectItem>
-                          <SelectItem value="Mobile Development">Mobile Development</SelectItem>
-                          <SelectItem value="Figma Design">Figma Design</SelectItem>
-                          <SelectItem value="REST API">REST API</SelectItem>
-                          <SelectItem value="FullStack Project">FullStack Project</SelectItem>
+                          <SelectItem value="Digital Marketing">Digital Marketing</SelectItem>
+                          <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
+                          <SelectItem value="UI/UX & Graphic Designing">UI/UX & Graphic Designing</SelectItem>
+                          <SelectItem value="Ai Chatbot Integration">Ai Chatbot Integration</SelectItem>
+                          <SelectItem value="App Development">App Development</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="type"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Type</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select your type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="Basic">Basic</SelectItem>
+                          <SelectItem value="Standard">Standard</SelectItem>
+                          <SelectItem value="Advanced">Advanced</SelectItem>
+                          <SelectItem value="Pro">Pro</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
