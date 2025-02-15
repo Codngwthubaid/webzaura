@@ -52,7 +52,7 @@ export const TeamSection = () => {
         },
         {
             imageUrl: zubairImg,
-            firstName: "Mohammed",
+            firstName: "Mohammad",
             lastName: "Zubair",
             positions: ["Web Developer", "Digital Marketer", "SEO Expert"],
             socialNetworks: [
@@ -143,7 +143,7 @@ export const TeamSection = () => {
                                 </div>
                                 <CardTitle className="py-6 pb-4 px-6">
                                     {firstName}
-                                    <span className="text-primary ml-2">{lastName}</span>
+                                    <span className="text-primary ml-1">{lastName}</span>
                                 </CardTitle>
                             </CardHeader>
                             {positions.map((position, index) => (

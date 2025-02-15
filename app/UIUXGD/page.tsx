@@ -5,19 +5,28 @@ import ServicesWorkFLowLayout from "@/components/layout/services/servicesWorkFLo
 import ServicesPricingLayout from "@/components/layout/services/servicesPricingLayout";
 import { ContactSection } from "@/components/layout/sections/contact";
 import { FooterSection } from "@/components/layout/sections/footer";
+import { useTheme } from "next-themes";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
+      setMounted(true); 
+      const timer = setTimeout(() => {
+          setLoading(false);
+      }, 2000);
+      return () => clearTimeout(timer);
   }, []);
 
+  if (!mounted) {
+      // Return a neutral state during SSR to avoid hydration mismatch
+      return null;
+  }
+  
   return loading ? (
-    <div className="flex justify-center items-center h-screen bg-[#0c0a09]">
+    <div className={`flex justify-center items-center h-screen  ${theme === "dark" ? "bg-[#0c0a09]" : "bg-white"}`}>
       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
     </div>
   ) : (
