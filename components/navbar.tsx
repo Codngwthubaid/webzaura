@@ -25,6 +25,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
 
 interface RouteProps {
   href: string;
@@ -49,6 +56,34 @@ const routeList: RouteProps[] = [
     label: "FAQ",
   },
 ];
+
+
+const servicesList: RouteProps[] = [
+  {
+    href: "/WebDevelopment",
+    label: "Web Development",
+  },
+  {
+    href: "/DigitalMarketing",
+    label: "Digital Marketing",
+  },
+  {
+    href: "/UIUXGD",
+    label: "Socal Media Marketing",
+  },
+  {
+    href: "/SocialMediaManagement",
+    label: "UI/UX & Graphic Design",
+  },
+  {
+    href: "/AiChatBot",
+    label: "Ai ChatBot Integration",
+  },
+  {
+    href: "/AppDevelopment",
+    label: "App Development",
+  }
+]
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -83,7 +118,20 @@ export const Navbar = () => {
               </SheetHeader>
 
               <div className="flex flex-col gap-2">
-                <Link href={"#services"} className="ml-4 cursor-pointer lg:hidden" onClick={() => setIsOpen(!isOpen)}>Services</Link>
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger className="font-semibold text-base ml-4">Services</AccordionTrigger>
+                    <AccordionContent  className="flex flex-col gap-y-3">
+                      {servicesList.map(({ href, label }) => (
+                        <ul key={href}>
+                          <li><Link href={href} className="ml-4 cursor-pointer lg:hidden hover:bg-primary/40 rounded-md p-2" onClick={() => setIsOpen(!isOpen)}>{label}</Link></li>
+                        </ul>
+
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+
                 {routeList.map(({ href, label }) => (
                   <Button
                     key={href}
@@ -131,7 +179,7 @@ export const Navbar = () => {
                   <Link href="/AiChatBot">Ai Chatbot Integration </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/AppDevelopment">App Development </Link>  
+                  <Link href="/AppDevelopment">App Development </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
