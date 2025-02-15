@@ -121,7 +121,7 @@ export const Navbar = () => {
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
                     <AccordionTrigger className="font-semibold text-base ml-4">Services</AccordionTrigger>
-                    <AccordionContent  className="flex flex-col gap-y-3">
+                    <AccordionContent className="flex flex-col gap-y-3">
                       {servicesList.map(({ href, label }) => (
                         <ul key={href}>
                           <li><Link href={href} className="ml-4 cursor-pointer lg:hidden hover:bg-primary/40 rounded-md p-2" onClick={() => setIsOpen(!isOpen)}>{label}</Link></li>
@@ -149,7 +149,6 @@ export const Navbar = () => {
 
             <SheetFooter className="flex-col sm:flex-col justify-start items-start">
               <Separator className="mb-2" />
-
               <ToggleTheme />
             </SheetFooter>
           </SheetContent>

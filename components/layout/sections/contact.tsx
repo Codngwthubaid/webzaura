@@ -86,7 +86,13 @@ export const ContactSection = () => {
   }
 
 
-  const contactList = [
+  interface RouteProps {
+    title: string;
+    icon: React.ReactNode;
+    desc: string;
+  }
+  
+  const contactList: RouteProps[] = [
     {
       title: "Email",
       icon: <Mail />,
