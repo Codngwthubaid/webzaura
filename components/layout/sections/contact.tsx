@@ -57,10 +57,8 @@ export const ContactSection = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const { firstName, lastName, email, subject, message } = values;
   
     const googleSheetsURL = process.env.GOOGLE_APPS_SCRIPT_URL as string; 
-  // Deployment ID : AKfycby7SzuQGcolNPpLhdPC6jnPWUSeU69-CmLTP54I16_Q95EV1NWxDnk09dIEj9TPidMg
 
     try {
       await fetch(googleSheetsURL, {
