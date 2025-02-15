@@ -1,17 +1,9 @@
 
+import React from "react";
 import { Server, Database, Code } from "lucide-react";
-import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 const servicesTechStackLayout = () => {
-  const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const technologies = [
     {
