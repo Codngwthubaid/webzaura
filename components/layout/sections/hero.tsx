@@ -35,10 +35,10 @@ export const HeroSection = () => {
             <h1>
               Transform your ideas to digital
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                perfection with 
+                perfection with
               </span>
-              
-              <SparklesText text="WebZaura" className="text-primary"/>
+
+              <SparklesText text="WebZaura" className="text-primary" />
             </h1>
           </div>
 
@@ -47,7 +47,7 @@ export const HeroSection = () => {
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
-            <Link href="#pricing">
+            <Link href="#pricing" passHref>
               <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
                 Get Started
                 <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />

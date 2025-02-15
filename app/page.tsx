@@ -12,14 +12,23 @@ import { TeamSection } from '@/components/layout/sections/team'
 import { TestimonialSection } from '@/components/layout/sections/testimonial'
 import { FooterSection } from '@/components/layout/sections/footer'
 import { useTheme } from 'next-themes'
+import { motion, useSpring, useScroll } from "motion/react"
 
 const Page = () => {
-    const [loading, setLoading] = useState(true);
     const { theme } = useTheme();
+    const [loading, setLoading] = useState(true);
     const [mounted, setMounted] = useState(false);
 
+    const { scrollYProgress } = useScroll()
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    })
+
+
     useEffect(() => {
-        setMounted(true); 
+        setMounted(true);
         const timer = setTimeout(() => {
             setLoading(false);
         }, 2000);
@@ -37,6 +46,19 @@ const Page = () => {
         </div>
     ) : (
         <>
+            <motion.div
+                id="scroll-indicator"
+                style={{
+                    scaleX,
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: 10,
+                    originX: 0,
+                    backgroundColor: "#e9590c",
+                }}
+            />
             <HeroSection />
             <MarqueeDemo />
             <BenefitSection />
