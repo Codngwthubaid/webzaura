@@ -2,7 +2,8 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
-
+import { TypingAnimation } from "@/components/magicui/typing-animation";
+ 
 interface BenefitsProps {
   icon: string;
   title: string;
@@ -43,11 +44,7 @@ export const BenefitSection = () => {
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <div>
           <SparklesText text="Benefits" className="mb-4 text-primary" />
-          {/* <h2 className="text-lg text-primary mb-2 tracking-wider">Benefits</h2> */}
-
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Your Shortcut to Success
-          </h2>
+          <TypingAnimation>Your Shortcut to Success</TypingAnimation>
           <p className="text-xl text-muted-foreground mb-8">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
             ducimus reprehenderit architecto rerum similique facere odit

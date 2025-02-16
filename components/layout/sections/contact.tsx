@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters").max(255),
@@ -92,7 +93,7 @@ export const ContactSection = () => {
     icon: React.ReactNode;
     desc: string;
   }
-  
+
   const contactList: RouteProps[] = [
     {
       title: "Email",
@@ -118,9 +119,8 @@ export const ContactSection = () => {
     <section id="contact" className="container py-24 px-10 sm:py-32 mx-auto">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          {/* <p className="text-lg text-primary mb-2 tracking-wider">Contact</p> */}
           <SparklesText text="Contact" className="mb-4 text-start text-primary" />
-          <h2 className="text-3xl md:text-4xl font-bold">Connect With Us</h2>
+          <TypingAnimation >Connect With Us</TypingAnimation>
           <p className="my-8 text-muted-foreground lg:w-5/6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>

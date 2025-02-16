@@ -1,5 +1,6 @@
 "use client";
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -303,7 +304,7 @@ export const PricingSection = () => {
 
       ].map(({ category, plans }) => (
         <div key={category} className="mt-2">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{category}</h2>
+          <TypingAnimation>{category}</TypingAnimation>
           <h3 className="text-xl text-muted-foreground pb-4 mb-4">Choose the perfect plan for your needs.</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {plans.map(({ title, popular, price, description, buttonText, benefitList }) => (

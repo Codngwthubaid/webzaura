@@ -1,5 +1,6 @@
 "use client"
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 import {
   Accordion,
   AccordionContent,
@@ -48,9 +49,10 @@ export const FAQSection = () => {
       <div className="text-center mb-8">
         {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">FAQS</h2> */}
         <SparklesText text="FAQS" className="mb-4 text-center text-primary" />
-        <h2 className="text-3xl md:text-4xl text-center font-bold">
+        {/* <h2 className="text-3xl md:text-4xl text-center font-bold">
           Common Questions
-        </h2>
+        </h2> */}
+        <TypingAnimation className="text-center">Common Questions</TypingAnimation>
       </div>
 
       <Accordion type="single" collapsible className="AccordionRoot">

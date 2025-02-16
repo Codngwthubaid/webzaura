@@ -1,4 +1,5 @@
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
@@ -51,13 +52,8 @@ const featureList: FeaturesProps[] = [
 export const FeaturesSection = () => {
   return (
     <section id="features" className="container py-24 sm:py-32 px-10 mx-auto">
-      {/* <h2 className="text-lg text-primary  ">Features</h2> */}
       <SparklesText text="Features" className="mb-4 text-center text-primary" />
-
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Makes Us Different
-      </h2>
-
+      <TypingAnimation className="text-center">What Makes Us Different</TypingAnimation>
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
         fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio

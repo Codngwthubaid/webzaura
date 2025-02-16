@@ -46,6 +46,6 @@ export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
 const ball = {
     width: 50,
     height: 50,
-    backgroundColor: "#e9590c",
+    backgroundColor: "#f97316",
     borderRadius: "50%",
 }

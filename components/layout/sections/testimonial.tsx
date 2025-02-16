@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 interface ReviewProps {
   name: string;
@@ -55,11 +56,8 @@ export const TestimonialSection = () => {
   return (
     <section id="testimonials" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="text-center mb-8">
-        {/* <h2 className="text-lg text-primary tracking-wider">Reviews</h2> */}
-         <SparklesText text="Reviews" className="mb-4 text-center text-primary" />
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Hear What Our Clients Say
-        </h2>
+        <SparklesText text="Reviews" className="mb-4 text-center text-primary" />
+        <TypingAnimation className="text-center">Hear What Our Clients Say</TypingAnimation>
       </div>
 
       {reviews.length > 0 && (
@@ -99,11 +97,11 @@ export const TestimonialSection = () => {
         <Textarea placeholder="Your Feedback" value={comment} onChange={(e) => setComment(e.target.value)} className="mb-4" />
         <div className="flex gap-1 mb-4">
           {[1, 2, 3, 4, 5].map((star) => (
-        <Star
-          key={star}
-          className={`size-5 cursor-pointer ${rating >= star ? "fill-primary text-primary" : "text-gray-400"}`}
-          onClick={() => setRating(star)}
-        />
+            <Star
+              key={star}
+              className={`size-5 cursor-pointer ${rating >= star ? "fill-primary text-primary" : "text-gray-400"}`}
+              onClick={() => setRating(star)}
+            />
           ))}
         </div>
         <Button onClick={handleSubmit} className="w-full" disabled={!rating}>Submit Feedback</Button>

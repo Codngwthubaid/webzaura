@@ -1,5 +1,4 @@
 "use client"
-import Aurora from "@/components/animations/bottomshade";
 import React, { useEffect, useState } from 'react'
 import { BenefitSection } from '@/components/layout/sections/benefits'
 import { ContactSection } from '@/components/layout/sections/contact'
@@ -59,8 +58,7 @@ const Page = () => {
                     originX: 0,
                     backgroundColor: "#e9590c",
                 }}
-            />
-            <Aurora speed={1.5} />
+            /> 
             <HeroSection />
             <MarqueeDemo />
             <BenefitSection />

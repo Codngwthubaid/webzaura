@@ -1,5 +1,6 @@
 "use client";
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -67,11 +68,8 @@ const serviceList: ServiceProps[] = [
 export const ServicesSection = () => {
   return (
     <section id="services" className="container py-24 sm:py-32 px-10 mx-auto">
-      {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">Services</h2> */}
       <SparklesText text="Services" className="mb-4 text-center text-primary" />
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Grow Your Business
-      </h2>
+       <TypingAnimation className="text-center">Grow Your Business</TypingAnimation>
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
         From marketing and sales to operations and strategy, we have the
         expertise to help you achieve your goals.
