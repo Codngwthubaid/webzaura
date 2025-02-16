@@ -87,7 +87,7 @@ export const HeroSection = () => {
   }
   return (
     <section className="container w-full px-10 mx-auto">
-      <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-24">
+      <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-10">
         <div className="text-center space-y-8">
           <Badge variant="outline" className="text-sm py-2">
             <span className="mr-2 text-primary">

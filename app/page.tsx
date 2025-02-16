@@ -1,4 +1,5 @@
 "use client"
+import Aurora from "@/components/animations/bottomshade";
 import React, { useEffect, useState } from 'react'
 import { BenefitSection } from '@/components/layout/sections/benefits'
 import { ContactSection } from '@/components/layout/sections/contact'
@@ -13,7 +14,6 @@ import { TestimonialSection } from '@/components/layout/sections/testimonial'
 import { FooterSection } from '@/components/layout/sections/footer'
 import { useTheme } from 'next-themes'
 import { motion, useSpring, useScroll } from "motion/react"
-import Ballpit from '@/components/animations/bottomballs'
 
 const Page = () => {
     const { theme } = useTheme();
@@ -60,6 +60,7 @@ const Page = () => {
                     backgroundColor: "#e9590c",
                 }}
             />
+            <Aurora speed={1.5} />
             <HeroSection />
             <MarqueeDemo />
             <BenefitSection />
@@ -71,7 +72,6 @@ const Page = () => {
             <ContactSection />
             <FAQSection />
             <FooterSection />
-            <Ballpit />
         </>
     )
 }
