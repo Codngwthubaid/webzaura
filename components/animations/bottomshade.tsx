@@ -141,20 +141,6 @@ export default function Aurora(props: AuroraProps) {
     const gl = renderer.gl;
     gl.clearColor(1, 1, 1, 1);
 
-    // Declare program variable so it's available in the resize callback.
-    let program: Program;
-
-    function resize() {
-      if (!ctn) return;
-      const width = ctn.offsetWidth;
-      const height = ctn.offsetHeight;
-      renderer.setSize(width, height);
-      if (program) {
-        program.uniforms.uResolution.value = [width, height];
-      }
-    }
-    window.addEventListener("resize", resize);
-
     // Create a full-screen triangle.
     const geometry = new Triangle(gl);
     // Remove the UV attribute since we now compute UVs in the fragment shader.
@@ -168,7 +154,7 @@ export default function Aurora(props: AuroraProps) {
     });
 
     // Initialize the shader program with the new uResolution uniform.
-    program = new Program(gl, {
+    const program = new Program(gl, {
       vertex: VERT,
       fragment: FRAG,
       uniforms: {
@@ -178,6 +164,15 @@ export default function Aurora(props: AuroraProps) {
         uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
       },
     });
+
+    function resize() {
+      if (!ctn) return;
+      const width = ctn.offsetWidth;
+      const height = ctn.offsetHeight;
+      renderer.setSize(width, height);
+      program.uniforms.uResolution.value = [width, height]; // No need to check `if (program)`
+    }
+    window.addEventListener("resize", resize);
 
     const mesh = new Mesh(gl, { geometry, program });
     ctn.appendChild(gl.canvas);
