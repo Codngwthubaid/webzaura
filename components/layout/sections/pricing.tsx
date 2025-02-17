@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const uiuxgdPlans = [
   {
@@ -289,38 +290,71 @@ const socialMediaPlans = [
   }
 ];
 
+
+const servicePlans = [
+  { category: "Web Development", plans: webDevelopmentPlans },
+  { category: "Digital Marketing", plans: digitalMarketingPlans },
+  { category: "Social Media Management", plans: socialMediaPlans },
+  { category: "UI/UX & Graphic Design", plans: uiuxgdPlans },
+  { category: "AI Chatbot Integration", plans: aiChatbotPlans },
+  { category: "App Development", plans: appDevelopmentPlans },
+];
+
 export const PricingSection = () => {
+  const [currency, setCurrency] = useState("INR");
+  const [conversionRate, setConversionRate] = useState(1);
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      try {
+        const response = await fetch("https://ipwhois.app/json/");
+        console.log(response)
+        const data = await response.json();
+        console.log(data)
+
+        if (data.country_code !== "IN") {
+          setCurrency("USD");
+          setConversionRate(1 / 87);
+        }
+      } catch (error) {
+        console.error("Error fetching location:", error);
+      }
+    };
+
+    fetchLocation();
+  }, []);
+
   return (
     <section id="pricing" className="container py-24 sm:py-32 relative px-10 mx-auto">
       <SparklesText text="Pricing" className="mb-4 text-4xl sm:text-5xl text-start text-primary" />
-      {[
-        { category: "Web Development", plans: webDevelopmentPlans },
-        { category: "Digital Marketing", plans: digitalMarketingPlans },
-        { category: "Social Media Management", plans: socialMediaPlans },
-        { category: "UI/UX & Graphic Design", plans: uiuxgdPlans },
-        { category: "AI Chatbot Integration", plans: aiChatbotPlans },
-        { category: "App Development", plans: appDevelopmentPlans },
 
-      ].map(({ category, plans }) => (
-        <div key={category} className="mt-2">
+      {servicePlans.map(({ category, plans }) => (
+        <div key={category} className="mt-10">
           <TypingAnimation className="text-2xl sm:text-3xl">{category}</TypingAnimation>
-          <h3 className="text-xl text-muted-foreground pb-4 mb-4">Choose the perfect plan for your needs.</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h3 className="text-xl text-muted-foreground pb-4 mb-4">
+            Choose the perfect plan for your needs.
+          </h3>
+
+          <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4  scrollbar-hide">
             {plans.map(({ title, popular, price, description, buttonText, benefitList }) => (
               <Card
                 key={title}
-                className={`mb-20 ${popular === 1
-                  ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary transition-all hover:lg:scale-[1.1]"
-                  : ""}`}
+                className={`min-w-[80%] sm:min-w-[60%] md:w-full flex-shrink-0 md:flex-shrink ${popular === 1
+                    ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary transition-all"
+                    : ""
+                  }`}
               >
                 <CardHeader>
                   <CardTitle className="pb-2">{title}</CardTitle>
                   <CardDescription className="pb-4">{description}</CardDescription>
                   <div>
                     <span className="text-2xl font-bold">Starts from / </span>
-                    <span className="text-3xl font-bold">${price}</span>
+                    <span className="text-3xl font-bold">
+                      {currency} {Math.round(price * conversionRate)}
+                    </span>
                   </div>
                 </CardHeader>
+
                 <CardContent>
                   <div className="space-y-4">
                     {benefitList.map((benefit) => (
@@ -331,19 +365,20 @@ export const PricingSection = () => {
                     ))}
                   </div>
                 </CardContent>
+
                 <CardFooter>
-                  <Button
-                    variant={popular === 1 ? "default" : "secondary"}
-                    className="w-full"
-                  >
-                    <Link href={"#contact"}>{buttonText}</Link>
-                  </Button>
+                  <Link href={"#contact"} passHref>
+                    <Button variant={popular === 1 ? "default" : "secondary"} className="w-full">
+                      {buttonText}
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             ))}
           </div>
+
         </div>
       ))}
     </section>
-  )
+  );
 };

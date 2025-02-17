@@ -187,3 +187,7 @@ html {
   display: flex;
   animation: scroll-horizontal 15s linear infinite;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
