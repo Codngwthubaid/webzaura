@@ -292,8 +292,7 @@ const socialMediaPlans = [
 export const PricingSection = () => {
   return (
     <section id="pricing" className="container py-24 sm:py-32 relative px-10 mx-auto">
-      {/* <h2 className="text-lg text-primary mb-2 tracking-wider">Pricing</h2> */}
-      <SparklesText text="Pricing" className="mb-4 text-start text-primary" />
+      <SparklesText text="Pricing" className="mb-4 text-3xl sm:text-5xl text-start text-primary" />
       {[
         { category: "Web Development", plans: webDevelopmentPlans },
         { category: "Digital Marketing", plans: digitalMarketingPlans },
@@ -304,7 +303,7 @@ export const PricingSection = () => {
 
       ].map(({ category, plans }) => (
         <div key={category} className="mt-2">
-          <TypingAnimation>{category}</TypingAnimation>
+          <TypingAnimation className="text-2xl sm:text-3xl">{category}</TypingAnimation>
           <h3 className="text-xl text-muted-foreground pb-4 mb-4">Choose the perfect plan for your needs.</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {plans.map(({ title, popular, price, description, buttonText, benefitList }) => (

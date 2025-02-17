@@ -81,7 +81,7 @@ const ReviewCard = ({
 export const MarqueeDemo = () => {
     return (
         <div className="mx-auto container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background px-10">
-            <SparklesText text="What we serve" className="mb-4 text-primary" />
+            <SparklesText text="What we serve" className="text-3xl mb-8 text-primary sm:text-5xl" />
             <Marquee pauseOnHover className="[--duration:20s]">
                 {firstRow.map((review) => (
                     <ReviewCard key={review.username} {...review} />

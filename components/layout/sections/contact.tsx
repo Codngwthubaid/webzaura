@@ -119,8 +119,8 @@ export const ContactSection = () => {
     <section id="contact" className="container py-24 px-10 sm:py-32 mx-auto">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <SparklesText text="Contact" className="mb-4 text-start text-primary" />
-          <TypingAnimation >Connect With Us</TypingAnimation>
+          <SparklesText text="Contact" className="mb-4 text-start text-primary text-3xl sm:text-5xl" />
+          <TypingAnimation className="text-2xl sm:text-3xl">Connect With Us</TypingAnimation>
           <p className="my-8 text-muted-foreground lg:w-5/6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>

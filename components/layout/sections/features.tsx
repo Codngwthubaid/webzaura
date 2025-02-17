@@ -52,8 +52,8 @@ const featureList: FeaturesProps[] = [
 export const FeaturesSection = () => {
   return (
     <section id="features" className="container py-24 sm:py-32 px-10 mx-auto">
-      <SparklesText text="Features" className="mb-4 text-center text-primary" />
-      <TypingAnimation className="text-center">What Makes Us Different</TypingAnimation>
+      <SparklesText text="Features" className="mb-4 text-center text-3xl text-primary sm:text-5xl" />
+      <TypingAnimation className="text-center text-2xl sm:text-3xl">What Makes Us Different</TypingAnimation>
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
         fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio

@@ -68,8 +68,8 @@ const serviceList: ServiceProps[] = [
 export const ServicesSection = () => {
   return (
     <section id="services" className="container py-24 sm:py-32 px-10 mx-auto">
-      <SparklesText text="Services" className="mb-4 text-center text-primary" />
-       <TypingAnimation className="text-center">Grow Your Business</TypingAnimation>
+      <SparklesText text="Services" className="text-3xl sm:text-5xl mb-4 text-center text-primary" />
+       <TypingAnimation className="text-center text-2xl sm:text-3xl">Grow Your Business</TypingAnimation>
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
         From marketing and sales to operations and strategy, we have the
         expertise to help you achieve your goals.

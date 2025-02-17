@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
- 
+
 interface BenefitsProps {
   icon: string;
   title: string;
@@ -42,10 +42,10 @@ export const BenefitSection = () => {
   return (
     <section id="benefits" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
-        <div>
-          <SparklesText text="Benefits" className="mb-4 text-primary" />
-          <TypingAnimation>Your Shortcut to Success</TypingAnimation>
-          <p className="text-xl text-muted-foreground mb-8">
+        <div className="mx-auto container">
+          <SparklesText text="Benefits" className="mb-4 text-primary text-center font-bold text-3xl sm:text-5xl" />
+          <TypingAnimation className="text-center text-2xl sm:text-3xl">Your Shortcut to Success</TypingAnimation>
+          <p className="text-xl text-center mt-2 text-muted-foreground mb-8">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
             ducimus reprehenderit architecto rerum similique facere odit
             deleniti necessitatibus quo quae.

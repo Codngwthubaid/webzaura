@@ -119,8 +119,8 @@ export const TeamSection = () => {
     return (
         <section id="team" className="container lg:w-[75%] py-24 sm:py-32 mx-auto px-10">
             <div className="text-center mb-8">
-                <SparklesText text="Team" className="mb-4 text-center text-primary" />
-                <TypingAnimation className="text-center">A team above all</TypingAnimation>
+                <SparklesText text="Team" className="mb-4 text-3xl text-center text-primary sm:text-5xl" />
+                <TypingAnimation className="text-center text-2xl sm:text-3xl">A team above all</TypingAnimation>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">

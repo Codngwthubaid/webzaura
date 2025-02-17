@@ -47,12 +47,8 @@ export const FAQSection = () => {
   return (
     <section id="faq" className="container md:w-[700px] py-24 px-10 sm:py-32 mx-auto">
       <div className="text-center mb-8">
-        {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">FAQS</h2> */}
-        <SparklesText text="FAQS" className="mb-4 text-center text-primary" />
-        {/* <h2 className="text-3xl md:text-4xl text-center font-bold">
-          Common Questions
-        </h2> */}
-        <TypingAnimation className="text-center">Common Questions</TypingAnimation>
+        <SparklesText text="FAQS" className="text-3xl sm:text-5xl mb-4 text-center text-primary" />
+        <TypingAnimation className="text-center text-2xl sm:text-3xl">Common Questions</TypingAnimation>
       </div>
 
       <Accordion type="single" collapsible className="AccordionRoot">
