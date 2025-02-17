@@ -158,9 +158,9 @@ export default function SplashCursor({
         ? (gl as WebGL2RenderingContext).HALF_FLOAT
         : (halfFloat && (halfFloat).HALF_FLOAT_OES) || 0;
 
-      let formatRGBA: any;
-      let formatRG: any;
-      let formatR: any;
+      let formatRGBA;
+      let formatRG;
+      let formatR;
 
       if (isWebGL2) {
         formatRGBA = getSupportedFormat(
@@ -906,72 +906,76 @@ export default function SplashCursor({
       const filtering = ext.supportLinearFiltering ? gl.LINEAR : gl.NEAREST;
       gl.disable(gl.BLEND);
 
-      if (!dye) {
-        dye = createDoubleFBO(
-          dyeRes.width,
-          dyeRes.height,
-          rgba.internalFormat,
-          rgba.format,
-          texType,
-          filtering
-        );
-      } else {
-        dye = resizeDoubleFBO(
-          dye,
-          dyeRes.width,
-          dyeRes.height,
-          rgba.internalFormat,
-          rgba.format,
-          texType,
-          filtering
-        );
-      }
+      if (rgba && rg && r) {
+        if (!dye) {
+          dye = createDoubleFBO(
+            dyeRes.width,
+            dyeRes.height,
+            rgba.internalFormat,
+            rgba.format,
+            texType,
+            filtering
+          );
+        } else {
+          dye = resizeDoubleFBO(
+            dye,
+            dyeRes.width,
+            dyeRes.height,
+            rgba.internalFormat,
+            rgba.format,
+            texType,
+            filtering
+          );
+        }
 
-      if (!velocity) {
-        velocity = createDoubleFBO(
+        if (!velocity) {
+          velocity = createDoubleFBO(
+            simRes.width,
+            simRes.height,
+            rg.internalFormat,
+            rg.format,
+            texType,
+            filtering
+          );
+        } else {
+          velocity = resizeDoubleFBO(
+            velocity,
+            simRes.width,
+            simRes.height,
+            rg.internalFormat,
+            rg.format,
+            texType,
+            filtering
+          );
+        }
+
+        divergence = createFBO(
           simRes.width,
           simRes.height,
-          rg.internalFormat,
-          rg.format,
+          r.internalFormat,
+          r.format,
           texType,
-          filtering
+          gl.NEAREST
         );
-      } else {
-        velocity = resizeDoubleFBO(
-          velocity,
+        curl = createFBO(
           simRes.width,
           simRes.height,
-          rg.internalFormat,
-          rg.format,
+          r.internalFormat,
+          r.format,
           texType,
-          filtering
+          gl.NEAREST
         );
+        pressure = createDoubleFBO(
+          simRes.width,
+          simRes.height,
+          r.internalFormat,
+          r.format,
+          texType,
+          gl.NEAREST
+        );
+      } else {
+        console.error("Failed to initialize framebuffers due to unsupported formats.");
       }
-
-      divergence = createFBO(
-        simRes.width,
-        simRes.height,
-        r.internalFormat,
-        r.format,
-        texType,
-        gl.NEAREST
-      );
-      curl = createFBO(
-        simRes.width,
-        simRes.height,
-        r.internalFormat,
-        r.format,
-        texType,
-        gl.NEAREST
-      );
-      pressure = createDoubleFBO(
-        simRes.width,
-        simRes.height,
-        r.internalFormat,
-        r.format,
-        texType,
-        gl.NEAREST
-      );
     }
 
     function updateKeywords() {
