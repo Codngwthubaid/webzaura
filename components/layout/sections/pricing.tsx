@@ -292,7 +292,7 @@ const socialMediaPlans = [
 export const PricingSection = () => {
   return (
     <section id="pricing" className="container py-24 sm:py-32 relative px-10 mx-auto">
-      <SparklesText text="Pricing" className="mb-4 text-3xl sm:text-5xl text-start text-primary" />
+      <SparklesText text="Pricing" className="mb-4 text-4xl sm:text-5xl text-start text-primary" />
       {[
         { category: "Web Development", plans: webDevelopmentPlans },
         { category: "Digital Marketing", plans: digitalMarketingPlans },

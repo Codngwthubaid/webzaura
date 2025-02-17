@@ -47,7 +47,7 @@ export const FAQSection = () => {
   return (
     <section id="faq" className="container md:w-[700px] py-24 px-10 sm:py-32 mx-auto">
       <div className="text-center mb-8">
-        <SparklesText text="FAQS" className="text-3xl sm:text-5xl mb-4 text-center text-primary" />
+        <SparklesText text="FAQS" className="text-4xl sm:text-5xl mb-4 text-center text-primary" />
         <TypingAnimation className="text-center text-2xl sm:text-3xl">Common Questions</TypingAnimation>
       </div>
 

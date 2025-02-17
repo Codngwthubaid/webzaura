@@ -56,7 +56,7 @@ export const TestimonialSection = () => {
   return (
     <section id="testimonials" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="text-center mb-8">
-        <SparklesText text="Reviews" className="mb-4 text-center text-3xl  sm:text-5xl text-primary" />
+        <SparklesText text="Reviews" className="mb-4 text-center text-4xl  sm:text-5xl text-primary" />
         <TypingAnimation className="text-center text-2xl sm:text-3xl">Hear What Our Clients Say</TypingAnimation>
 
       </div>

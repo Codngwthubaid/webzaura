@@ -43,7 +43,7 @@ export const BenefitSection = () => {
     <section id="benefits" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <div className="mx-auto container">
-          <SparklesText text="Benefits" className="mb-4 text-primary text-center font-bold text-3xl sm:text-5xl" />
+          <SparklesText text="Benefits" className="mb-4 text-primary text-center font-bold text-4xl sm:text-5xl" />
           <TypingAnimation className="text-center text-2xl sm:text-3xl">Your Shortcut to Success</TypingAnimation>
           <p className="text-xl text-center mt-2 text-muted-foreground mb-8">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
