@@ -31,7 +31,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-
+import Image from "next/image";
 
 interface RouteProps {
   href: string;
@@ -44,7 +44,7 @@ const routeList: RouteProps[] = [
     label: "Testimonials",
   },
   {
-    href: "#team",
+    href: "/TeamMembers",
     label: "Team",
   },
   {
@@ -87,11 +87,18 @@ const servicesList: RouteProps[] = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
       <Link href="/" className="font-bold text-lg flex items-center">
-        <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-        WebZaura
+        <Image src={
+          "/LogoImg/logoLight.png"
+        }
+          width={64}
+          height={64}
+          alt="logo"
+        />
+        Web<span className="text-primary">Zaura</span>
       </Link>
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
@@ -110,9 +117,15 @@ export const Navbar = () => {
             <div>
               <SheetHeader className="mb-4 ml-4">
                 <SheetTitle className="flex items-center">
-                  <Link href="/" className="flex items-center">
-                    <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-                    WebZaura
+                  <Link href="/" className="font-bold text-lg flex items-center">
+                    <Image src={
+                      "/LogoImg/logoLight.png"
+                    }
+                      width={64}
+                      height={64}
+                      alt="logo"
+                    />
+                    Web<span className="text-primary">Zaura</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>

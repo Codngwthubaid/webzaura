@@ -6,7 +6,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner"
 import SplashCursor from "@/components/animations/SplashCursor"
 
-
 export const metadata: Metadata = {
   title: "Agency - Landing template",
   description: "Landing template for Agency",
@@ -28,7 +27,6 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          {/* <Drag /> */}
           <SplashCursor />
           <Toaster />
         </ThemeProvider>

@@ -85,7 +85,10 @@ export const HeroSection = () => {
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
                 perfection with
               </span>
-              <SparklesText text="WebZaura" className="text-primary text-5xl sm:text-7xl" />
+              <div className="flex items-center justify-center">
+              <SparklesText text="Web" className="text-white text-5xl sm:text-7xl" />
+              <SparklesText text="Zaura" className="text-primary text-5xl sm:text-7xl" />
+              </div>
             </h1>
           </div>
 

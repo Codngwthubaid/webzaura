@@ -1,10 +1,10 @@
 import GithubIcon from "@/components/icons/github-icon";
 import LinkedInIcon from "@/components/icons/linkedin-icon";
 import XIcon from "@/components/icons/x-icon";
-import ubaidImg from "@/public/TeamMembersImg/ubaidImg.jpg"
-import alamgeerImg from "@/public/TeamMembersImg/alamgeerImg.png"
-import arshImg from "@/public/TeamMembersImg/arshImg.png"
-import zubairImg from "@/public/TeamMembersImg/zubairImg.jpg"
+import ubaidImg from "../../../public/TeamMembersImg/ubaidImg.jpg"
+import zubairImg from "../../../public/TeamMembersImg/zubairImg.jpg"
+import arshImg from "../../../public/TeamMembersImg/arshImg.png"
+import alamgeerImg from "../../../public/TeamMembersImg/alamgeerImg.png"
 import {
     Card,
     CardContent,
@@ -30,6 +30,7 @@ interface SocialNetworkProps {
     name: string;
     url: string;
 }
+
 export const TeamSection = () => {
     const teamList: TeamProps[] = [
         {
