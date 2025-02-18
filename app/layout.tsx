@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/sonner"
 import SplashCursor from "@/components/animations/SplashCursor"
 
 export const metadata: Metadata = {
-  title: "Agency - Landing template",
+  title: "WebZaura - Web Development and Digital Marketing Agency",
   description: "Landing template for Agency",
 };
 
