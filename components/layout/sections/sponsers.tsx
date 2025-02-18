@@ -5,40 +5,34 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 
 const reviews = [
     {
-        name: "Jack",
-        username: "@jack",
-        body: "I've never seen anything like this before. It's amazing. I love it.",
-        img: "/img/ubaidImg.jpg"
+        name: "Web Development",
+        body: "Your website isn't just a URL — It's your digital identity. We create high-performing, visually stunning, and fully optimized websites that don't just exist but leave a lasting impression and drive results.",
+        img: "/Services/WD.jpg"
     },
     {
-        name: "Jill",
-        username: "@jill",
-        body: "I don't know what to say. I'm speechless. This is amazing.",
-        img: "/img/ubaidImg.jpg"
+        name: "Digital Marketing",
+        body: "Marketing isn't just about visibility — It's about impact. Our data-driven digital marketing strategies ensure that your brand not only reaches the right audience but converts them into loyal customer.",
+        img: "/Services/DM.jpg"
     },
     {
-        name: "John",
-        username: "@john",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "/img/ubaidImg.jpg"
+        name: "UI/UX & Graphic Designing",
+        body: "Design is more than aesthetics — It's about experience. We craft intuitive, visually stunning, and user-friendly designs that captivate, engage, and turn visitors into customers.",
+        img: "/Services/UIUXGD.jpg"
     },
     {
-        name: "Jane",
-        username: "@jane",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "/img/ubaidImg.jpg"
+        name: "Social Media Manangement",
+        body: "Every brand tells a story. Our graphic designs ensure yours is bold, beautiful, and unforgettable—whether it's a logo, social media visuals, or complete branding.",
+        img: "/Services/SMM.jpg"
     },
     {
-        name: "Jenny",
-        username: "@jenny",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "/img/ubaidImg.jpg"
+        name: "Ai Chatbot Integration",
+        body: "AI-driven chatbots that do more than just chat—they enhance customer engagement, automate workflows, and create seamless interactions that feel as natural as human conversation",
+        img: "/Services/AICH.jpg"
     },
     {
-        name: "James",
-        username: "@james",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "/img/ubaidImg.jpg"
+        name: "App Development",
+        body: "Your business deserves an app that's fast, intuitive, and built to scale. We develop mobile experiences that engage users, boost efficiency, and keep you ahead in a mobile-first world",
+        img: "/Services/MAD.jpg"
     },
 ];
 
@@ -48,29 +42,26 @@ const secondRow = reviews.slice(reviews.length / 2);
 const ReviewCard = ({
     img,
     name,
-    username,
     body,
 }: {
     img: string;
     name: string;
-    username: string;
     body: string;
 }) => {
     return (
         <figure
             className={cn(
-                "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+                "relative w-64 h-fit cursor-pointer overflow-hidden rounded-xl border p-4",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
             )}
         >
             <div className="flex flex-row items-center gap-2">
-                <Image className="rounded-full" width="32" height="32" alt="" src={img} />
+                <Image className="rounded-md" width="64" height="64" alt="" src={img} />
                 <div className="flex flex-col">
                     <figcaption className="text-sm font-medium dark:text-white">
                         {name}
                     </figcaption>
-                    <p className="text-xs font-medium dark:text-white/40">{username}</p>
                 </div>
             </div>
             <blockquote className="mt-2 text-sm">{body}</blockquote>
@@ -80,16 +71,17 @@ const ReviewCard = ({
 
 export const MarqueeDemo = () => {
     return (
-        <div className="mx-auto container relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background px-10">
-            <SparklesText text="What we serve" className="text-4xl mb-8 text-primary sm:text-5xl" />
-            <Marquee pauseOnHover className="[--duration:20s]">
+        <div className="mx-auto container relative flex h-fit w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background px-10">
+            <SparklesText text="What we serve" className="text-4xl mb-4 text-primary sm:text-5xl" />
+            <p className="text-center text-muted-foreground sm:mx-20 mb-8 font-semibold text-white text-2xl">From powerful websites and mobile apps to AI-driven chatbots, high-impact branding, and result-oriented digital marketing, Webzaura delivers smart, scalable, and stunning solutions—all at a price that makes sense.</p>
+            <Marquee pauseOnHover className="[--duration:20s] ">
                 {firstRow.map((review) => (
-                    <ReviewCard key={review.username} {...review} />
+                    <ReviewCard key={review.name} {...review} />
                 ))}
             </Marquee>
-            <Marquee reverse pauseOnHover className="[--duration:20s]">
+            <Marquee reverse pauseOnHover className="[--duration:20s] ">
                 {secondRow.map((review) => (
-                    <ReviewCard key={review.username} {...review} />
+                    <ReviewCard key={review.name} {...review} />
                 ))}
             </Marquee>
             <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>

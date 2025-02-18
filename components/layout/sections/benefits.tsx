@@ -46,9 +46,7 @@ export const BenefitSection = () => {
           <SparklesText text="Benefits" className="mb-4 text-primary text-center font-bold text-4xl sm:text-5xl" />
           <TypingAnimation className="text-center text-2xl sm:text-3xl">Your Shortcut to Success</TypingAnimation>
           <p className="text-xl text-center mt-2 text-muted-foreground mb-8">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-            ducimus reprehenderit architecto rerum similique facere odit
-            deleniti necessitatibus quo quae.
+          We combine creativity with the latest technology to develop powerful websites, engaging apps, and intelligent automation that help businesses thrive. Whether you&apos;re starting from scratch or upgrading your brand, we&apos;re here to transform your vision into reality.
           </p>
         </div>
 

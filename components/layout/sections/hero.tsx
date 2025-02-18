@@ -90,7 +90,7 @@ export const HeroSection = () => {
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            {`Porro esse facere modi iste, earum praesentium suscipit ab obcaecati vitae ut cumque doloremque maiores labore delectus nesciunt qui quam. Qui, maxime.`}
+            {`We craft digital experiences that ignite passion and elevate your brand's impact. Let us help you redefine your online presence and take your business to new heights!`}
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
