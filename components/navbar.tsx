@@ -32,6 +32,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import Image from "next/image";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface RouteProps {
   href: string;
@@ -209,18 +210,9 @@ export const Navbar = () => {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden lg:flex">
+      <div className="hidden lg:flex items-center">
         <ToggleTheme />
-
-        <Button asChild size="sm" variant="ghost" aria-label="View on GitHub">
-          <Link
-            aria-label="View on GitHub"
-            href="https://github.com/Codngwthubaid"
-            target="_blank"
-          >
-            <Github className="size-5" />
-          </Link>
-        </Button>
+        <LanguageSwitcher lang="en" />
       </div>
     </header>
   );

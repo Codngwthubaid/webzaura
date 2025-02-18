@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -7,8 +6,9 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import TitledImg from "@/components/animations/titledImg";
+import { useEffect, useState } from "react";
 
-export const HeroSection = () => {
+export const HeroSection = ({ translations }: { translations: any }) => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [dimensions, setDimensions] = useState({
@@ -74,32 +74,32 @@ export const HeroSection = () => {
         <div className="text-center space-y-8">
           <Badge variant="outline" className="text-sm py-2">
             <span className="mr-2 text-primary">
-              <Badge>New</Badge>
+              <Badge>{translations.newBadge}</Badge>
             </span>
-            <span> Design your web right now! </span>
+            <span>{translations.tagline}</span>
           </Badge>
 
           <div className="max-w-screen-md mx-auto text-center text-2xl md:text-6xl font-bold">
             <h1>
-              Transform your ideas to digital
+              {translations.title1}
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                perfection with
+                {translations.title2}
               </span>
               <div className="flex items-center justify-center">
-              <SparklesText text="Web" className={`${theme === "dark" ? "text-white" : "text-[#e9590c]"} text-5xl sm:text-7xl`} />
-              <SparklesText text="Zaura" className="text-primary text-5xl sm:text-7xl" />
+                <SparklesText text={translations.web} className={`${theme === "dark" ? "text-white" : "text-[#e9590c]"} text-5xl sm:text-7xl`} />
+                <SparklesText text={translations.zaura} className="text-primary text-5xl sm:text-7xl" />
               </div>
             </h1>
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            {`We craft digital experiences that ignite passion and elevate your brand's impact. Let us help you redefine your online presence and take your business to new heights!`}
+            {translations.description}
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
             <Link href="#pricing" passHref>
               <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-                Get Started
+                {translations.getStarted}
                 <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
               </Button>
             </Link>

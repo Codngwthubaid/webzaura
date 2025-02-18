@@ -13,12 +13,14 @@ import { FooterSection } from '@/components/layout/sections/footer'
 import { useTheme } from 'next-themes'
 import { motion, useSpring, useScroll } from "motion/react"
 import Link from 'next/link'
+import { getTranslations } from "@/utils/i18n";
 
-const Page = () => {
+const Page = ({ params }: { params: { lang: string } }) => {
     const { theme } = useTheme();
     const [loading, setLoading] = useState(true);
     const [mounted, setMounted] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const translations = getTranslations(params.lang);
 
     const { scrollYProgress } = useScroll()
     const scaleX = useSpring(scrollYProgress, {
@@ -126,7 +128,7 @@ const Page = () => {
                     )}
                 </Link>
             </div>
-            <HeroSection />
+            <HeroSection translations={translations.hero} />
             <MarqueeDemo />
             <BenefitSection />
             <FeaturesSection />
