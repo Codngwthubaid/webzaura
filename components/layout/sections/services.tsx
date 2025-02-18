@@ -34,32 +34,39 @@ const serviceList: ServiceProps[] = [
   {
     title: "Website Development",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
+      "🚀 Future-Ready Websites Designed to Perform. Your website is more than just a platform— It's your brand's digital identity. At Webzaura, we craft high-speed, user-friendly, and scalable websites that deliver seamless experiences across all devices. From custom business websites to eCommerce platforms, we ensure your site stands out and drives results.",
     pro: 0,
     url: "/WebDevelopment",
   },
   {
     title: "Digital Marketing",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
+      "📈 Data-Driven Strategies That Deliver Results. We go beyond traditional marketing. At Webzaura, we craft AI-powered, data-driven campaigns that connect with the right audience, increase engagement, and maximize ROI. From SEO and social media marketing to paid ads and content strategy, we help your brand stay ahead in the digital world.",
     pro: 0,
     url: "/DigitalMarketing",
   },
   {
+    title: "Social Media Management",
+    description:
+      "🌟A social media management agency boosts a brand's online presence through tailored strategies and engaging content. They create eye-catching posts, manage community interactions, and run targeted ad campaigns, all while monitoring performance for continuous improvement. By adapting to industry trends, they help brands connect with their audience, driving engagement and growth.",
+    pro: 0,
+    url: "/SocialMediaManagement",
+  },
+  {
     title: "UI/UX & Graphic Design",
-    description: "Lorem ipsum dolor sit amet consectetur.",
+    description: "🎨 Designs That Feel as Good as They Look. Your digital success starts with an exceptional user experience. At Webzaura, we create sleek, modern, and user-friendly UI/UX designs that keep visitors engaged and drive conversions. Every pixel is carefully placed to ensure effortless navigation, intuitive interactions, and a memorable digital experience.",
     pro: 0,
     url: "/UIUXGD",
   },
   {
     title: "AI Chatbot Integration",
-    description: "Lorem ipsum dolor sit amet consectetur.",
+    description: "🤖 Smart Conversations, Seamless Interactions Engage your customers 24/7 with intelligent AI chatbots that automate responses, handle customer queries, and provide real-time assistance. Our chatbots are designed to enhance engagement, improve efficiency, and boost conversions—all while delivering a human-like interaction.",
     pro: 1,
     url: "/AiChatBot",
   },
   {
     title: "App Development",
-    description: "Lorem dolor sit amet adipisicing.",
+    description: "📱 Building Apps That Users Love. A great app is more than just functional—it's an experience. Our mobile app development services bring speed, efficiency, and creativity together to build intuitive, high-performance applications for iOS and Android. Whether it's a business app, an eCommerce solution, or a custom-built application, we turn ideas into seamless mobile experiences.",
     pro: 1,
     url: "/AppDevelopment",
   },

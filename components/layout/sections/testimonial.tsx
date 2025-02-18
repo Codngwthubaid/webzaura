@@ -62,7 +62,7 @@ export const TestimonialSection = () => {
       </div>
 
       {reviews.length > 0 && (
-        <Carousel className="relative w-[80%] sm:w-[90%] lg:max-w-screen-xl">
+        <Carousel className="relative mx-auto w-[80%] sm:w-[90%] lg:max-w-screen-xl">
           <CarouselContent>
             {reviews.map((review, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">

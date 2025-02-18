@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import WD from "../../../public/ServicesImg/WD.jpg"
 import DM from "../../../public/ServicesImg/DM.jpg"
@@ -50,7 +50,7 @@ const ReviewCard = ({
     name,
     body,
 }: {
-    img: any;
+    img: StaticImageData;
     name: string;
     body: string;
 }) => {

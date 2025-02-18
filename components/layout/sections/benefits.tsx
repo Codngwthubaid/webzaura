@@ -15,25 +15,25 @@ const benefitList: BenefitsProps[] = [
     icon: "Blocks",
     title: "Build Brand Trust",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Building brand trust involves transparent communication, showcasing social proof through customer reviews, and maintaining consistency in messaging and actions. These strategies foster long-term relationships and enhance customer loyalty.",
   },
   {
     icon: "ChartLine",
     title: "More Leads",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+      "To generate more leads, businesses can enhance visibility through SEO, utilize PPC advertising for targeted reach, and employ lead generation ads on social media. Engaging content, such as videos, can also attract and retain potential customers effectively.",
   },
   {
     icon: "Wallet",
     title: "Higher Conversions",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+      "To achieve higher conversions, focus on optimizing your website by using high-quality images and videos, offering multiple payment options, and creating a sense of urgency to encourage quick action",
   },
   {
     icon: "Sparkle",
     title: "Test Marketing Ideas",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Testing marketing ideas means running small trials to gauge customer reactions, using methods like A/B testing and surveys to refine strategies before a full launch.",
   },
 ];
 

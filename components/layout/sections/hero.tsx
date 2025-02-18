@@ -69,7 +69,7 @@ export const HeroSection = () => {
   }
 
   return (
-    <section className="container w-full px-10 mx-auto">
+    <section className="container px-10 mx-auto">
       <div className="grid place-items-center gap-8 mx-auto py-20">
         <div className="text-center space-y-8">
           <Badge variant="outline" className="text-sm py-2">
@@ -86,7 +86,7 @@ export const HeroSection = () => {
                 perfection with
               </span>
               <div className="flex items-center justify-center">
-              <SparklesText text="Web" className="text-white text-5xl sm:text-7xl" />
+              <SparklesText text="Web" className={`${theme === "dark" ? "text-white" : "text-[#e9590c]"} text-5xl sm:text-7xl`} />
               <SparklesText text="Zaura" className="text-primary text-5xl sm:text-7xl" />
               </div>
             </h1>

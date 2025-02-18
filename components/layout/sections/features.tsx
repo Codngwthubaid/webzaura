@@ -15,37 +15,37 @@ const featureList: FeaturesProps[] = [
     icon: "TabletSmartphone",
     title: "Mobile Friendly",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      "A mobile-friendly design ensures that websites and applications are easily accessible and user-friendly on smartphones and tablets, enhancing the overall user experience and engagement.",
   },
   {
     icon: "BadgeCheck",
     title: "Social Proof",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Social proof is the influence of others' actions and opinions on individual decisions, often seen in reviews and testimonials.",
   },
   {
     icon: "Goal",
     title: "Targeted Content",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Targeted content is a digital advertising strategy focused on delivering ads or content to a specific audience based on their demographics, interests, or online behavior",
   },
   {
     icon: "PictureInPicture",
     title: "Strong Visuals",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Strong visuals capture attention and enhance communication by conveying messages quickly and effectively through compelling images, graphics, and design.",
   },
   {
     icon: "MousePointerClick",
     title: "Clear CTA",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "A clear CTA (Call to Action) prompts users to take specific actions, guiding them through the customer journey with concise and compelling instructions.",
   },
   {
     icon: "Newspaper",
     title: "Clear Headline",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "A clear headline grabs attention and conveys the main message succinctly, encouraging readers to engage with the content.",
   },
 ];
 
@@ -55,9 +55,7 @@ export const FeaturesSection = () => {
       <SparklesText text="Features" className="mb-4 text-center text-4xl text-primary sm:text-5xl" />
       <TypingAnimation className="text-center text-2xl sm:text-3xl">What Makes Us Different</TypingAnimation>
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+      Innovation. Performance. Affordability. We don&apos;t just build digital solutions—we create experiences that drive success. Explore the features that make Webzaura your ultimate digital partner.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
