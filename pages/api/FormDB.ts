@@ -5,7 +5,8 @@ type SheetBody = {
   firstName: string;
   lastName: string;
   email: string;
-  subject: string;
+  services: string;
+  type: string;
   message: string;
 };
 
@@ -45,7 +46,7 @@ export default async function FormDB(
       range: "Sheet1!A:E",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [[body.firstName, body.lastName, body.email, body.subject, body.message]],
+        values: [[body.firstName, body.lastName, body.email, body.services, body.type, body.message]],
       },
     } as sheets_v4.Params$Resource$Spreadsheets$Values$Append);
 

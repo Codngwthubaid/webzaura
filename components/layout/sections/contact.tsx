@@ -7,8 +7,9 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { Building2, Mail, Phone } from "lucide-react";
+import { Building2, Mail, Phone,Instagram ,MessageCircleMore} from "lucide-react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner"
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -69,7 +70,7 @@ export const ContactSection = () => {
         },
       });
       console.log("Success:", data);
-      alert(data.message);
+      toast(`Thanks ${values.firstName} for contacting us, our team will contact you soon asap !❤️`);
       form.reset();
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -101,8 +102,18 @@ export const ContactSection = () => {
       desc: "webzaura@gmail.com",
     },
     {
+      title: "Instagram",
+      icon:  <Instagram />,
+      desc: "WebZaura | WebDev Agency",
+    },
+    {
       title: "Phone",
       icon: <Phone />,
+      desc: "+91-91490-97947",
+    },
+    {
+      title: "WhatsApp",
+      icon:  <MessageCircleMore />,
       desc: "+91-90685-07572",
     },
     {
@@ -131,7 +142,7 @@ export const ContactSection = () => {
                   <span>{icon}</span>
                   <span>{title}</span>
                 </div>
-                <div>{desc}</div>
+                <div className="hover:text-primary">{desc}</div>
               </div>
             ))}
           </div>
@@ -146,7 +157,7 @@ export const ContactSection = () => {
                   <FormItem>
                     <FormLabel>First Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Mohammad" {...field} />
+                      <Input placeholder="abc" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -156,7 +167,7 @@ export const ContactSection = () => {
                   <FormItem>
                     <FormLabel>Last Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Ubaid" {...field} />
+                      <Input placeholder="xyz" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -166,7 +177,7 @@ export const ContactSection = () => {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="codngwthubaid@gmail.com" {...field} />
+                      <Input type="email" placeholder="example@gmail.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

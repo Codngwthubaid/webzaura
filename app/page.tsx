@@ -62,7 +62,7 @@ const Page = () => {
             />
             <div className="fixed bottom-3 right-3 z-10">
                 <Link
-                    href="https://wa.me/yourphonenumber"
+                    href="https://wa.me/9068507572?text=Hi%20I%20want%20to%20buy%20your%20services.%20Can%20you%20help%20me%20please%20?"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="relative inline-block"
