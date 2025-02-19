@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { use , useEffect, useState } from 'react';
 import { BenefitSection } from '@/components/layout/sections/benefits';
 import { ContactSection } from '@/components/layout/sections/contact';
 import { FAQSection } from '@/components/layout/sections/faq';
@@ -17,17 +17,18 @@ import { getTranslations } from "@/utils/i18n";
 
 // Define the PageProps type
 type PageProps = {
-  params: {
-    lang: string;
+    params: Promise<{
+      lang: string;
+    }>;
   };
-};
 
 const Page = ({ params }: PageProps) => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const translations = getTranslations(params.lang);
+  const unwrappedParams = use(params);
+  const translations = getTranslations(unwrappedParams.lang);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
