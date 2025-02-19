@@ -8,7 +8,18 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import TitledImg from "@/components/animations/titledImg";
 import { useEffect, useState } from "react";
 
-export const HeroSection = ({ translations }: { translations: any }) => {
+interface Translations {
+  newBadge: string;
+  tagline: string;
+  title1: string;
+  title2: string;
+  web: string;
+  zaura: string;
+  description: string;
+  getStarted: string;
+}
+
+export const HeroSection = ({ translations }: { translations: Translations }) => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [dimensions, setDimensions] = useState({

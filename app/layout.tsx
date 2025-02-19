@@ -5,6 +5,8 @@ import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner"
 import SplashCursor from "@/components/animations/SplashCursor"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "WebZaura - Web Development and Digital Marketing Agency",
@@ -29,6 +31,8 @@ export default function RootLayout({
           {children}
           <SplashCursor />
           <Toaster />
+          <Analytics/>
+          <SpeedInsights/>
         </ThemeProvider>
       </body>
     </html>

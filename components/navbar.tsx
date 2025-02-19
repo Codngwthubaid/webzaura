@@ -1,5 +1,5 @@
 "use client";
-import { Github, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import React from "react";
 import {
   Sheet,

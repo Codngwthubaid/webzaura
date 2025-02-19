@@ -39,7 +39,6 @@ const Page = ({ params }: { params: { lang: string } }) => {
     }, []);
 
     if (!mounted) {
-        // Return a neutral state during SSR to avoid hydration mismatch
         return null;
     }
 

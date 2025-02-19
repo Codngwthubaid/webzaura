@@ -16,7 +16,6 @@ export const LanguageSwitcher = ({ lang }: { lang: string }) => {
 
   return (
     <div className="relative">
-      {/* Dropdown Button */}
       <button
         onClick={toggleDropdown}
         className="flex items-center justify-between px-4 py-2 bg-gray-100 dark:bg-gray-600 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -38,7 +37,6 @@ export const LanguageSwitcher = ({ lang }: { lang: string }) => {
         </svg>
       </button>
 
-      {/* Dropdown Menu */}
       {isOpen && (
         <div className="absolute mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg">
           <ul className="py-1">
@@ -47,7 +45,7 @@ export const LanguageSwitcher = ({ lang }: { lang: string }) => {
                 <Link
                   href={`/${language.code}`}
                   className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  onClick={() => setIsOpen(false)} // Close dropdown on selection
+                  onClick={() => setIsOpen(false)}
                 >
                   {language.name}
                 </Link>
