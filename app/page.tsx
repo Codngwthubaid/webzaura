@@ -14,15 +14,8 @@ import { useTheme } from 'next-themes';
 import { motion, useSpring, useScroll } from "framer-motion";
 import Link from 'next/link';
 
-// Define the PageProps type
-type PageProps = {
-  params: Promise<{
-    lang: string;
-  }>;
-};
 
-
-const Page = ({ params }: PageProps) => {
+const Page = () => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
