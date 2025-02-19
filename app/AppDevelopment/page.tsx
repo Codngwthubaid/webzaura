@@ -45,13 +45,13 @@ const Page = () => {
         wst4="Development"
         wst5="Testing"
         wst6="Deployment and Maintenance"
-        wsd1="Define the app's purpose, analyze market needs, and identify target users to generate feasible ideas."
-        wsd2="Outline the app's features, create user personas, and develop a project roadmap with timelines and milestones."
-        wsd3="Create wireframes and prototypes to design the app's interface and user experience, ensuring intuitive navigation and visual appeal."
-        wsd4="Code the app's frontend and backend, integrating all necessary functionalities and ensuring compatibility across devices."
-        wsd5="Conduct thorough testing to identify and fix bugs, ensuring the app functions correctly and provides a seamless user experience."
-        wsd6="Launch the app on relevant platforms, followed by ongoing maintenance and updates based on user feedback and performance metrics."
-        desc=" A structured approach to App development is the process of creating software applications for mobile devices, involving stages such as ideation, design, coding, testing, and deployment. It focuses on delivering user-friendly and functional apps that meet specific needs and provide a seamless experience across platforms."
+        wsd1="Great apps start with great ideas, and we specialize in turning your vision into something tangible. Through deep research and brainstorming, we identify the right problem to solve and ensure there’s a real market for your solution. This is where innovation meets strategy."
+        wsd2="With a validated idea, we map out the full journey. Our team takes your vision and creates a detailed blueprint that outlines the app’s functionality, features, and user experience. We turn complex ideas into clear, actionable plans—laying the foundation for a seamless development process."
+        wsd3="Design is everything. We craft user experiences that are not only intuitive and easy to navigate but also visually stunning. Our design team ensures that every touchpoint of your app feels natural, delightful, and aligned with your brand—creating an experience users won’t forget."
+        wsd4="This is where the magic happens. Our skilled developers bring your app to life with clean, scalable code. We use the latest technologies to create apps that are fast, secure, and efficient—ensuring a smooth experience on every device and platform."
+        wsd5="Before your app goes live, we put it through its paces. Rigorous testing ensures everything functions perfectly, from performance to security. We test for bugs, glitches, and any issues that could affect the user experience—making sure your app is flawless before launch."
+        wsd6="Launching your app is just the beginning. We handle the deployment process, ensuring a smooth app store launch. But we don’t stop there. We provide ongoing maintenance, updates, and optimizations to keep your app performing at its best and evolving with your business needs."
+        desc="Bringing an app idea to life is an exciting journey, and we’re here to guide you every step of the way. From the first spark of inspiration to a fully-functioning product, we build apps that are designed to engage, perform, and grow with your business."
       />
 
       <ServicesPricingLayout

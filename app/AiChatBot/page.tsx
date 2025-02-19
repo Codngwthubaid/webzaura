@@ -44,13 +44,13 @@ const Page = () => {
         wst4="Customize Actions"
         wst5="Test the Chatbot"
         wst6="Train and Optimize"
-        wsd1="Clearly identify your business needs and what you want the chatbot to achieve, such as improving customer service or cutting down response times"
-        wsd2="Choose the right AI chatbot platform, considering pre-programmed options or customizable solutions"
-        wsd3="Design the chatbot conversation using a chatbot editor, creating building blocks by dragging and dropping them"
-        wsd4="Edit the chatbot profile with a welcome message and customize the bot's actions based on whether the visitor is new, returning, or engaging with all visitors"
-        wsd5="Evaluate whether everything is functioning appropriately by testing it out, and rectify the sequence if modifications are necessary"
-        wsd6="Train the bot by analyzing conversations and identifying frequently raised queries to 'nourish' the NLP engine, enabling the chatbot to recognize comparable questions in the future"
-        desc="Engage your customers 24/7 with intelligent AI chatbots that automate responses, handle customer queries, and provide real-time assistance. Our chatbots are designed to enhance engagement, improve efficiency, and boost conversions—all while delivering a human-like interaction."
+        wsd1="Before we dive into development, we start with the 'why?' What do you want your chatbot to achieve? Whether it’s increasing customer engagement, improving sales, or providing 24/7 support, we’ll help you define clear goals to ensure your chatbot delivers value right from the start."
+        wsd2="Choosing the right platform is key to a chatbot’s success. We’ll help you pick a solution that matches your needs, whether you’re looking for a simple FAQ bot or a more sophisticated AI assistant. From rule-based bots to conversational AI, we’ve got you covered."
+        wsd3="A chatbot’s true value comes from creating smooth, natural conversations. We’ll design a conversation flow that guides users seamlessly toward their goals—whether that’s gathering info, solving problems, or making purchases—ensuring your chatbot feels intuitive and engaging."
+        wsd4="Every business is unique, and so is every chatbot we build. We customize actions and responses to match your brand’s voice and tone. Whether it’s booking appointments, processing orders, or providing customer support, we ensure your chatbot works as an extension of your team."
+        wsd5="Before we go live, we rigorously test the chatbot to iron out any issues. From error handling to conversation consistency, we make sure everything works as it should. Testing is an essential part of the process to ensure your chatbot performs flawlessly under real-world conditions."
+        wsd6="AI chatbots need continuous learning to stay relevant. We’ll train your bot on real customer interactions, constantly improving its accuracy and efficiency. And once it’s live, we don’t stop—we optimize its performance regularly, ensuring it adapts to evolving customer needs and new trends."
+        desc="Creating a high-performing AI chatbot isn’t just about programming—it’s about crafting a solution that feels natural and drives results. Here’s our step-by-step approach to building the perfect AI-powered chatbot for your business:"
       />
 
       <ServicesPricingLayout

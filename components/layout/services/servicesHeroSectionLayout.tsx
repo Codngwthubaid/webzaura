@@ -48,7 +48,7 @@ const ServicesHeroSectionLayout = (
                                 {headLineSecond}
                             </div>
                             <div className="flex items-center justify-center">
-                                <SparklesText text="Web" className={`${theme === "dark" ? "text-white" : "text-[#e9590c]"} text-5xl sm:text-7xl`} />
+                                <SparklesText text="Web" className={`${theme === "dark" ? "text-white" : "text-[#f97316]"} text-5xl sm:text-7xl`} />
                                 <SparklesText text="Zaura" className="text-primary text-5xl sm:text-7xl" />
                             </div>
                         </h1>

@@ -19,7 +19,7 @@ const uiuxgdPlans = [
     category: "UI/UX & Graphic Design",
     title: "Enterprise",
     popular: 1,
-    price: 199,
+    price: 149999,
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -34,7 +34,7 @@ const uiuxgdPlans = [
     category: "UI/UX & Graphic Design",
     title: "Basic",
     popular: 0,
-    price: 79,
+    price: 34999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -48,8 +48,8 @@ const uiuxgdPlans = [
   {
     category: "UI/UX & Graphic Design",
     title: "Advanced",
-    popular: 0,
-    price: 79,
+    popular: 1,
+    price: 74999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -67,7 +67,7 @@ const aiChatbotPlans = [
     category: "AI Chatbot Integration",
     title: "Enterprise",
     popular: 1,
-    price: 199,
+    price: 49999,
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -82,7 +82,7 @@ const aiChatbotPlans = [
     category: "AI Chatbot Integration",
     title: "Basic",
     popular: 0,
-    price: 79,
+    price: 17999,
     description: "Ideal for small businesses and startups.",
     buttonText: "Buy Now",
     benefitList: [
@@ -96,8 +96,8 @@ const aiChatbotPlans = [
   {
     category: "AI Chatbot Integration",
     title: "Advanced",
-    popular: 0,
-    price: 79,
+    popular: 1,
+    price: 34999,
     description: "Ideal for enterprises requiring automation.",
     buttonText: "Buy Now",
     benefitList: [
@@ -114,7 +114,7 @@ const webDevelopmentPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 299,
+    price: 89999,
     description: "Best for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -128,7 +128,7 @@ const webDevelopmentPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 179,
+    price: 19999,
     description: "A perfect plan for small businesses and startups.",
     buttonText: "Buy Now",
     benefitList: [
@@ -141,8 +141,8 @@ const webDevelopmentPlans = [
   },
   {
     title: "Advanced",
-    popular: 0,
-    price: 599,
+    popular: 1,
+    price: 54999,
     description: "A perfect plan for small businesses and startups.",
     buttonText: "Buy Now",
     benefitList: [
@@ -159,7 +159,7 @@ const appDevelopmentPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 299,
+    price: 299999,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
     benefitList: [
@@ -173,7 +173,7 @@ const appDevelopmentPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 299,
+    price: 49999,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
     benefitList: [
@@ -186,8 +186,8 @@ const appDevelopmentPlans = [
   },
   {
     title: "Advanced",
-    popular: 0,
-    price: 299,
+    popular: 1,
+    price: 149999,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
     benefitList: [
@@ -204,7 +204,7 @@ const digitalMarketingPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 199,
+    price: 49999,
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -218,7 +218,7 @@ const digitalMarketingPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 79,
+    price: 17999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -231,8 +231,8 @@ const digitalMarketingPlans = [
   },
   {
     title: "Advanced",
-    popular: 0,
-    price: 79,
+    popular: 1,
+    price: 29999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -249,7 +249,7 @@ const socialMediaPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 199,
+    price: 49999,
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -263,7 +263,7 @@ const socialMediaPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 79,
+    price: 17999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -276,8 +276,8 @@ const socialMediaPlans = [
   },
   {
     title: "Advanced",
-    popular: 0,
-    price: 79,
+    popular: 1,
+    price: 34999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [

@@ -2,28 +2,42 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import Image from "next/image";
 
-const footercontent = [
+const footerContent = [
   {
     title: "Contact",
     content: ["WhatsApp", "webzaura@gmail.com", "+91-91490-97947", "+91-90685-07572"],
-    links: ["", ""]
+    links: [
+      "https://wa.me/9068507572",
+      "mailto:webzaura@gmail.com",
+      "tel:+919149097947",
+      "https://wa.me/9068507572"
+    ]
   },
   {
     title: "Services",
-    content: ["Web Development", "Digital Marketing", "Social Media Management", "UI/UX & Graphic Desiging", "AI Chatbot Integration", "Android Development",],
-    links: ["https://webzaura.vercel.app/WebDevelopment", "https://webzaura.vercel.app/DigitalMarketing", "https://webzaura.vercel.app/SocialMediaManagement", "https://webzaura.vercel.app/UIUXGD", "https://webzaura.vercel.app/AiChatBot", "https://webzaura.vercel.app/AppDevelopment"]
-
+    content: ["Web Development", "Digital Marketing", "Social Media Management", "UI/UX & Graphic Designing", "AI Chatbot Integration", "Android Development"],
+    links: [
+      "https://webzaura.vercel.app/WebDevelopment",
+      "https://webzaura.vercel.app/DigitalMarketing",
+      "https://webzaura.vercel.app/SocialMediaManagement",
+      "https://webzaura.vercel.app/UIUXGD",
+      "https://webzaura.vercel.app/AiChatBot",
+      "https://webzaura.vercel.app/AppDevelopment"
+    ]
   },
   {
     title: "Help",
     content: ["Contact Us", "FAQ", "Feedback"],
-    links: ["", ""]
+    links: ["#contact", "#faq", "#testimonials"]
   },
   {
     title: "Socials",
-    content: ["Instagram", "Facebook", "Twitch", "Discord", "Dribbble"],
-    links: ["", ""]
-  },
+    content: ["Instagram", "Facebook"],
+    links: [
+      "https://www.instagram.com/webzaura/",
+      "https://www.facebook.com/profile.php?id=61573227749309"
+    ]
+  }
 ];
 
 export const FooterSection = () => {
@@ -34,9 +48,8 @@ export const FooterSection = () => {
           {/* Logo Section */}
           <div className="col-span-full xl:col-span-2">
             <Link href="/" className="font-bold text-lg flex items-center">
-              <Image src={
-                "/LogoImg/logoLight.png"
-              }
+              <Image
+                src="/LogoImg/logoLight.png"
                 width={64}
                 height={64}
                 alt="logo"
@@ -46,28 +59,30 @@ export const FooterSection = () => {
           </div>
 
           {/* Footer content */}
-          {footercontent.map((section) => (
-            <div key={section.title} className="flex flex-col gap-2">
+          {footerContent.map((section, index) => (
+            <div key={index} className="flex flex-col gap-2">
               <h3 className="font-bold text-lg">{section.title}</h3>
-              {section.content.map((link) => (
-                <div key={link}>
-                  <Link href="#" className="opacity-60 hover:opacity-100">
-                    {link}
-                  </Link>
-                </div>
+              {section.content.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={section.links[idx]}
+                  className="opacity-60 hover:opacity-100"
+                >
+                  {item}
+                </Link>
               ))}
             </div>
           ))}
         </div>
 
         <Separator className="my-6" />
-        <section className="">
-          <h3 className="">
-            &copy; {new Date().getFullYear()} Designed and developed by
+        <section>
+          <h3>
+            &copy; {new Date().getFullYear()} Designed and developed by{" "}
             <Link
               target="_blank"
               href="/"
-              className="text-primary transition-all border-primary hover:border-b-2 ml-1"
+              className="text-primary transition-all border-primary hover:border-b-2"
             >
               WebZaura
             </Link>
