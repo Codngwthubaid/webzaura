@@ -1,5 +1,5 @@
 "use client"
-import React, { use , useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BenefitSection } from '@/components/layout/sections/benefits';
 import { ContactSection } from '@/components/layout/sections/contact';
 import { FAQSection } from '@/components/layout/sections/faq';
@@ -13,23 +13,20 @@ import { FooterSection } from '@/components/layout/sections/footer';
 import { useTheme } from 'next-themes';
 import { motion, useSpring, useScroll } from "framer-motion";
 import Link from 'next/link';
-import { getTranslations } from "@/utils/i18n";
 
 // Define the PageProps type
 type PageProps = {
-    params: Promise<{
-      lang: string;
-    }>;
-  };
+  params: Promise<{
+    lang: string;
+  }>;
+};
+
 
 const Page = ({ params }: PageProps) => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const unwrappedParams = use(params);
-  const translations = getTranslations(unwrappedParams.lang);
-
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -94,7 +91,7 @@ const Page = ({ params }: PageProps) => {
           )}
         </Link>
       </div>
-      <HeroSection translations={translations.hero} />
+      <HeroSection />
       <MarqueeDemo />
       <BenefitSection />
       <FeaturesSection />

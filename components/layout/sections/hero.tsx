@@ -8,18 +8,7 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import TitledImg from "@/components/animations/titledImg";
 import { useEffect, useState } from "react";
 
-interface Translations {
-  newBadge: string;
-  tagline: string;
-  title1: string;
-  title2: string;
-  web: string;
-  zaura: string;
-  description: string;
-  getStarted: string;
-}
-
-export const HeroSection = ({ translations }: { translations: Translations }) => {
+export const HeroSection = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [dimensions, setDimensions] = useState({
@@ -85,32 +74,32 @@ export const HeroSection = ({ translations }: { translations: Translations }) =>
         <div className="text-center space-y-8">
           <Badge variant="outline" className="text-sm py-2">
             <span className="mr-2 text-primary">
-              <Badge>{translations.newBadge}</Badge>
+              <Badge>New</Badge>
             </span>
-            <span>{translations.tagline}</span>
+            <span>Design your web right now!</span>
           </Badge>
 
           <div className="max-w-screen-md mx-auto text-center text-2xl md:text-6xl font-bold">
             <h1>
-              {translations.title1}
+            Transform your ideas to digital
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                {translations.title2}
+              perfection with
               </span>
               <div className="flex items-center justify-center">
-                <SparklesText text={translations.web} className={`${theme === "dark" ? "text-white" : "text-[#e9590c]"} text-5xl sm:text-7xl`} />
-                <SparklesText text={translations.zaura} className="text-primary text-5xl sm:text-7xl" />
+                <SparklesText text="Web" className={`${theme === "dark" ? "text-white" : "text-[#e9590c]"} text-5xl sm:text-7xl`} />
+                <SparklesText text="Zaura" className="text-primary text-5xl sm:text-7xl" />
               </div>
             </h1>
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            {translations.description}
+          We craft digital experiences that ignite passion and elevate your brand's impact. Let us help you redefine your online presence and take your business to new heights!
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
             <Link href="#pricing" passHref>
               <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-                {translations.getStarted}
+                Get Started
                 <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
               </Button>
             </Link>

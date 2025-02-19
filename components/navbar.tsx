@@ -32,7 +32,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import Image from "next/image";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface RouteProps {
   href: string;
@@ -212,7 +211,6 @@ export const Navbar = () => {
 
       <div className="hidden lg:flex items-center">
         <ToggleTheme />
-        <LanguageSwitcher lang="en" />
       </div>
     </header>
   );

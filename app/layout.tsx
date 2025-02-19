@@ -13,11 +13,7 @@ export const metadata: Metadata = {
   description: "Landing template for Agency",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function RootLayout({ children } : {children: React.ReactNode}) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background")}>
@@ -31,8 +27,8 @@ export default function RootLayout({
           {children}
           <SplashCursor />
           <Toaster />
-          <Analytics/>
-          <SpeedInsights/>
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
