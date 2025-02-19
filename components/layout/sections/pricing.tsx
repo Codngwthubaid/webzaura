@@ -17,21 +17,6 @@ import { useEffect, useState } from "react";
 const uiuxgdPlans = [
   {
     category: "UI/UX & Graphic Design",
-    title: "Basic",
-    popular: 0,
-    price: 79,
-    description: "Ideal for individuals and freelancers.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Wireframing & prototyping",
-      "Basic UI design",
-      "Logo design",
-      "Branding guidelines",
-      "Email support",
-    ],
-  },
-  {
-    category: "UI/UX & Graphic Design",
     title: "Enterprise",
     popular: 1,
     price: 199,
@@ -43,6 +28,21 @@ const uiuxgdPlans = [
       "Custom illustrations",
       "User testing & feedback",
       "Priority support",
+    ],
+  },
+  {
+    category: "UI/UX & Graphic Design",
+    title: "Basic",
+    popular: 0,
+    price: 79,
+    description: "Ideal for individuals and freelancers.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Wireframing & prototyping",
+      "Basic UI design",
+      "Logo design",
+      "Branding guidelines",
+      "Email support",
     ],
   },
   {
@@ -65,21 +65,6 @@ const uiuxgdPlans = [
 const aiChatbotPlans = [
   {
     category: "AI Chatbot Integration",
-    title: "Basic",
-    popular: 0,
-    price: 79,
-    description: "Ideal for small businesses and startups.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Pre-built chatbot templates",
-      "Basic NLP capabilities",
-      "Simple user interactions",
-      "Email support",
-      "Integration with websites",
-    ],
-  },
-  {
-    category: "AI Chatbot Integration",
     title: "Enterprise",
     popular: 1,
     price: 199,
@@ -91,6 +76,21 @@ const aiChatbotPlans = [
       "Custom chatbot flows",
       "Real-time analytics",
       "Priority support",
+    ],
+  },
+  {
+    category: "AI Chatbot Integration",
+    title: "Basic",
+    popular: 0,
+    price: 79,
+    description: "Ideal for small businesses and startups.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Pre-built chatbot templates",
+      "Basic NLP capabilities",
+      "Simple user interactions",
+      "Email support",
+      "Integration with websites",
     ],
   },
   {
@@ -112,20 +112,6 @@ const aiChatbotPlans = [
 
 const webDevelopmentPlans = [
   {
-    title: "Basic",
-    popular: 0,
-    price: 179,
-    description: "A perfect plan for small businesses and startups.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "3 team members",
-      "5 GB storage",
-      "Upto 5 pages",
-      "Community support",
-      "Basic SEO",
-    ],
-  },
-  {
     title: "Enterprise",
     popular: 1,
     price: 299,
@@ -137,6 +123,20 @@ const webDevelopmentPlans = [
       "Upto 10 pages",
       "Priority support",
       "Advanced SEO",
+    ],
+  },
+  {
+    title: "Basic",
+    popular: 0,
+    price: 179,
+    description: "A perfect plan for small businesses and startups.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "3 team members",
+      "5 GB storage",
+      "Upto 5 pages",
+      "Community support",
+      "Basic SEO",
     ],
   },
   {
@@ -157,8 +157,8 @@ const webDevelopmentPlans = [
 
 const appDevelopmentPlans = [
   {
-    title: "Basic",
-    popular: 0,
+    title: "Enterprise",
+    popular: 1,
     price: 299,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
@@ -171,8 +171,8 @@ const appDevelopmentPlans = [
     ],
   },
   {
-    title: "Enterprise",
-    popular: 1,
+    title: "Basic",
+    popular: 0,
     price: 299,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
@@ -202,20 +202,6 @@ const appDevelopmentPlans = [
 
 const digitalMarketingPlans = [
   {
-    title: "Basic",
-    popular: 0,
-    price: 79,
-    description: "Ideal for individuals and freelancers.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Social media management",
-      "Content marketing",
-      "PPC advertising",
-      "Basic analytics",
-      "Email support",
-    ],
-  },
-  {
     title: "Enterprise",
     popular: 1,
     price: 199,
@@ -227,6 +213,20 @@ const digitalMarketingPlans = [
       "Paid ad campaigns",
       "In-depth analytics",
       "Priority support",
+    ],
+  },
+  {
+    title: "Basic",
+    popular: 0,
+    price: 79,
+    description: "Ideal for individuals and freelancers.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Social media management",
+      "Content marketing",
+      "PPC advertising",
+      "Basic analytics",
+      "Email support",
     ],
   },
   {
@@ -247,20 +247,6 @@ const digitalMarketingPlans = [
 
 const socialMediaPlans = [
   {
-    title: "Basic",
-    popular: 0,
-    price: 79,
-    description: "Ideal for individuals and freelancers.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Social media management",
-      "Content marketing",
-      "PPC advertising",
-      "Basic analytics",
-      "Email support",
-    ],
-  },
-  {
     title: "Enterprise",
     popular: 1,
     price: 199,
@@ -272,6 +258,20 @@ const socialMediaPlans = [
       "Paid ad campaigns",
       "In-depth analytics",
       "Priority support",
+    ],
+  },
+  {
+    title: "Basic",
+    popular: 0,
+    price: 79,
+    description: "Ideal for individuals and freelancers.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Social media management",
+      "Content marketing",
+      "PPC advertising",
+      "Basic analytics",
+      "Email support",
     ],
   },
   {

@@ -13,26 +13,27 @@ const Page = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-      setMounted(true); 
-      const timer = setTimeout(() => {
-          setLoading(false);
-      }, 2000);
-      return () => clearTimeout(timer);
+    setMounted(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!mounted) {
-      // Return a neutral state during SSR to avoid hydration mismatch
-      return null;
+    // Return a neutral state during SSR to avoid hydration mismatch
+    return null;
   }
-  
+
   return loading ? (
     <div className={`flex justify-center items-center h-screen  ${theme === "dark" ? "bg-[#0c0a09]" : "bg-white"}`}>
-    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
-  </div>
+      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
+    </div>
   ) : (
     <>
       <ServicesHeroSectionLayout
-        serviceName="Digital Marketing"
+        serviceBadgeName="Digital"
+        serviceSpanName="Marketing"
         headLineFirst="Aligning"
         headLineSecond="Strategy with Stories"
       />
@@ -52,7 +53,7 @@ const Page = () => {
         wsd6="Based on the data collected, make necessary adjustments to improve future campaigns. This could involve tweaking your content strategy, adjusting your target audience, or experimenting with different promotional tactics"
         desc="A digital marketing workflow is a structured process that outlines the steps and tasks required to achieve specific marketing goals. It helps teams manage their projects efficiently, ensuring that all necessary actions are completed in a timely manner. Here's a detailed breakdown of how to create and implement an effective digital marketing workflow."
       />
-      
+
       <ServicesPricingLayout
         wdt1="SEO"
         wdpo1={0}
@@ -83,8 +84,8 @@ const Page = () => {
         wdbl3_5="wdbl3_5"
       />
 
-     <ContactSection />
-     <FooterSection />
+      <ContactSection />
+      <FooterSection />
     </>
   )
 }

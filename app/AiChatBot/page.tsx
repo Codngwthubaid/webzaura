@@ -31,7 +31,8 @@ const Page = () => {
   ) : (
     <>
       <ServicesHeroSectionLayout
-        serviceName="AI Chat Bot"
+        serviceBadgeName="AI Chatbot"
+        serviceSpanName="Integration"
         headLineFirst='Building'
         headLineSecond='Intelligent Conversations'
       />

@@ -13,26 +13,27 @@ const Page = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-      setMounted(true); 
-      const timer = setTimeout(() => {
-          setLoading(false);
-      }, 2000);
-      return () => clearTimeout(timer);
+    setMounted(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!mounted) {
-      // Return a neutral state during SSR to avoid hydration mismatch
-      return null;
+    // Return a neutral state during SSR to avoid hydration mismatch
+    return null;
   }
 
   return loading ? (
     <div className={`flex justify-center items-center h-screen  ${theme === "dark" ? "bg-[#0c0a09]" : "bg-white"}`}>
-    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
-  </div>
+      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
+    </div>
   ) : (
     <>
       <ServicesHeroSectionLayout
-        serviceName="App Development"
+        serviceBadgeName="App"
+        serviceSpanName="Development"
         headLineFirst='Unlocking'
         headLineSecond='Digital Doors'
       />
@@ -53,34 +54,34 @@ const Page = () => {
         desc=" A structured approach to App development is the process of creating software applications for mobile devices, involving stages such as ideation, design, coding, testing, and deployment. It focuses on delivering user-friendly and functional apps that meet specific needs and provide a seamless experience across platforms."
       />
 
-      <ServicesPricingLayout 
-              wdt1="Basic"
-              wdpo1={0}
-              wdp1={1199}
-              wdd1="A perfect plan for small businesses and startups."
-              wdt2="Enterprise"
-              wdpo2={0}
-              wdp2={2999}
-              wdd2="Best for growing businesses."
-              wdt3="Advanced"
-              wdpo3={0}
-              wdp3={5999}
-              wdd3="A perfect plan for small businesses and startups."
-              wdbl1_1="wdbl1_1"
-              wdbl1_2="wdbl1_2"
-              wdbl1_3="wdbl1_3"
-              wdbl1_4="wdbl1_4"
-              wdbl1_5="wdbl1_5"
-              wdbl2_1="wdbl2_1"
-              wdbl2_2="wdbl2_2"
-              wdbl2_3="wdbl2_3"
-              wdbl2_4="wdbl2_4"
-              wdbl2_5="wdbl2_5"
-              wdbl3_1="wdbl3_1"
-              wdbl3_2="wdbl3_2"
-              wdbl3_3="wdbl3_3"
-              wdbl3_4="wdbl3_4"
-              wdbl3_5="wdbl3_5"
+      <ServicesPricingLayout
+        wdt1="Basic"
+        wdpo1={0}
+        wdp1={1199}
+        wdd1="A perfect plan for small businesses and startups."
+        wdt2="Enterprise"
+        wdpo2={0}
+        wdp2={2999}
+        wdd2="Best for growing businesses."
+        wdt3="Advanced"
+        wdpo3={0}
+        wdp3={5999}
+        wdd3="A perfect plan for small businesses and startups."
+        wdbl1_1="wdbl1_1"
+        wdbl1_2="wdbl1_2"
+        wdbl1_3="wdbl1_3"
+        wdbl1_4="wdbl1_4"
+        wdbl1_5="wdbl1_5"
+        wdbl2_1="wdbl2_1"
+        wdbl2_2="wdbl2_2"
+        wdbl2_3="wdbl2_3"
+        wdbl2_4="wdbl2_4"
+        wdbl2_5="wdbl2_5"
+        wdbl3_1="wdbl3_1"
+        wdbl3_2="wdbl3_2"
+        wdbl3_3="wdbl3_3"
+        wdbl3_4="wdbl3_4"
+        wdbl3_5="wdbl3_5"
       />
 
       <ContactSection />

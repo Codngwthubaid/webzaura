@@ -3,18 +3,23 @@ import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { SparklesText } from "@/components/magicui/sparkles-text";
+import { useTheme } from "next-themes";
 
 const ServicesHeroSectionLayout = (
     {
-        serviceName,
+        serviceBadgeName,
+        serviceSpanName,
         headLineFirst,
         headLineSecond
     }: {
-        serviceName: string,
+        serviceBadgeName: string,
+        serviceSpanName: string,
         headLineFirst: string,
         headLineSecond: string
     }
 ) => {
+    const { theme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -26,13 +31,14 @@ const ServicesHeroSectionLayout = (
     }
 
     return (
-        <section className="container w-full px-10 mx-auto">
-            <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
+        <section className="container px-10 mx-auto">
+            <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20">
                 <div className="text-center space-y-8">
                     <Badge variant="outline" className="text-sm py-2">
-                        <span className="text-primary">
-                            <Badge className="text-sm">{serviceName}</Badge>
+                        <span className="mr-2 text-primary">
+                            <Badge>{serviceBadgeName}</Badge>
                         </span>
+                        <span>{serviceSpanName}</span>
                     </Badge>
 
                     <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">
@@ -41,7 +47,10 @@ const ServicesHeroSectionLayout = (
                             <div className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
                                 {headLineSecond}
                             </div>
-                            with WebZaura
+                            <div className="flex items-center justify-center">
+                                <SparklesText text="Web" className={`${theme === "dark" ? "text-white" : "text-[#e9590c]"} text-5xl sm:text-7xl`} />
+                                <SparklesText text="Zaura" className="text-primary text-5xl sm:text-7xl" />
+                            </div>
                         </h1>
                     </div>
 

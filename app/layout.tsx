@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner"
 import SplashCursor from "@/components/animations/SplashCursor"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import WhatsAppIcon from "@/components/layout/sections/whtasappIcon";
 
 export const metadata: Metadata = {
   title: "WebZaura - Web Development and Digital Marketing Agency",
@@ -25,6 +26,7 @@ export default async function RootLayout({ children } : {children: React.ReactNo
         >
           <Navbar />
           {children}
+          <WhatsAppIcon />
           <SplashCursor />
           <Toaster />
           <Analytics />

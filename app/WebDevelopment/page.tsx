@@ -10,22 +10,22 @@ import ServicesPricingLayout from "@/components/layout/services/servicesPricingL
 import { FooterSection } from "@/components/layout/sections/footer";
 
 const Page = () => {
-    const [loading, setLoading] = useState(true);
-    const { theme } = useTheme();
-    const [mounted, setMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-    useEffect(() => {
-        setMounted(true); 
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2000);
-        return () => clearTimeout(timer);
-    }, []);
+  useEffect(() => {
+    setMounted(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
-    if (!mounted) {
-        // Return a neutral state during SSR to avoid hydration mismatch
-        return null;
-    }
+  if (!mounted) {
+    // Return a neutral state during SSR to avoid hydration mismatch
+    return null;
+  }
 
   return loading ? (
     <div className={`flex justify-center items-center h-screen  ${theme === "dark" ? "bg-[#0c0a09]" : "bg-white"}`}>
@@ -34,11 +34,12 @@ const Page = () => {
   ) : (
     <>
       <ServicesHeroSectionLayout
-        serviceName="Web Development"
+        serviceBadgeName="Web"
+        serviceSpanName="Development"
         headLineFirst="Designed"
         headLineSecond="Your Digital Identity"
       />
-      
+
       <ServicesWorkFLowLayout
         wst1="Research & Planning"
         wst2="UI/UX Design"
@@ -54,7 +55,7 @@ const Page = () => {
         wsd6="Providing ongoing updates, security patches, and feature enhancements based on user feedback."
         desc=" A structured approach to web development ensures high-quality web solutions from the initial planning stages to the final deployment and maintenance, focusing on organization, user experience, and clear objectives. This involves a systematic methodology that incorporates key elements such as defining goals, planning site structure, and employing agile practices. By prioritizing these aspects, developers can create websites that are both effective and user-friendly"
       />
-      
+
       <ServicesTechStackLayout />
 
       <ServicesPricingLayout

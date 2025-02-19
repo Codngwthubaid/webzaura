@@ -12,14 +12,13 @@ import { TestimonialSection } from '@/components/layout/sections/testimonial';
 import { FooterSection } from '@/components/layout/sections/footer';
 import { useTheme } from 'next-themes';
 import { motion, useSpring, useScroll } from "framer-motion";
-import Link from 'next/link';
+
 
 
 const Page = () => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -58,32 +57,7 @@ const Page = () => {
           backgroundColor: "#e9590c",
         }}
       />
-      <div className="fixed bottom-3 right-3 z-10">
-        <Link
-          href="https://wa.me/9068507572?text=Hi%20I%20want%20to%20buy%20your%20services.%20Can%20you%20help%20me%20please%20?"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative inline-block"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* WhatsApp Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 175.216 175.552"
-            className="w-16 transition-transform duration-300 ease-in-out hover:scale-125"
-          >
-            {/* SVG Paths */}
-          </svg>
 
-          {/* Tooltip on Hover */}
-          {isHovered && (
-            <div className="absolute w-40 bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-black text-white text-sm px-3 py-1 rounded-md shadow-lg">
-              Chat with us on WhatsApp!
-            </div>
-          )}
-        </Link>
-      </div>
       <HeroSection />
       <MarqueeDemo />
       <BenefitSection />

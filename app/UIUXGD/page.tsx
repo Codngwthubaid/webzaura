@@ -32,7 +32,8 @@ const Page = () => {
   ) : (
     <>
       <ServicesHeroSectionLayout
-        serviceName="UI/UX & Graphic Designs"
+      serviceBadgeName="UI/UX"
+        serviceSpanName="Graphic Design"
         headLineFirst="Designs"
         headLineSecond="That Make a Lasting Impression"
       />

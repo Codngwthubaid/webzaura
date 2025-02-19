@@ -1,23 +1,28 @@
 import { Separator } from "@/components/ui/separator";
-import { ChevronsDownIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
-const footerLinks = [
+const footercontent = [
   {
     title: "Contact",
-    links: ["Github", "Twitter", "Instagram"],
+    content: ["WhatsApp", "webzaura@gmail.com", "+91-91490-97947", "+91-90685-07572"],
+    links: ["", ""]
   },
   {
     title: "Services",
-    links: ["Website Development", "Android Development", "Digital Marketing" , "SEO" ],
+    content: ["Web Development", "Digital Marketing", "Social Media Management", "UI/UX & Graphic Desiging", "AI Chatbot Integration", "Android Development",],
+    links: ["https://webzaura.vercel.app/WebDevelopment", "https://webzaura.vercel.app/DigitalMarketing", "https://webzaura.vercel.app/SocialMediaManagement", "https://webzaura.vercel.app/UIUXGD", "https://webzaura.vercel.app/AiChatBot", "https://webzaura.vercel.app/AppDevelopment"]
+
   },
   {
     title: "Help",
-    links: ["Contact Us", "FAQ", "Feedback"],
+    content: ["Contact Us", "FAQ", "Feedback"],
+    links: ["", ""]
   },
   {
     title: "Socials",
-    links: ["Twitch", "Discord", "Dribbble"],
+    content: ["Instagram", "Facebook", "Twitch", "Discord", "Dribbble"],
+    links: ["", ""]
   },
 ];
 
@@ -28,17 +33,23 @@ export const FooterSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
           {/* Logo Section */}
           <div className="col-span-full xl:col-span-2">
-            <Link href="#" className="flex font-bold items-center">
-              <ChevronsDownIcon className="w-9 h-9 mr-2 bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg border border-secondary" />
-              <h3 className="text-2xl">Agency</h3>
+            <Link href="/" className="font-bold text-lg flex items-center">
+              <Image src={
+                "/LogoImg/logoLight.png"
+              }
+                width={64}
+                height={64}
+                alt="logo"
+              />
+              Web<span className="text-primary">Zaura</span>
             </Link>
           </div>
 
-          {/* Footer Links */}
-          {footerLinks.map((section) => (
+          {/* Footer content */}
+          {footercontent.map((section) => (
             <div key={section.title} className="flex flex-col gap-2">
               <h3 className="font-bold text-lg">{section.title}</h3>
-              {section.links.map((link) => (
+              {section.content.map((link) => (
                 <div key={link}>
                   <Link href="#" className="opacity-60 hover:opacity-100">
                     {link}
@@ -55,10 +66,10 @@ export const FooterSection = () => {
             &copy; {new Date().getFullYear()} Designed and developed by
             <Link
               target="_blank"
-              href="https://github.com/codngwthubaid"
+              href="/"
               className="text-primary transition-all border-primary hover:border-b-2 ml-1"
             >
-              Ubaid
+              WebZaura
             </Link>
           </h3>
         </section>
