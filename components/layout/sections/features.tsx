@@ -21,31 +21,31 @@ const featureList: FeaturesProps[] = [
     icon: "BadgeCheck",
     title: "Social Proof",
     description:
-      "Social proof is the influence of others' actions and opinions on individual decisions, often seen in reviews and testimonials.",
+      "We ensure every website and app is fully optimized for mobile, providing a seamless experience across all devices. No matter where your audience is, they’ll enjoy smooth, intuitive navigation.",
   },
   {
     icon: "Goal",
     title: "Targeted Content",
     description:
-      "Targeted content is a digital advertising strategy focused on delivering ads or content to a specific audience based on their demographics, interests, or online behavior",
+      "Great content isn’t just about what you say—it’s about what your audience needs to hear. We craft content that speaks directly to your target market, ensuring it resonates, engages, and drives action. With the right message at the right time, we help your business connect with the people who matter most.",
   },
   {
     icon: "PictureInPicture",
     title: "Strong Visuals",
     description:
-      "Strong visuals capture attention and enhance communication by conveying messages quickly and effectively through compelling images, graphics, and design.",
+      "The right visuals can make all the difference. We create stunning designs that capture attention and tell your brand’s story. Whether it’s a website, app, or social media post, we ensure your visuals not only look great but also drive engagement and make a lasting impression.",
   },
   {
     icon: "MousePointerClick",
     title: "Clear CTA",
     description:
-      "A clear CTA (Call to Action) prompts users to take specific actions, guiding them through the customer journey with concise and compelling instructions.",
+      "Your visitors shouldn’t have to guess what’s next. We design intuitive, bold calls to action that seamlessly guide them towards the next step—whether it's making a purchase, signing up, or reaching out. With our clear CTAs, we create an experience where taking action feels natural, not forced.",
   },
   {
     icon: "Newspaper",
     title: "Clear Headline",
     description:
-      "A clear headline grabs attention and conveys the main message succinctly, encouraging readers to engage with the content.",
+      "A headline isn’t just text—it’s your first impression. We create precision-driven headlines that immediately communicate value, using data-backed strategies to ensure they resonate with your audience. With the right combination of clarity and relevance, we ensure your message stands out in a crowded digital landscape."
   },
 ];
 
@@ -72,7 +72,7 @@ export const FeaturesSection = () => {
                   />
                 </div>
 
-                <CardTitle>{title}</CardTitle>
+                <CardTitle className="hover:text-[#e9590c]">{title}</CardTitle>
               </CardHeader>
 
               <CardContent className="text-muted-foreground text-center">

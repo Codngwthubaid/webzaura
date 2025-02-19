@@ -15,25 +15,25 @@ const benefitList: BenefitsProps[] = [
     icon: "Blocks",
     title: "Build Brand Trust",
     description:
-      "Building brand trust involves transparent communication, showcasing social proof through customer reviews, and maintaining consistency in messaging and actions. These strategies foster long-term relationships and enhance customer loyalty.",
+      "Building trust is the foundation of any successful business. With our tailored web and app development solutions, sleek UI/UX design, and seamless social media management, we create a strong, professional online presence that resonates with your target audience. Our strategies ensure that your brand stands out for its reliability, transparency, and value, establishing long-term customer loyalty and trust.",
   },
   {
     icon: "ChartLine",
     title: "More Leads",
     description:
-      "To generate more leads, businesses can enhance visibility through SEO, utilize PPC advertising for targeted reach, and employ lead generation ads on social media. Engaging content, such as videos, can also attract and retain potential customers effectively.",
+      "Generating high-quality leads is essential to growing your business. Our digital marketing expertise leverages data-driven strategies to ensure your business is visible to the right audience. By optimizing your website, launching targeted campaigns, and integrating AI chatbots that engage potential customers 24/7, we drive more relevant traffic and turn site visitors into valuable leads",
   },
   {
     icon: "Wallet",
     title: "Higher Conversions",
     description:
-      "To achieve higher conversions, focus on optimizing your website by using high-quality images and videos, offering multiple payment options, and creating a sense of urgency to encourage quick action",
+      "Turning visitors into paying customers is where the magic happens. Through detailed UX/UI design and optimized digital marketing, we create user journeys that are intuitive, engaging, and conversion-focused. Our integrated strategies, from persuasive call-to-actions to personalized experiences, ensure that your visitors are not just browsing—they're converting into loyal customers",
   },
   {
     icon: "Sparkle",
     title: "Test Marketing Ideas",
     description:
-      "Testing marketing ideas means running small trials to gauge customer reactions, using methods like A/B testing and surveys to refine strategies before a full launch.",
+      "Curious about how a new marketing strategy or product will perform? We help you test ideas with minimal risk through data-driven A/B testing and market insights. Whether it's testing a new website feature, app functionality, or social media campaign, we provide actionable feedback that lets you adjust and perfect your approach before going full scale",
   },
 ];
 
@@ -41,12 +41,12 @@ const benefitList: BenefitsProps[] = [
 export const BenefitSection = () => {
   return (
     <section id="benefits" className="container py-24 sm:py-32 px-10 mx-auto">
-      <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
+      <div className="flex flex-col">
         <div className="mx-auto container">
           <SparklesText text="Benefits" className="mb-4 text-primary text-center font-bold text-4xl sm:text-5xl" />
           <TypingAnimation className="text-center text-2xl sm:text-3xl">Your Shortcut to Success</TypingAnimation>
           <p className="text-xl text-center mt-2 text-muted-foreground mb-8">
-          We combine creativity with the latest technology to develop powerful websites, engaging apps, and intelligent automation that help businesses thrive. Whether you&apos;re starting from scratch or upgrading your brand, we&apos;re here to transform your vision into reality.
+          At WebZaura, we believe in your business potential, and we&apos;rehere to help you unlock it. Our approach is simple: we focus on what truly matters to you—growing your brand, attracting the right people, and turning them into loyal customers. Let&apos;s take a look at how we can make a real impact on your business with these key benefits.
           </p>
         </div>
 
