@@ -13,9 +13,14 @@ import {
 import { Check } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination, Autoplay } from "swiper/modules";
+import { log } from "console";
+
 
 const uiuxgdPlans = [
-
   {
     category: "UI/UX & Graphic Design",
     title: "Basic",
@@ -49,7 +54,7 @@ const uiuxgdPlans = [
   {
     category: "UI/UX & Graphic Design",
     title: "Advanced",
-    popular: 1,
+    popular: 0,
     price: 74999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
@@ -64,21 +69,6 @@ const uiuxgdPlans = [
 ];
 
 const aiChatbotPlans = [
-  {
-    category: "AI Chatbot Integration",
-    title: "Enterprise",
-    popular: 1,
-    price: 99999,
-    description: "Ideal for growing businesses.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Custom chatbot development",
-      "Advanced NLP & ML models",
-      "Multi-channel support",
-      "24/7 customer support",
-      "Integration with CRM systems",
-    ]
-  },
   {
     category: "AI Chatbot Integration",
     title: "Basic",
@@ -96,8 +86,23 @@ const aiChatbotPlans = [
   },
   {
     category: "AI Chatbot Integration",
-    title: "Advanced",
+    title: "Enterprise",
     popular: 1,
+    price: 99999,
+    description: "Ideal for growing businesses.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Custom chatbot development",
+      "Advanced NLP & ML models",
+      "Multi-channel support",
+      "24/7 customer support",
+      "Integration with CRM systems",
+    ]
+  },
+  {
+    category: "AI Chatbot Integration",
+    title: "Advanced",
+    popular: 0,
     price: 34999,
     description: "Ideal for enterprises requiring automation.",
     buttonText: "Buy Now",
@@ -113,20 +118,6 @@ const aiChatbotPlans = [
 
 const webDevelopmentPlans = [
   {
-    title: "Enterprise",
-    popular: 1,
-    price: 99999,
-    description: "A perfect plan for growing businesses.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "10 team members",
-      "20 GB storage",
-      "Upto 20 pages",
-      "Priority support",
-      "Advanced SEO",
-    ],
-  },
-  {
     title: "Basic",
     popular: 0,
     price: 19999,
@@ -141,8 +132,22 @@ const webDevelopmentPlans = [
     ],
   },
   {
-    title: "Advanced",
+    title: "Enterprise",
     popular: 1,
+    price: 99999,
+    description: "A perfect plan for growing businesses.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "10 team members",
+      "20 GB storage",
+      "Upto 20 pages",
+      "Priority support",
+      "Advanced SEO",
+    ],
+  },
+  {
+    title: "Advanced",
+    popular: 0,
     price: 54999,
     description: "A perfect plan for small businesses and startups.",
     buttonText: "Buy Now",
@@ -158,20 +163,6 @@ const webDevelopmentPlans = [
 
 const appDevelopmentPlans = [
   {
-    title: "Enterprise",
-    popular: 1,
-    price: 99999,
-    description: "A solid plan for new mobile applications.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "iOS & Android support",
-      "API integration",
-      "Basic analytics",
-      "3-month support",
-      "Bug fixes",
-    ],
-  },
-  {
     title: "Basic",
     popular: 0,
     price: 49999,
@@ -186,8 +177,22 @@ const appDevelopmentPlans = [
     ],
   },
   {
-    title: "Advanced",
+    title: "Enterprise",
     popular: 1,
+    price: 99999,
+    description: "A solid plan for new mobile applications.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "iOS & Android support",
+      "API integration",
+      "Basic analytics",
+      "3-month support",
+      "Bug fixes",
+    ],
+  },
+  {
+    title: "Advanced",
+    popular: 0,
     price: 149999,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
@@ -203,20 +208,6 @@ const appDevelopmentPlans = [
 
 const digitalMarketingPlans = [
   {
-    title: "Enterprise",
-    popular: 1,
-    price: 39999,
-    description: "Ideal for growing businesses.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Advanced social media strategy",
-      "SEO & content optimization",
-      "Paid ad campaigns",
-      "In-depth analytics",
-      "Priority support",
-    ],
-  },
-  {
     title: "Basic",
     popular: 0,
     price: 17999,
@@ -231,8 +222,22 @@ const digitalMarketingPlans = [
     ],
   },
   {
-    title: "Advanced",
+    title: "Enterprise",
     popular: 1,
+    price: 39999,
+    description: "Ideal for growing businesses.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Advanced social media strategy",
+      "SEO & content optimization",
+      "Paid ad campaigns",
+      "In-depth analytics",
+      "Priority support",
+    ],
+  },
+  {
+    title: "Advanced",
+    popular: 0,
     price: 29999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
@@ -248,20 +253,6 @@ const digitalMarketingPlans = [
 
 const socialMediaPlans = [
   {
-    title: "Enterprise",
-    popular: 1,
-    price: 39999,
-    description: "Ideal for growing businesses.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Advanced social media strategy",
-      "SEO & content optimization",
-      "Paid ad campaigns",
-      "In-depth analytics",
-      "Priority support",
-    ],
-  },
-  {
     title: "Basic",
     popular: 0,
     price: 17999,
@@ -276,8 +267,22 @@ const socialMediaPlans = [
     ],
   },
   {
-    title: "Advanced",
+    title: "Enterprise",
     popular: 1,
+    price: 39999,
+    description: "Ideal for growing businesses.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Advanced social media strategy",
+      "SEO & content optimization",
+      "Paid ad campaigns",
+      "In-depth analytics",
+      "Priority support",
+    ],
+  },
+  {
+    title: "Advanced",
+    popular: 0,
     price: 34999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
@@ -326,7 +331,7 @@ export const PricingSection = () => {
   }, []);
 
   return (
-    <section id="pricing" className="container py-24 sm:py-32 relative px-10 mx-auto">
+    <section id="pricing" className="container py-24 sm:py-32 px-10 mx-auto">
       <SparklesText text="Pricing" className="mb-4 text-4xl sm:text-5xl text-start text-primary" />
 
       {servicePlans.map(({ category, plans }) => (
@@ -336,18 +341,64 @@ export const PricingSection = () => {
             Choose the perfect plan for your needs.
           </h3>
 
-          <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4  scrollbar-hide">
+          {/* Swiper for Mobile */}
+          <div className="block md:hidden">
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={20}
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 3000, 
+                disableOnInteraction: false, 
+              }}
+              modules={[Pagination, Autoplay]}
+            >
+              {plans.map(({ title, popular, price, description, buttonText, benefitList }) => (
+                <SwiperSlide key={title}>
+                  <Card className={`p-6 ${popular ? "border-2 border-primary shadow-lg" : ""}`}>
+                    <CardHeader>
+                      <CardTitle>{title}</CardTitle>
+                      <CardDescription>{description}</CardDescription>
+                      <div>
+                        <span className="text-2xl font-bold">Starts from / </span>
+                        <span className="text-3xl font-bold">
+                          {currency} {Math.round(price * conversionRate)}
+                        </span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        {benefitList.map((benefit) => (
+                          <span key={benefit} className="flex">
+                            <Check className="text-primary mr-2" />
+                            <h3>{benefit}</h3>
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter>
+                      <Link href={"#contact"} passHref>
+                        <Button variant={popular ? "default" : "secondary"} className="w-full">
+                          {buttonText}
+                        </Button>
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Grid for Desktop */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
             {plans.map(({ title, popular, price, description, buttonText, benefitList }) => (
               <Card
                 key={title}
-                className={` ${popular === 1
-                    ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary transition-all"
-                    : ""
-                  }`}
+                className={`p-6 ${popular ? "border-2 border-primary shadow-lg" : ""}`}
               >
                 <CardHeader>
-                  <CardTitle className="pb-2">{title}</CardTitle>
-                  <CardDescription className="pb-4">{description}</CardDescription>
+                  <CardTitle>{title}</CardTitle>
+                  <CardDescription>{description}</CardDescription>
                   <div>
                     <span className="text-2xl font-bold">Starts from / </span>
                     <span className="text-3xl font-bold">
@@ -355,7 +406,6 @@ export const PricingSection = () => {
                     </span>
                   </div>
                 </CardHeader>
-
                 <CardContent>
                   <div className="space-y-4">
                     {benefitList.map((benefit) => (
@@ -366,10 +416,9 @@ export const PricingSection = () => {
                     ))}
                   </div>
                 </CardContent>
-
                 <CardFooter>
                   <Link href={"#contact"} passHref>
-                    <Button variant={popular === 1 ? "default" : "secondary"} className="w-full">
+                    <Button variant={popular ? "default" : "secondary"} className="w-full">
                       {buttonText}
                     </Button>
                   </Link>
@@ -377,7 +426,6 @@ export const PricingSection = () => {
               </Card>
             ))}
           </div>
-
         </div>
       ))}
     </section>

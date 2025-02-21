@@ -26,6 +26,7 @@ export default async function RootLayout({ children } : {children: React.ReactNo
         >
           <Navbar />
           {children}
+          <SplashCursor />
           <WhatsAppIcon />
           <Toaster />
           <Analytics />
