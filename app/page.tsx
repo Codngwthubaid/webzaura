@@ -57,12 +57,11 @@ const Page = () => {
           backgroundColor: "#e9590c",
         }}
       />
-
       <HeroSection />
       <MarqueeDemo />
       <BenefitSection />
-      <FeaturesSection />
       <ServicesSection />
+      <FeaturesSection />
       <TestimonialSection />
       <PricingSection />
       <ContactSection />

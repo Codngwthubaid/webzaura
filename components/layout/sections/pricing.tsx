@@ -15,21 +15,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const uiuxgdPlans = [
-  {
-    category: "UI/UX & Graphic Design",
-    title: "Enterprise",
-    popular: 1,
-    price: 149999,
-    description: "Ideal for growing businesses.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Advanced UX research",
-      "High-fidelity UI design",
-      "Custom illustrations",
-      "User testing & feedback",
-      "Priority support",
-    ],
-  },
+
   {
     category: "UI/UX & Graphic Design",
     title: "Basic",
@@ -43,6 +29,21 @@ const uiuxgdPlans = [
       "Logo design",
       "Branding guidelines",
       "Email support",
+    ],
+  },
+  {
+    category: "UI/UX & Graphic Design",
+    title: "Enterprise",
+    popular: 1,
+    price: 149999,
+    description: "Ideal for growing businesses.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Advanced UX research",
+      "High-fidelity UI design",
+      "Custom illustrations",
+      "User testing & feedback",
+      "Priority support",
     ],
   },
   {
@@ -67,16 +68,16 @@ const aiChatbotPlans = [
     category: "AI Chatbot Integration",
     title: "Enterprise",
     popular: 1,
-    price: 49999,
+    price: 99999,
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
-      "Advanced AI & NLP",
-      "Multi-platform support",
-      "Custom chatbot flows",
-      "Real-time analytics",
-      "Priority support",
-    ],
+      "Custom chatbot development",
+      "Advanced NLP & ML models",
+      "Multi-channel support",
+      "24/7 customer support",
+      "Integration with CRM systems",
+    ]
   },
   {
     category: "AI Chatbot Integration",
@@ -114,13 +115,13 @@ const webDevelopmentPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 89999,
-    description: "Best for growing businesses.",
+    price: 99999,
+    description: "A perfect plan for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
-      "6 team members",
-      "15 GB storage",
-      "Upto 10 pages",
+      "10 team members",
+      "20 GB storage",
+      "Upto 20 pages",
       "Priority support",
       "Advanced SEO",
     ],
@@ -159,7 +160,7 @@ const appDevelopmentPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 299999,
+    price: 99999,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
     benefitList: [
@@ -204,7 +205,7 @@ const digitalMarketingPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 49999,
+    price: 39999,
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -249,7 +250,7 @@ const socialMediaPlans = [
   {
     title: "Enterprise",
     popular: 1,
-    price: 49999,
+    price: 39999,
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -339,7 +340,7 @@ export const PricingSection = () => {
             {plans.map(({ title, popular, price, description, buttonText, benefitList }) => (
               <Card
                 key={title}
-                className={`min-w-[80%] sm:min-w-[60%] md:w-full flex-shrink-0 md:flex-shrink ${popular === 1
+                className={` ${popular === 1
                     ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary transition-all"
                     : ""
                   }`}

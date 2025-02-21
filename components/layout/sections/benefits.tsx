@@ -44,8 +44,8 @@ export const BenefitSection = () => {
       <div className="flex flex-col">
         <div className="mx-auto container">
           <SparklesText text="Benefits" className="mb-4 text-primary text-center font-bold text-4xl sm:text-5xl" />
-          <TypingAnimation className="text-center text-2xl sm:text-3xl">Your Shortcut to Success</TypingAnimation>
-          <p className="text-xl text-center mt-2 text-muted-foreground mb-8">
+          <TypingAnimation className="text-center text-2xl sm:text-3xl mb-4 sm:mb-0">Your Shortcut to Success</TypingAnimation>
+          <p className="text-xl text-center mt-2 text-muted-foreground mb-8 hidden sm:block">
           At WebZaura, we believe in your business potential, and we&apos;rehere to help you unlock it. Our approach is simple: we focus on what truly matters to you—growing your brand, attracting the right people, and turning them into loyal customers. Let&apos;s take a look at how we can make a real impact on your business with these key benefits.
           </p>
         </div>
@@ -54,7 +54,7 @@ export const BenefitSection = () => {
           {benefitList.map(({ icon, title, description }, index) => (
             <Card
               key={title}
-              className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number"
+              className="shadow-md bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number"
             >
               <CardHeader>
                 <div className="flex justify-between">
@@ -72,7 +72,7 @@ export const BenefitSection = () => {
                 <CardTitle>{title}</CardTitle>
               </CardHeader>
 
-              <CardContent className="text-muted-foreground">
+              <CardContent className="text-muted-foreground hidden sm:block">
                 {description}
               </CardContent>
             </Card>

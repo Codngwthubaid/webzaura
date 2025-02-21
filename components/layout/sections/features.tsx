@@ -53,15 +53,15 @@ export const FeaturesSection = () => {
   return (
     <section id="features" className="container py-24 sm:py-32 px-10 mx-auto">
       <SparklesText text="Features" className="mb-4 text-center text-4xl text-primary sm:text-5xl" />
-      <TypingAnimation className="text-center text-2xl sm:text-3xl">What Makes Us Different</TypingAnimation>
-      <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
+      <TypingAnimation className="text-center text-2xl sm:text-3xl mb-4 sm:mb-0">What Makes Us Different</TypingAnimation>
+      <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8 hidden sm:block">
       Innovation. Performance. Affordability. We don&apos;t just build digital solutions—we create experiences that drive success. Explore the features that make Webzaura your ultimate digital partner.
       </h3>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {featureList.map(({ icon, title, description }) => (
           <div key={title}>
-            <Card className="h-full bg-background border-0 shadow-none">
+            <Card className="h-full bg-background  shadow-md">
               <CardHeader className="flex justify-center items-center">
                 <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
                   <Icon
@@ -72,10 +72,10 @@ export const FeaturesSection = () => {
                   />
                 </div>
 
-                <CardTitle className="hover:text-[#e9590c]">{title}</CardTitle>
+                <CardTitle className="text-center hover:text-[#e9590c]">{title}</CardTitle>
               </CardHeader>
 
-              <CardContent className="text-muted-foreground text-center">
+              <CardContent className="text-muted-foreground text-center hidden sm:block">
                 {description}
               </CardContent>
             </Card>
