@@ -92,7 +92,7 @@ export const TeamSection = () => {
         {
             imageUrl: alamgeerImg,
             firstName: "Alamgeer",
-            lastName: "Siwara",
+            lastName: "Seohara",
             positions: ["Machine Learning Engineer", "TensorFlow Tinkerer"],
             socialNetworks: [
                 {

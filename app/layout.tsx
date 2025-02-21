@@ -8,13 +8,14 @@ import SplashCursor from "@/components/animations/SplashCursor"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import WhatsAppIcon from "@/components/layout/sections/whtasappIcon";
+import Chatbot from "../components/Chatbot";
 
 export const metadata: Metadata = {
   title: "WebZaura - Web Development and Digital Marketing Agency",
   description: "Landing template for Agency",
 };
 
-export default async function RootLayout({ children } : {children: React.ReactNode}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background")}>
@@ -26,7 +27,8 @@ export default async function RootLayout({ children } : {children: React.ReactNo
         >
           <Navbar />
           {children}
-          <SplashCursor />
+          {/* <SplashCursor /> */}
+          <Chatbot />
           <WhatsAppIcon />
           <Toaster />
           <Analytics />
