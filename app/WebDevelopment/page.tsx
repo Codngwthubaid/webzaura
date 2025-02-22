@@ -32,7 +32,7 @@ const Page = () => {
       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
     </div>
   ) : (
-    <>
+    <div>
       <ServicesHeroSectionLayout
         serviceBadgeName="Web"
         serviceSpanName="Development"
@@ -89,7 +89,7 @@ const Page = () => {
       />
       <ContactSection />
       <FooterSection />
-    </>
+    </div>
   );
 };
 

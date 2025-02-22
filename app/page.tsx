@@ -43,7 +43,7 @@ const Page = () => {
       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#ea580c]"></div>
     </div>
   ) : (
-    <>
+    <div>
       <motion.div
         id="scroll-indicator"
         style={{
@@ -67,7 +67,7 @@ const Page = () => {
       <ContactSection />
       <FAQSection />
       <FooterSection />
-    </>
+    </div>
   );
 };
 

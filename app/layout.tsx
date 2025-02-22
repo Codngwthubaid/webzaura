@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner"
-import SplashCursor from "@/components/animations/SplashCursor"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import WhatsAppIcon from "@/components/layout/sections/whtasappIcon";
@@ -28,7 +27,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           <Navbar />
           {children}
-          <SplashCursor />
           <Chatbot />
           <WhatsAppIcon />
           <Toaster />
