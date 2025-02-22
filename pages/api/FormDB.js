@@ -1,21 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { google, sheets_v4 } from "googleapis";
+import { google } from "googleapis";
 
-type SheetBody = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  services: string;
-  type: string;
-  message: string;
-  couponCode: string;
-  originalPrice?: number;
-  finalPrice?: number;
-  discountApplied: boolean;
-  couponUses: number;
-};
-
-export default async function FormDB(req: NextApiRequest, res: NextApiResponse) {
+export default async function FormDB(req, res) {
   const { GOOGLE_CLIENT_EMAIL, GOOGLE_PRIVATE_KEY, GOOGLE_SHEET_ID } = process.env;
 
   if (!GOOGLE_CLIENT_EMAIL || !GOOGLE_PRIVATE_KEY || !GOOGLE_SHEET_ID) {
@@ -47,12 +32,12 @@ export default async function FormDB(req: NextApiRequest, res: NextApiResponse) 
       return res.status(200).json({ couponUses });
     } catch (error) {
       console.log("Google Sheets GET Error:", error);
-      return res.status(500).json({ message: "Failed to fetch coupon count", error: (error as Error).message });
+      return res.status(500).json({ message: "Failed to fetch coupon count", error: error.message });
     }
   }
 
   if (req.method === "POST") {
-    const body = req.body as SheetBody;
+    const body = req.body;
 
     try {
       let currentCouponUses = body.couponUses;
@@ -79,12 +64,12 @@ export default async function FormDB(req: NextApiRequest, res: NextApiResponse) 
             currentCouponUses,
           ]],
         },
-      } as sheets_v4.Params$Resource$Spreadsheets$Values$Append);
+      });
 
       return res.status(200).json({ message: "Success", data: response.data, couponUses: currentCouponUses });
     } catch (error) {
       console.log("Google Sheets POST Error:", error);
-      const errorMessage = (error as Error).message;
+      const errorMessage = error.message;
       return res.status(500).json({ message: "Internal Server Error At Form-DB Route", error: errorMessage });
     }
   }
