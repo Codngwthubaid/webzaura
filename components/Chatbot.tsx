@@ -34,7 +34,7 @@ const Chatbot = () => {
                 >
                     <button
                         onClick={() => setIsOpen(false)}
-                        className="relative left-[140px] sm:left-[540px] bg-white text-black px-5 py-3 rounded-md"
+                        className="relative left-[135px] sm:left-[540px] bg-white text-black px-5 py-3 rounded-md"
                     >
                         ✖
                     </button>
