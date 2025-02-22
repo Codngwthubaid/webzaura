@@ -314,9 +314,7 @@ export const PricingSection = () => {
     const fetchLocation = async () => {
       try {
         const response = await fetch("https://ipwhois.app/json/");
-        console.log(response)
         const data = await response.json();
-        console.log(data)
 
         if (data.country_code !== "IN") {
           setCurrency("USD");

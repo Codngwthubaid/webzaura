@@ -69,16 +69,13 @@ export const ContactSection = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log("Success:", data);
       toast(`Thanks ${values.firstName} for contacting us, our team will contact you soon asap !❤️`);
       form.reset();
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.error("Error Response:", error.response?.data || error.message);
         const errorMessage = axios.isAxiosError(error) ? error.response?.data || error.message : String(error);
         alert(`Request failed: ${errorMessage}`);
       } else {
-        console.error("Error:", error);
         alert(`Request failed: ${error}`);
       }
     }
