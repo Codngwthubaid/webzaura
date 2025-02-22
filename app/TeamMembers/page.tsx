@@ -1,3 +1,4 @@
+"use client"
 import { ContactSection } from '@/components/layout/sections/contact'
 import { FooterSection } from '@/components/layout/sections/footer'
 import { TeamSection } from '@/components/layout/sections/team'

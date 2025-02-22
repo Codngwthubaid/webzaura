@@ -14,7 +14,6 @@ import { useTheme } from 'next-themes';
 import { motion, useSpring, useScroll } from "framer-motion";
 
 
-
 const Page = () => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
