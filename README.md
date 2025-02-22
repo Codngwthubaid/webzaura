@@ -1,9 +1,14 @@
 # 🌐 [WebZaura - Web Development and Digital Marketing Agency](https://webzaura.vercel.app/)
 
+![WebZaura](./public/assets/forReadme.png)
+
+---
+
 Welcome to **WebZaura**, your one-stop destination for cutting-edge **Web Development**, **Digital Marketing**, **Graphic Design**, and more! 🚀  
 We help businesses **thrive online** with powerful, user-friendly, and engaging digital solutions.
 We craft digital experiences that ignite passion and elevate your brand's impact.
 Let us help you redefine your online presence and take your business to new heights!
+  
 ---
 
 ## 📌 Our Services  
