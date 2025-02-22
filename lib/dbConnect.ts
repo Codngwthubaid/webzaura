@@ -1,16 +1,15 @@
 import mongoose from "mongoose";
 
+// Define the Mongoose cache interface with precise typing
 interface MongooseCache {
-  conn: typeof mongoose | null;
-  promise: Promise<typeof mongoose> | null;
+  conn: mongoose.Mongoose | null;
+  promise: Promise<mongoose.Mongoose> | null;
 }
 
-declare global {
-  var mongoose: MongooseCache;
-}
+// Module-level cache (replaces global.mongoose)
+const mongooseCache: MongooseCache = { conn: null, promise: null };
 
-
-const MONGODB_URI = process.env.MONGO_URI;
+const MONGODB_URI = process.env.MONGO_URI as string;
 
 if (!MONGODB_URI) {
   throw new Error(
@@ -18,33 +17,27 @@ if (!MONGODB_URI) {
   );
 }
 
-let cached = global.mongoose;
-
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
-
-async function dbConnect() {
-  if (cached.conn) {
-    return cached.conn;
+async function dbConnect(): Promise<mongoose.Mongoose> {
+  if (mongooseCache.conn) {
+    return mongooseCache.conn;
   }
 
-  if (!cached.promise) {
-    const opts = {
+  if (!mongooseCache.promise) {
+    const opts: mongoose.ConnectOptions = {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI as string, opts).then((mongoose) => {
-      return mongoose;
+    mongooseCache.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
+      return mongooseInstance;
     });
   }
 
   try {
-    cached.conn = await cached.promise;
+    mongooseCache.conn = await mongooseCache.promise;
     console.log("MongoDB connected successfully");
-    return cached.conn;
+    return mongooseCache.conn;
   } catch (error) {
-    cached.promise = null;
+    mongooseCache.promise = null;
     console.error("MongoDB connection error:", error);
     throw error;
   }
