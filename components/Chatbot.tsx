@@ -1,173 +1,66 @@
-// "use client"
-// import { useEffect, useState } from 'react';
-// import { FaRobot } from 'react-icons/fa';
-// import { useTheme } from 'next-themes';
-
-// declare global {
-//   interface Window {
-//     project_id: string;
-//     frame_type: string;
-//   }
-// }
-
-
-// const Chatbot = () => {
-// const {theme} = useTheme();
-//   const [isChatbotVisible, setIsChatbotVisible] = useState(false);
-
-//   useEffect(() => {
-//     if (typeof window !== 'undefined' && isChatbotVisible) {
-//       // Create the div element
-//       const divElement = document.createElement('div');
-//       divElement.id = 'odin-chatbot';
-
-//       // Append the div element to the body
-//       document.body.appendChild(divElement);
-
-//       // Set the global variables
-//       window.project_id = "b6cee3ae4dff4db989f337";
-//       window.frame_type = "window";
-
-//       // Create the script element for the loader
-//       const scriptElement = document.createElement('script');
-//       scriptElement.src = "https://app.getodin.ai/loader.min.js";
-//       scriptElement.setAttribute('project_id', "b6cee3ae4dff4db989f337");
-//       scriptElement.setAttribute('frame_type', "window");
-//       scriptElement.defer = true;
-
-//       document.body.appendChild(scriptElement);
-
-//       return () => {
-//         document.body.removeChild(divElement);
-//         document.body.removeChild(scriptElement);
-//       };
-//     }
-//   }, [isChatbotVisible]); 
-
-//   return (
-//     <div>
-//       <div
-//         style={{
-//           position: 'fixed',
-//           bottom: '100px',
-//           right: '25px',
-//           cursor: 'pointer',
-//           zIndex: 1000,
-//         }}
-//         onClick={() => setIsChatbotVisible(!isChatbotVisible)}
-//       >
-//         <FaRobot size={50} className={` ${theme === "dark" ? "text-white hover:text-[#e9590c]" : "hover:text-black text-[#e9590c]"} border-2 rounded-md p-2 bg-white`} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Chatbot;
-
-
-
 "use client";
-import { useEffect, useState } from "react";
-import { FaRobot } from "react-icons/fa";
 import { useTheme } from "next-themes";
-
-declare global {
-  interface Window {
-    project_id: string;
-    frame_type: string;
-  }
-}
+import { useState, useEffect } from "react";
+import { BotMessageSquare } from 'lucide-react';
+import { Bot } from 'lucide-react';
 
 const Chatbot = () => {
-  const { theme } = useTheme();
-  const [isChatbotVisible, setIsChatbotVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+    const { theme } = useTheme();
+    const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && isChatbotVisible) {
-      setIsLoading(true);
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme]);
 
-      // Create chatbot container
-      const divElement = document.createElement("div");
-      divElement.id = "odin-chatbot";
-      divElement.style.position = "fixed";
-      divElement.style.bottom = "80px";
-      divElement.style.right = "20px";
-      divElement.style.width = window.innerWidth <= 768 ? "90%" : "25%"; 
-      divElement.style.height = "500px";
-      divElement.style.borderRadius = "10px";
-      divElement.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
-      divElement.style.overflow = "hidden";
-      divElement.style.zIndex = "999";
-      divElement.style.background = theme === "dark" ? "#1a1a1a" : "#fff";
+    return (
+        <div>
+            {/* Chatbot Toggle Button */}
+            <div className="fixed bottom-24 right-5 flex flex-col gap-3">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="bg-[#e9590c] hover:bg-black text-white px-4 py-4 rounded-full shadow-lg transition"
+                >
+                    {isOpen ? <Bot /> : <BotMessageSquare />}
+                </button>
+            </div>
 
-      document.body.appendChild(divElement);
-
-      // Set global variables
-      window.project_id = "b6cee3ae4dff4db989f337";
-      window.frame_type = "window";
-
-      // Load chatbot script
-      const scriptElement = document.createElement("script");
-      scriptElement.src = "https://app.getodin.ai/loader.min.js";
-      scriptElement.setAttribute("project_id", "b6cee3ae4dff4db989f337");
-      scriptElement.setAttribute("frame_type", "window");
-      scriptElement.defer = true;
-
-      scriptElement.onload = () => setIsLoading(false); 
-
-      document.body.appendChild(scriptElement);
-
-      return () => {
-        document.body.removeChild(divElement);
-        document.body.removeChild(scriptElement);
-      };
-    }
-  }, [isChatbotVisible, theme]);
-
-  return (
-    <div>
-      {/* Chatbot Icon */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: "100px",
-          right: "25px",
-          cursor: "pointer",
-          zIndex: 1000,
-        }}
-        onClick={() => setIsChatbotVisible(!isChatbotVisible)}
-      >
-        <FaRobot
-          size={50}
-          className={`${
-            theme === "dark"
-              ? "text-white hover:text-[#e9590c]"
-              : "hover:text-black text-[#e9590c]"
-          } border-2 rounded-md p-2 bg-white`}
-        />
-      </div>
-
-      {/* Loading Indicator */}
-      {isChatbotVisible && isLoading && (
-        <div
-          style={{
-            position: "fixed",
-            bottom: "120px",
-            right: "50px",
-            background: "#fff",
-            padding: "10px",
-            borderRadius: "5px",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-            zIndex: 1001,
-            fontSize: "14px",
-          }}
-        >
-          Loading Chatbot...
+            {isOpen && (
+                <div
+                    className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 z-50"
+                >
+                    <button
+                        onClick={() => setIsOpen(false)}
+                        className="relative left-[140px] sm:left-[540px] bg-white text-black px-5 py-3 rounded-md"
+                    >
+                        ✖
+                    </button>
+                    <div
+                        className={`relative shadow-lg rounded-lg p-2 transition ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
+                            }`}
+                        style={{
+                            width: "90vw",
+                            height: "90vh",
+                            borderRadius: "10px",
+                        }}
+                    >
+                        <iframe
+                            src="https://www.chatbase.co/chatbot-iframe/CcCDmOeKurTq63Rs3ndAp"
+                            className="w-full h-full"
+                            frameBorder="0"
+                            style={{
+                                borderRadius: "10px",
+                                filter: theme === "dark" ? "invert(1)" : "none",
+                            }}
+                        ></iframe>
+                    </div>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default Chatbot;

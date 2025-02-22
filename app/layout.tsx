@@ -8,7 +8,8 @@ import SplashCursor from "@/components/animations/SplashCursor"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import WhatsAppIcon from "@/components/layout/sections/whtasappIcon";
-import Chatbot from "../components/Chatbot";
+import Chatbot from "@/components/Chatbot";
+
 
 export const metadata: Metadata = {
   title: "WebZaura - Web Development and Digital Marketing Agency",
@@ -27,7 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           <Navbar />
           {children}
-          <SplashCursor />
+          {/* <SplashCursor /> */}
           <Chatbot />
           <WhatsAppIcon />
           <Toaster />
