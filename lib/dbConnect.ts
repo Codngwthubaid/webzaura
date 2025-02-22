@@ -1,51 +1,25 @@
 import mongoose from "mongoose";
 
-// Define the Mongoose cache interface
-interface MongooseCache {
-  conn: mongoose.Mongoose | null;
-  promise: Promise<mongoose.Mongoose> | null;
-}
-
-declare global {
-  let mongoose: MongooseCache;
-}
-
-const MONGODB_URI = process.env.MONGO_URI as string;
+const MONGODB_URI = process.env.MONGO_URI;
 
 if (!MONGODB_URI) {
-  throw new Error("Please define the MONGO_URI environment variable inside .env.local");
+  throw new Error(
+    "Please define the MONGO_URI environment variable inside .env.local"
+  );
 }
 
-let cached: MongooseCache = (global as any).mongoose;
-
-if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
-}
-
-async function dbConnect(): Promise<mongoose.Mongoose> {
-  if (cached.conn) {
-    return cached.conn;
-  }
-
-  if (!cached.promise) {
-    const opts: mongoose.ConnectOptions = {
-      bufferCommands: false,
-    };
-
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
-      return mongooseInstance;
-    });
-  }
+async function dbConnect(): Promise<typeof mongoose> {
+  const opts: mongoose.ConnectOptions = {
+    bufferCommands: false,
+  };
 
   try {
-    cached.conn = await cached.promise;
+    const conn = await mongoose.connect(MONGODB_URI as string, opts);
     console.log("MongoDB connected successfully");
-    return cached.conn;
+    return conn;
   } catch (error) {
-    // Reset promise on failure to allow retry
-    cached.promise = null;
     console.error("MongoDB connection error:", error);
-    throw error; // Re-throw to let the caller handle it
+    throw error;
   }
 }
 
