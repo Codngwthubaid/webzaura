@@ -362,7 +362,7 @@
 
 
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import { Building2, Mail, Phone, Instagram, MessageCircleMore } from "lucide-react";
 import { useForm } from "react-hook-form";
