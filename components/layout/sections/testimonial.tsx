@@ -336,7 +336,7 @@ export const TestimonialSection = () => {
     const newReview: ReviewProps = { name, comment, rating };
   
     try {
-      const response = await fetch("/api/reviews", {
+      const response = await fetch(`${window.location.origin}/api/reviews`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
