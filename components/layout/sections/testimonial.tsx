@@ -286,17 +286,57 @@ export const TestimonialSection = () => {
     fetchReviews();
   }, []);
 
+  // const handleSubmit = async () => {
+  //   if (!name || !comment || rating === null) {
+  //     toast.error("Please fill in all fields before submitting.");
+  //     return;
+  //   }
+
+  //   setIsLoading(true);
+  //   const newReview = { name, comment, rating };
+
+  //   try {
+  //     const response = await fetch(`${window.location.origin}/api/reviews`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //       body: JSON.stringify(newReview),
+  //     });
+
+  //     const data = await response.json();
+
+  //     if (response.ok) {
+  //       setReviews((prev) => [...prev, data.data]);
+  //       setName("");
+  //       setComment("");
+  //       setRating(null);
+  //       toast.success("We appreciate your feedback! Thanks ❤️");
+  //     } else {
+  //       throw new Error(data.error || "Failed to submit review");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error submitting the review:", error);
+  //     toast.error("Error submitting the review. Please try again.");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
+
+
   const handleSubmit = async () => {
-    if (!name || !comment || rating === null) {
+    if (!name || !comment || !rating) {
       toast.error("Please fill in all fields before submitting.");
       return;
     }
-
+  
     setIsLoading(true);
-    const newReview = { name, comment, rating };
-
+    const newReview: ReviewProps = { name, comment, rating };
+  
     try {
-      const response = await fetch(`${window.location.origin}/api/reviews`, {
+      const response = await fetch("/api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -304,18 +344,21 @@ export const TestimonialSection = () => {
         },
         body: JSON.stringify(newReview),
       });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setReviews((prev) => [...prev, data.data]);
-        setName("");
-        setComment("");
-        setRating(null);
-        toast.success("We appreciate your feedback! Thanks ❤️");
-      } else {
-        throw new Error(data.error || "Failed to submit review");
+  
+      // Log raw response before parsing JSON
+      const textResponse = await response.text();
+      console.log("Raw response:", textResponse);
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status} - ${textResponse}`);
       }
+  
+      const data = JSON.parse(textResponse); // Now parse JSON safely
+      setReviews((prev) => [...prev, data.data]);
+      setName("");
+      setComment("");
+      setRating(0);
+      toast.success("We appreciate your feedback! Thanks ❤️");
     } catch (error) {
       console.error("Error submitting the review:", error);
       toast.error("Error submitting the review. Please try again.");
@@ -323,7 +366,7 @@ export const TestimonialSection = () => {
       setIsLoading(false);
     }
   };
-
+  
   return (
     <section id="testimonials" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="text-center mb-8">
