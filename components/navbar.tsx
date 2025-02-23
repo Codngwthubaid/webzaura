@@ -24,13 +24,13 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 import Image from "next/image";
 
 interface RouteProps {
@@ -39,77 +39,51 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  {
-    href: "#testimonials",
-    label: "Testimonials",
-  },
-  {
-    href: "/TeamMembers",
-    label: "Team",
-  },
-  {
-    href: "#contact",
-    label: "Contact",
-  },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "/TeamMembers", label: "Team" },
+  { href: "#contact", label: "Contact" },
+  { href: "#faq", label: "FAQ" },
 ];
 
-
 const servicesList: RouteProps[] = [
-  {
-    href: "/WebDevelopment",
-    label: "Web Development",
-  },
-  {
-    href: "/DigitalMarketing",
-    label: "Digital Marketing",
-  },
-  {
-    href: "/UIUXGD",
-    label: "Socal Media Marketing",
-  },
-  {
-    href: "/SocialMediaManagement",
-    label: "UI/UX & Graphic Design",
-  },
-  {
-    href: "/AiChatBot",
-    label: "Ai ChatBot Integration",
-  },
-  {
-    href: "/AppDevelopment",
-    label: "App Development",
-  }
-]
+  { href: "/WebDevelopment", label: "Web Development" },
+  { href: "/DigitalMarketing", label: "Digital Marketing" },
+  { href: "/UIUXGD", label: "Social Media Marketing" }, 
+  { href: "/SocialMediaManagement", label: "UI/UX & Graphic Design" },
+  { href: "/AiChatBot", label: "Ai ChatBot Integration" },
+  { href: "/AppDevelopment", label: "App Development" },
+];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; 
+  }
 
   return (
     <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
       <Link href="/" className="font-bold text-lg flex items-center">
-        <Image src={
-          "/LogoImg/logoLight.png"
-        }
+        <Image
+          src="/LogoImg/logoLight.png"
           width={64}
           height={64}
           alt="logo"
         />
         Web<span className="text-primary">Zaura</span>
       </Link>
-      {/* <!-- Mobile --> */}
+
+      {/* Mobile */}
       <div className="flex items-center lg:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Menu
-              onClick={() => setIsOpen(!isOpen)}
-              className="cursor-pointer lg:hidden"
-            />
+            <Menu className="cursor-pointer lg:hidden" />
           </SheetTrigger>
-
           <SheetContent
             side="left"
             className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl bg-card border-secondary"
@@ -118,9 +92,8 @@ export const Navbar = () => {
               <SheetHeader className="mb-4 ml-4">
                 <SheetTitle className="flex items-center">
                   <Link href="/" className="font-bold text-lg flex items-center">
-                    <Image src={
-                      "/LogoImg/logoLight.png"
-                    }
+                    <Image
+                      src="/LogoImg/logoLight.png"
                       width={64}
                       height={64}
                       alt="logo"
@@ -133,13 +106,22 @@ export const Navbar = () => {
               <div className="flex flex-col gap-2">
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
-                    <AccordionTrigger className="font-semibold text-base ml-4">Services</AccordionTrigger>
+                    <AccordionTrigger className="font-semibold text-base ml-4">
+                      Services
+                    </AccordionTrigger>
                     <AccordionContent className="flex flex-col gap-y-3">
                       {servicesList.map(({ href, label }) => (
                         <ul key={href}>
-                          <li><Link href={href} className="ml-4 cursor-pointer lg:hidden hover:bg-primary/40 rounded-md p-2" onClick={() => setIsOpen(!isOpen)}>{label}</Link></li>
+                          <li>
+                            <Link
+                              href={href}
+                              className="ml-4 cursor-pointer lg:hidden hover:bg-primary/40 rounded-md p-2"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {label}
+                            </Link>
+                          </li>
                         </ul>
-
                       ))}
                     </AccordionContent>
                   </AccordionItem>
@@ -156,7 +138,6 @@ export const Navbar = () => {
                     <Link href={href}>{label}</Link>
                   </Button>
                 ))}
-
               </div>
             </div>
 
@@ -168,44 +149,31 @@ export const Navbar = () => {
         </Sheet>
       </div>
 
-      {/* <!-- Desktop --> */}
+      {/* Desktop */}
       <NavigationMenu className="hidden lg:block mx-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
             <DropdownMenu>
               <DropdownMenuTrigger className="outline-none">Services</DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link href="/WebDevelopment">Web Development </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/DigitalMarketing">Digital Marketing </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/UIUXGD">UI/UX & Graphic Design </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/SocialMediaManagement">Social Media Management </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/AiChatBot">Ai Chatbot Integration </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/AppDevelopment">App Development </Link>
-                </DropdownMenuItem>
+                {servicesList.map(({ href, label }) => (
+                  <DropdownMenuItem key={href}>
+                    <Link href={href}>{label}</Link>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            {routeList.map(({ href, label }) => (
-              <NavigationMenuLink key={href} asChild>
+          {routeList.map(({ href, label }) => (
+            <NavigationMenuItem key={href}>
+              <NavigationMenuLink asChild>
                 <Link href={href} className="text-base px-2">
                   {label}
                 </Link>
               </NavigationMenuLink>
-            ))}
-          </NavigationMenuItem>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
 
