@@ -49,15 +49,6 @@
 
 import dbConnect from "@/lib/dbConnect";
 import Review from "@/models/ReviewSchema";
-import Cors from 'cors';
-
-const cors = Cors({ methods: ["GET", "POST"] });
-
-function runMiddleware(req, res, fn) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => (result instanceof Error ? reject(result) : resolve(result)));
-  });
-}
 
 // export default async function handler(req, res) {
 //   await runMiddleware(req, res, cors);
