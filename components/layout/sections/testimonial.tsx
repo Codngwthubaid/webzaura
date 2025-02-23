@@ -22,47 +22,134 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 interface ReviewProps {
-  _id?: string; // Added _id since MongoDB will include it
+  _id?: string;
   name: string;
   comment: string;
   rating: number;
-  createdAt?: string; // Added since we added timestamps in schema
+  createdAt?: string;
 }
+
+// export const TestimonialSection = () => {
+//   const [reviews, setReviews] = useState<ReviewProps[]>([]);
+//   const [name, setName] = useState("");
+//   const [comment, setComment] = useState("");
+//   const [rating, setRating] = useState(0);
+//   const [isLoading, setIsLoading] = useState(false); 
+
+
+//   useEffect(() => {
+//     const fetchReviews = async () => {
+//       try {
+//         setIsLoading(true);
+//         const response = await fetch("/api/reviews", {
+//           method: "GET", 
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//         });
+
+//         if (!response.ok) {
+//           throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+
+//         const data = await response.json();
+
+//         if (Array.isArray(data)) {
+//           setReviews(data);
+//         } else {
+//           console.error("Unexpected data format:", data);
+//           toast.error("Failed to load reviews. Please try again.");
+//         }
+//       } catch (error) {
+//         console.error("Error fetching reviews:", error);
+//         toast.error("Error fetching reviews. Please try again.");
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
+
+//     fetchReviews();
+//   }, []);
+
+//   const handleSubmit = async () => {
+//     if (!name || !comment || !rating) {
+//       toast.error("Please fill in all fields before submitting.");
+//       return;
+//     }
+
+//     setIsLoading(true);
+//     const newReview: ReviewProps = { name, comment, rating };
+
+//     try {
+//       const response = await fetch("/api/reviews", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Accept: "application/json",
+//         },
+//         body: JSON.stringify(newReview),
+//       });
+
+//       const data = await response.json();
+
+//       if (response.ok) {
+//         setReviews((prev) => [...prev, data.data]);
+//         setName("");
+//         setComment("");
+//         setRating(0);
+//         toast.success("We appreciate your feedback! Thanks ❤️");
+//       } else {
+//         throw new Error(data.error || "Failed to submit review");
+//       }
+//     } catch (error) {
+//       console.error("Error submitting the review:", error);
+//       toast.error("Error submitting the review. Please try again.");
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
+
+
 
 export const TestimonialSection = () => {
   const [reviews, setReviews] = useState<ReviewProps[]>([]);
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
-  const [isLoading, setIsLoading] = useState(false); // Added loading state
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Fetch reviews
   useEffect(() => {
     const fetchReviews = async () => {
       try {
         setIsLoading(true);
+        console.log("Fetching reviews from /api/reviews..."); // Debug log
         const response = await fetch("/api/reviews", {
-          method: "GET", // Explicitly specify GET method
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
         });
 
+        console.log("Response status:", response.status); // Debug log
+        const data = await response.json();
+        console.log("Response data:", data); // Debug log
+
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}, message: ${data.error || "Unknown"}`);
         }
 
-        const data = await response.json();
-        
-        if (Array.isArray(data)) { // Changed to expect array directly
+        if (Array.isArray(data)) {
           setReviews(data);
         } else {
-          console.error("Unexpected data format:", data);
-          toast.error("Failed to load reviews. Please try again.");
+          throw new Error("Unexpected data format: " + JSON.stringify(data));
         }
       } catch (error) {
         console.error("Error fetching reviews:", error);
-        toast.error("Error fetching reviews. Please try again.");
+        if (error instanceof Error) {
+          toast.error(`Error fetching reviews: ${error.message}`);
+        } else {
+          toast.error("Error fetching reviews.");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -71,7 +158,6 @@ export const TestimonialSection = () => {
     fetchReviews();
   }, []);
 
-  // Submit review
   const handleSubmit = async () => {
     if (!name || !comment || !rating) {
       toast.error("Please fill in all fields before submitting.");
@@ -94,7 +180,6 @@ export const TestimonialSection = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Update reviews list with the new review from the response
         setReviews((prev) => [...prev, data.data]);
         setName("");
         setComment("");
@@ -111,14 +196,15 @@ export const TestimonialSection = () => {
     }
   };
 
+
   return (
     <section id="testimonials" className="container py-24 sm:py-32 px-10 mx-auto">
       <div className="text-center mb-8">
-        <SparklesText 
-          text="Reviews" 
-          className="mb-4 text-center text-4xl sm:text-5xl text-primary" 
+        <SparklesText
+          text="Reviews"
+          className="mb-4 text-center text-4xl sm:text-5xl text-primary"
         />
-        <TypingAnimation 
+        <TypingAnimation
           className="text-center text-2xl sm:text-3xl"
         >
           Hear What Our Clients Say
@@ -136,8 +222,8 @@ export const TestimonialSection = () => {
                   <CardContent className="pt-6 pb-0">
                     <div className="flex gap-1 pb-6">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
+                        <Star
+                          key={i}
                           className={`size-4 ${i < review.rating ? "fill-primary text-primary" : "text-gray-400"}`}
                         />
                       ))}
@@ -165,17 +251,17 @@ export const TestimonialSection = () => {
       {/* Feedback Form */}
       <div className="bg-muted/50 dark:bg-card p-6 rounded-lg mb-10 max-w-xl mx-auto mt-10">
         <h3 className="text-2xl font-semibold mb-4 text-center">Share Your Feedback</h3>
-        <Input 
-          placeholder="Your Name" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
+        <Input
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="mb-4"
           disabled={isLoading}
         />
-        <Textarea 
-          placeholder="Your Feedback" 
-          value={comment} 
-          onChange={(e) => setComment(e.target.value)} 
+        <Textarea
+          placeholder="Your Feedback"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
           className="mb-4"
           disabled={isLoading}
         />
@@ -188,9 +274,9 @@ export const TestimonialSection = () => {
             />
           ))}
         </div>
-        <Button 
-          onClick={handleSubmit} 
-          className="w-full" 
+        <Button
+          onClick={handleSubmit}
+          className="w-full"
           disabled={isLoading}
         >
           {isLoading ? "Submitting..." : "Submit Feedback"}
@@ -199,3 +285,5 @@ export const TestimonialSection = () => {
     </section>
   );
 };
+
+
