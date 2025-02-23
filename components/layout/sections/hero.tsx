@@ -15,7 +15,7 @@ export const HeroSection = () => {
   useEffect(() => {
     setMounted(true);
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (!videoRef.current) return;
       const video = videoRef.current;
       const rect = video.getBoundingClientRect();
