@@ -1,17 +1,17 @@
 "use client"
+import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
+import { motion, useSpring, useScroll } from "framer-motion";
 import { BenefitSection } from '@/components/layout/sections/benefits';
 import { ContactSection } from '@/components/layout/sections/contact';
 import { FAQSection } from '@/components/layout/sections/faq';
 import { FeaturesSection } from '@/components/layout/sections/features';
 import { HeroSection } from '@/components/layout/sections/hero';
 import { PricingSection } from '@/components/layout/sections/pricing';
-import { ServicesSection } from '@/components/layout/sections/services';
+import { LensDemo } from '@/components/layout/sections/services';
 import { MarqueeDemo } from '@/components/layout/sections/sponsers';
-import { TestimonialSection } from '@/components/layout/sections/testimonial';
 import { FooterSection } from '@/components/layout/sections/footer';
-import { useTheme } from 'next-themes';
-import { motion, useSpring, useScroll } from "framer-motion";
+import BottomGravity from '@/components/animations/bottomGravity';
 
 
 const Page = () => {
@@ -59,13 +59,13 @@ const Page = () => {
       <HeroSection />
       <MarqueeDemo />
       <BenefitSection />
-      <ServicesSection />
+      <LensDemo />
       <FeaturesSection />
-      <TestimonialSection />
       <PricingSection />
       <ContactSection />
       <FAQSection />
       <FooterSection />
+      <BottomGravity />
     </div>
   );
 };

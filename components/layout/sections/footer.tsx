@@ -42,7 +42,7 @@ const footerContent = [
 
 export const FooterSection = () => {
   return (
-    <footer id="footer" className="container py-24 sm:py-32 px-10 mx-auto">
+    <footer id="footer" className="container pt-24 sm:pt-32 px-10 mx-auto">
       <div className="p-10 bg-card border border-secondary rounded-2xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
           {/* Logo Section */}

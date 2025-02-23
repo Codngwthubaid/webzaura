@@ -23,17 +23,11 @@ export default async function handler(req, res) {
       });
 
       const savedReview = await newReview.save();
-      res.status(201).json({
+      res.status(201).json({ 
         message: "Review added successfully!",
-        data: savedReview
+        data: savedReview 
       });
     } else if (req.method === "GET") {
-      // const reviews = await Review.find().sort({ createdAt: -1 });
-      // res.status(200).json(reviews);
-      res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
-      res.setHeader("Pragma", "no-cache");
-      res.setHeader("Expires", "0");
-
       const reviews = await Review.find().sort({ createdAt: -1 });
       res.status(200).json(reviews);
     } else {

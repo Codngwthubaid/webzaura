@@ -10,14 +10,22 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { Check } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
-
+import ContactForm from "./form";
 
 
 const uiuxgdPlans = [
@@ -346,8 +354,8 @@ export const PricingSection = () => {
               spaceBetween={20}
               pagination={{ clickable: true }}
               autoplay={{
-                delay: 3000, 
-                disableOnInteraction: false, 
+                delay: 3000,
+                disableOnInteraction: false,
               }}
               modules={[Pagination, Autoplay]}
             >
@@ -375,11 +383,24 @@ export const PricingSection = () => {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href={"#contact"} passHref>
-                        <Button variant={popular ? "default" : "secondary"} className="w-full">
-                          {buttonText}
-                        </Button>
-                      </Link>
+                      <Dialog >
+                        <DialogTrigger asChild >
+                          <Button variant={popular ? "default" : "secondary"} className="w-full">
+                            {buttonText}
+                          </Button>
+
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[425px]">
+                          <DialogHeader>
+                            {/* form */}
+                           <ContactForm />
+                          </DialogHeader>
+                          <DialogFooter>
+                            {/* send btn */}
+                            <Button type="submit">Save changes</Button>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
                     </CardFooter>
                   </Card>
                 </SwiperSlide>
@@ -415,11 +436,19 @@ export const PricingSection = () => {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Link href={"#contact"} passHref>
-                    <Button variant={popular ? "default" : "secondary"} className="w-full">
-                      {buttonText}
-                    </Button>
-                  </Link>
+                  <Dialog >
+                    <DialogTrigger asChild >
+                      <Button variant={popular ? "default" : "secondary"} className="w-full">
+                        {buttonText}
+                      </Button>
+
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]">
+                      <DialogTitle>
+                      <ContactForm />
+                      </DialogTitle>
+                    </DialogContent>
+                  </Dialog>
                 </CardFooter>
               </Card>
             ))}
