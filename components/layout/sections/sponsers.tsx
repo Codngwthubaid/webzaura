@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
-import { StaticImageData } from "next/image";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 
 

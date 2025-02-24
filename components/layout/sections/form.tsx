@@ -7,7 +7,6 @@ import { z } from "zod";
 import {
     Card,
     CardContent,
-    CardFooter,
     CardHeader,
 } from "@/components/ui/card";
 import { zodResolver } from "@hookform/resolvers/zod";
