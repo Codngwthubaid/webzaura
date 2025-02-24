@@ -88,17 +88,30 @@ export default async function FormDB(req, res) {
     return res.status(500).json({ message: "Missing Google API credentials" });
   }
 
+  // const auth = new google.auth.GoogleAuth({
+  //   credentials: {
+  //     client_email: GOOGLE_CLIENT_EMAIL,
+  //     private_key: (GOOGLE_PRIVATE_KEY || "").replace(/\\n/g, "\n"), // Fix private key formatting
+  //   },
+  //   scopes: [
+  //     "https://www.googleapis.com/auth/drive",
+  //     "https://www.googleapis.com/auth/drive.file",
+  //     "https://www.googleapis.com/auth/spreadsheets",
+  //   ],
+  // });
+
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: GOOGLE_CLIENT_EMAIL,
-      private_key: (GOOGLE_PRIVATE_KEY || "").replace(/\\n/g, "\n"), // Fix private key formatting
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"), // Ensure correct newlines
     },
     scopes: [
+      "https://www.googleapis.com/auth/spreadsheets",
       "https://www.googleapis.com/auth/drive",
       "https://www.googleapis.com/auth/drive.file",
-      "https://www.googleapis.com/auth/spreadsheets",
     ],
   });
+  
 
   const sheets = google.sheets({ version: "v4", auth });
 
