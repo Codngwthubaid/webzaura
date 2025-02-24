@@ -19,7 +19,8 @@ interface ServiceProps {
   pro: ProService;
   description: string;
   url: string;
-  image: StaticImageData;
+  light: string;
+  dark: string;
 }
 
 const serviceList: ServiceProps[] = [
@@ -29,7 +30,8 @@ const serviceList: ServiceProps[] = [
       "Future-Ready Websites, Built to Perform. At Webzaura, we design high-speed, user-friendly, and scalable websites that elevate your brand and drive results.",
     pro: 0,
     url: "/WebDevelopment",
-    image: forReadme,
+    light: "assets/lwd.mp4",
+    dark: "assets/dwd.mp4",
   },
   {
     title: "Digital Marketing",
@@ -37,7 +39,8 @@ const serviceList: ServiceProps[] = [
       "Smart Marketing, Real Results. At Webzaura, we craft AI-powered, data-driven campaigns that boost engagement, maximize ROI, and keep your brand ahead.",
     pro: 0,
     url: "/DigitalMarketing",
-    image: forReadme,
+    light: "assets/ldm.mp4",
+    dark: "assets/ldm.mp4",
   },
   {
     title: "Social Media Management",
@@ -45,28 +48,32 @@ const serviceList: ServiceProps[] = [
       "Elevate Your Brand Online. A social media management agency crafts tailored strategies, creates engaging content, manages interactions, and runs targeted ads to boost growth and engagement.",
     pro: 0,
     url: "/SocialMediaManagement",
-    image: forReadme,
+    light: "assets/lsmm.mp4",
+    dark: "assets/lsmm.mp4",
   },
   {
     title: "UI/UX & Graphic Design",
     description: "Designs That Engage & Convert. At Webzaura, we craft sleek, modern UI/UX designs for seamless navigation, intuitive interactions, and a memorable digital experience.",
     pro: 0,
     url: "/UIUXGD",
-    image: forReadme,
+    light: "assets/luiux.mp4",
+    dark: "assets/luiux.mp4",
   },
   {
     title: "AI Chatbot Integration",
     description: "AI Chatbots: Smart, Seamless, Efficient. Engage customers 24/7 with intelligent chatbots that automate queries, enhance engagement, and drive conversions with human-like interactions.",
     pro: 1,
     url: "/AiChatBot",
-    image: forReadme,
+    light: "assets/lai.mp4",
+    dark: "assets/lai.mp4",
   },
   {
     title: "App Development",
     description: "Apps Users Love, Built to Perform. We create fast, intuitive, and high-performance mobile apps for iOS and Android, turning ideas into seamless digital experiences.",
     pro: 1,
     url: "/AppDevelopment",
-    image: forReadme,
+    light: "assets/lad.mp4",
+    dark: "assets/lad.mp4",
   },
 ];
 
@@ -95,12 +102,29 @@ export function LensDemo() {
           >
             <div className="relative z-10">
               <Lens hovering={hovering} setHovering={setHovering}>
-                <Image
+                {/* <Image
                   src={service.image}
                   alt={service.title}
                   width={500}
                   height={500}
                   className="rounded-2xl"
+                /> */}
+                <video
+                  src={service.dark}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="hidden dark:block"
+                />
+
+                <video
+                  src={service.light}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="dark:hidden"
                 />
               </Lens>
               <motion.div

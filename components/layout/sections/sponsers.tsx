@@ -1,14 +1,46 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import Link from "next/link";
 
 
 
 const reviews = [
     {
+        href: "/WebDevelopment",
         name: "Web Development",
-        light: "assets/WD/lwd.mp4",
-        dark: "assets/WD/dwd.mp4",
+        light: "assets/lwd.mp4",
+        dark: "assets/dwd.mp4",
+    },
+    {
+        href: "/DigitalMarketing",
+        name: "Digital Marketing",
+        light: "assets/ldm.mp4",
+        dark: "assets/ldm.mp4",
+    },
+    {
+        href: "/SocialMediaManagement",
+        name: "Social Media Management",
+        light: "assets/lsmm.mp4",
+        dark: "assets/lsmm.mp4",
+    },
+    {
+        href: "/UIUXGD",
+        name: "UI/UX & Graphic Designing",
+        light: "assets/luiux.mp4",
+        dark: "assets/luiux.mp4",
+    },
+    {
+        href: "/AiChatBot",
+        name: "AI ChatBot Integration",
+        light: "assets/lai.mp4",
+        dark: "assets/lai.mp4",
+    },
+    {
+        href: "/AppDevelopment",
+        name: "App Development",
+        light: "assets/lad.mp4",
+        dark: "assets/lad.mp4",
     },
 ];
 
@@ -16,10 +48,12 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
+    href,
     light,
     dark,
     name,
 }: {
+    href: string;
     name: string;
     light: string;
     dark: string;
@@ -51,10 +85,10 @@ const ReviewCard = ({
                     className="dark:hidden"
                 />
 
-                <figcaption className="text-sm font-medium absolute top-4 z-10 white:text-black dark:text-white border p-3 rounded-md">
-                    {name}
+                <figcaption className="text-sm font-medium absolute top-4 z-10 text-[#e9590c] border p-3 rounded-md">
+                    <Link href={href}>{name}</Link>
                 </figcaption>
-            </div>        
+            </div>
         </figure>
     );
 };
