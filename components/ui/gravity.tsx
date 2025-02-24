@@ -9,7 +9,7 @@ import {
   useRef,
   useState,
 } from "react"
-import { debounce } from "lodash"
+import { debounce } from "lodash";
 import Matter, {
   Bodies,
   Engine,
