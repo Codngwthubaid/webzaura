@@ -98,7 +98,7 @@ export function LensDemo() {
             className={`w-full relative rounded-lg border shadow-lg overflow-hidden max-w-md mx-auto p-8 my-10 ${theme === "dark" ? "bg-[#0c0a09]" : "bg-white"}`}
           >
             <div className="relative z-10">
-              <Lens hovering={hovering} setHovering={setHovering}>z
+              <Lens hovering={hovering} setHovering={setHovering}>
                 <video
                   src={service.dark}
                   autoPlay
