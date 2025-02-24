@@ -1,10 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Lens } from "@/components/ui/lens";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import type { StaticImageData } from "next/image";
-import forReadme from "@/public/assets/forReadme.png"
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { useTheme } from "next-themes";
@@ -101,14 +98,7 @@ export function LensDemo() {
             className={`w-full relative rounded-lg border shadow-lg overflow-hidden max-w-md mx-auto p-8 my-10 ${theme === "dark" ? "bg-[#0c0a09]" : "bg-white"}`}
           >
             <div className="relative z-10">
-              <Lens hovering={hovering} setHovering={setHovering}>
-                {/* <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={500}
-                  height={500}
-                  className="rounded-2xl"
-                /> */}
+              <Lens hovering={hovering} setHovering={setHovering}>z
                 <video
                   src={service.dark}
                   autoPlay
