@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -66,7 +66,6 @@ export default function ContactForm() {
     const [couponUses, setCouponUses] = React.useState<number>(0);
     const [couponMessage, setCouponMessage] = React.useState<string>("");
 
-    // Removed useEffect since we no longer need to sync with localStorage
 
     const MAX_COUPON_USES = 100;
     const VALID_COUPON_CODE = "WEBZAURA33";

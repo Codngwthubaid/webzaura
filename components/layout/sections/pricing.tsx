@@ -13,7 +13,6 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -393,7 +392,7 @@ export const PricingSection = () => {
                         <DialogContent className="sm:max-w-[425px]">
                           <DialogHeader>
                             {/* form */}
-                           <ContactForm />
+                            <ContactForm />
                           </DialogHeader>
                           <DialogFooter>
                             {/* send btn */}
@@ -445,7 +444,7 @@ export const PricingSection = () => {
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px]">
                       <DialogTitle>
-                      <ContactForm />
+                        <ContactForm />
                       </DialogTitle>
                     </DialogContent>
                   </Dialog>

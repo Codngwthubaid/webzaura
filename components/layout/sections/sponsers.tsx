@@ -12,32 +12,26 @@ import AICB from "../../../public/ServicesImg/AICB.webp"
 const reviews = [
     {
         name: "Web Development",
-        body: "Your website isn't just a URL — It's your digital identity. We create high-performing, visually stunning, and fully optimized websites that don't just exist but leave a lasting impression and drive results.",
         img: WD
     },
     {
         name: "Digital Marketing",
-        body: "Marketing isn't just about visibility — It's about impact. Our data-driven digital marketing strategies ensure that your brand not only reaches the right audience but converts them into loyal customer.",
         img: DM
     },
     {
         name: "UI/UX & Graphic Designing",
-        body: "Design is more than aesthetics — It's about experience. We craft intuitive, visually stunning, and user-friendly designs that captivate, engage, and turn visitors into customers.",
         img: UIUXGD
     },
     {
         name: "Social Media Manangement",
-        body: "Every brand tells a story. Our graphic designs ensure yours is bold, beautiful, and unforgettable—whether it's a logo, social media visuals, or complete branding.",
         img: SMM
     },
     {
         name: "Ai Chatbot Integration",
-        body: "AI-driven chatbots that do more than just chat—they enhance customer engagement, automate workflows, and create seamless interactions that feel as natural as human conversation",
         img: AICB
     },
     {
         name: "App Development",
-        body: "Your business deserves an app that's fast, intuitive, and built to scale. We develop mobile experiences that engage users, boost efficiency, and keep you ahead in a mobile-first world",
         img: MAD
     },
 ];
@@ -48,11 +42,9 @@ const secondRow = reviews.slice(reviews.length / 2);
 const ReviewCard = ({
     img,
     name,
-    body,
 }: {
     img: StaticImageData;
     name: string;
-    body: string;
 }) => {
     return (
         <figure
@@ -62,15 +54,12 @@ const ReviewCard = ({
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
             )}
         >
-            <div className="flex flex-rowitems-center gap-2">
-                <Image className="rounded-md" width="64" height="64" alt="" src={img} />
-                <div className="flex flex-col">
-                    <figcaption className="text-sm font-medium dark:text-white ">
+            <div className="flex flex-col items-center gap-2">
+                <Image className="rounded-md" width="200" height="100" alt="" src={img} />
+                    <figcaption className="text-sm font-medium dark:text-white border">
                         {name}
                     </figcaption>
-                </div>
             </div>
-            <blockquote className="mt-2 text-sm">{body}</blockquote>
         </figure>
     );
 };
