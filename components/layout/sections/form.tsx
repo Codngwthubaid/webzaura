@@ -203,6 +203,54 @@ export default function ContactForm() {
                             )}
                         />
 
+                        {/* <FormField
+                            control={form.control}
+                            name="services"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Services</FormLabel>
+                                    <Select onValueChange={field.onChange} value={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select your services" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            {servicePlans.map((service) => (
+                                                <SelectItem key={service.category} value={service.category}>
+                                                    {service.category}
+                                                </SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <FormField
+                            control={form.control}
+                            name="type"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Type</FormLabel>
+                                    <Select onValueChange={field.onChange} value={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select your type" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="Basic">Basic</SelectItem>
+                                            <SelectItem value="Advanced">Advanced</SelectItem>
+                                            <SelectItem value="Enterprise">Enterprise</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        /> */}
+
                         <FormField
                             control={form.control}
                             name="services"
