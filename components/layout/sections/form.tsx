@@ -97,7 +97,7 @@ export default function ContactForm() {
                 discountApplied,
             };
 
-            await axios.post("/api/FormDB", submissionData, {
+            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/FormDB`, submissionData, {
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
