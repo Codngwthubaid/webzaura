@@ -51,8 +51,7 @@ export default async function FormDB(req, res) {
         valueInputOption: "USER_ENTERED",
         requestBody: {
           values: [[
-            body.firstName,
-            body.lastName,
+            body.fullName,
             body.email,
             body.services,
             body.type,

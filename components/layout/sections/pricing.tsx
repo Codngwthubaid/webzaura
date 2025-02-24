@@ -32,7 +32,7 @@ const uiuxgdPlans = [
     category: "UI/UX & Graphic Design",
     title: "Basic",
     popular: 0,
-    price: 34999,
+    price: 13999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -45,24 +45,9 @@ const uiuxgdPlans = [
   },
   {
     category: "UI/UX & Graphic Design",
-    title: "Enterprise",
-    popular: 1,
-    price: 149999,
-    description: "Ideal for growing businesses.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "Advanced UX research",
-      "High-fidelity UI design",
-      "Custom illustrations",
-      "User testing & feedback",
-      "Priority support",
-    ],
-  },
-  {
-    category: "UI/UX & Graphic Design",
     title: "Advanced",
-    popular: 0,
-    price: 74999,
+    popular: 1,
+    price: "Custom",
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -73,6 +58,21 @@ const uiuxgdPlans = [
       "Email & chat support",
     ],
   },
+  {
+    category: "UI/UX & Graphic Design",
+    title: "Standard",
+    popular: 0,
+    price: 30999,
+    description: "Ideal for growing businesses.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "Advanced UX research",
+      "High-fidelity UI design",
+      "Custom illustrations",
+      "User testing & feedback",
+      "Priority support",
+    ],
+  },
 ];
 
 const aiChatbotPlans = [
@@ -80,7 +80,7 @@ const aiChatbotPlans = [
     category: "AI Chatbot Integration",
     title: "Basic",
     popular: 0,
-    price: 17999,
+    price: 24999,
     description: "Ideal for small businesses and startups.",
     buttonText: "Buy Now",
     benefitList: [
@@ -93,9 +93,9 @@ const aiChatbotPlans = [
   },
   {
     category: "AI Chatbot Integration",
-    title: "Enterprise",
+    title: "Advanced",
     popular: 1,
-    price: 99999,
+    price: "Custom",
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -108,9 +108,9 @@ const aiChatbotPlans = [
   },
   {
     category: "AI Chatbot Integration",
-    title: "Advanced",
+    title: "Standard",
     popular: 0,
-    price: 34999,
+    price: 39999,
     description: "Ideal for enterprises requiring automation.",
     buttonText: "Buy Now",
     benefitList: [
@@ -127,7 +127,7 @@ const webDevelopmentPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 19999,
+    price: 9999,
     description: "A perfect plan for small businesses and startups.",
     buttonText: "Buy Now",
     benefitList: [
@@ -139,9 +139,37 @@ const webDevelopmentPlans = [
     ],
   },
   {
-    title: "Enterprise",
+    title: "Standard",
+    popular: 0,
+    price: 26999,
+    description: "A perfect plan for small businesses and startups.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "3 team members",
+      "5 GB storage",
+      "Upto 5 pages",
+      "Community support",
+      "Basic SEO",
+    ],
+  },
+  {
+    title: "Advanced",
+    popular: 0,
+    price: 52999,
+    description: "A perfect plan for small businesses and startups.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "3 team members",
+      "5 GB storage",
+      "Upto 5 pages",
+      "Community support",
+      "Basic SEO",
+    ],
+  },
+  {
+    title: "E-Comm",
     popular: 1,
-    price: 99999,
+    price: "Custom",
     description: "A perfect plan for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -152,41 +180,13 @@ const webDevelopmentPlans = [
       "Advanced SEO",
     ],
   },
-  {
-    title: "Advanced",
-    popular: 0,
-    price: 54999,
-    description: "A perfect plan for small businesses and startups.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "3 team members",
-      "5 GB storage",
-      "Upto 5 pages",
-      "Community support",
-      "Basic SEO",
-    ],
-  },
 ];
 
 const appDevelopmentPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 49999,
-    description: "A solid plan for new mobile applications.",
-    buttonText: "Buy Now",
-    benefitList: [
-      "iOS & Android support",
-      "API integration",
-      "Basic analytics",
-      "3-month support",
-      "Bug fixes",
-    ],
-  },
-  {
-    title: "Enterprise",
-    popular: 1,
-    price: 99999,
+    price: 69999,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
     benefitList: [
@@ -199,8 +199,22 @@ const appDevelopmentPlans = [
   },
   {
     title: "Advanced",
+    popular: 1,
+    price: "Custom",
+    description: "A solid plan for new mobile applications.",
+    buttonText: "Buy Now",
+    benefitList: [
+      "iOS & Android support",
+      "API integration",
+      "Basic analytics",
+      "3-month support",
+      "Bug fixes",
+    ],
+  },
+  {
+    title: "Standard",
     popular: 0,
-    price: 149999,
+    price: 99999,
     description: "A solid plan for new mobile applications.",
     buttonText: "Buy Now",
     benefitList: [
@@ -217,7 +231,7 @@ const digitalMarketingPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 17999,
+    price: 29999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -229,9 +243,9 @@ const digitalMarketingPlans = [
     ],
   },
   {
-    title: "Enterprise",
+    title: "Advanced",
     popular: 1,
-    price: 39999,
+    price: "Custom",
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -243,9 +257,9 @@ const digitalMarketingPlans = [
     ],
   },
   {
-    title: "Advanced",
+    title: "Standard",
     popular: 0,
-    price: 29999,
+    price: 59999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -262,7 +276,7 @@ const socialMediaPlans = [
   {
     title: "Basic",
     popular: 0,
-    price: 17999,
+    price: 9999,
     description: "Ideal for individuals and freelancers.",
     buttonText: "Buy Now",
     benefitList: [
@@ -274,9 +288,9 @@ const socialMediaPlans = [
     ],
   },
   {
-    title: "Enterprise",
+    title: "Advanced",
     popular: 1,
-    price: 39999,
+    price: "Custom",
     description: "Ideal for growing businesses.",
     buttonText: "Buy Now",
     benefitList: [
@@ -288,7 +302,7 @@ const socialMediaPlans = [
     ],
   },
   {
-    title: "Advanced",
+    title: "Standard",
     popular: 0,
     price: 34999,
     description: "Ideal for individuals and freelancers.",
@@ -365,9 +379,8 @@ export const PricingSection = () => {
                       <CardTitle>{title}</CardTitle>
                       <CardDescription>{description}</CardDescription>
                       <div>
-                        <span className="text-2xl font-bold">Starts from / </span>
                         <span className="text-3xl font-bold">
-                          {currency} {Math.round(price * conversionRate)}
+                          {currency} {typeof price === "number" ? Math.round(price * conversionRate) : price}
                         </span>
                       </div>
                     </CardHeader>
@@ -418,9 +431,8 @@ export const PricingSection = () => {
                   <CardTitle>{title}</CardTitle>
                   <CardDescription>{description}</CardDescription>
                   <div>
-                    <span className="text-2xl font-bold">Starts from / </span>
                     <span className="text-3xl font-bold">
-                      {currency} {Math.round(price * conversionRate)}
+                      {currency} {typeof price === "number" ? Math.round(price * conversionRate) : price}
                     </span>
                   </div>
                 </CardHeader>

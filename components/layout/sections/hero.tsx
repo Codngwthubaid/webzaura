@@ -95,7 +95,7 @@ export const HeroSection = () => {
 
       {/* Full-Screen Video Section with Tilt Effect */}
       <section className="relative w-full overflow-hidden my-14">
-        <div className="relative w-[70%] h-auto mx-auto">
+        <div className="relative w-full sm:w-[70%] h-auto mx-auto">
           <video
             ref={videoRef}
             src="/assets/WebZaura.mp4"

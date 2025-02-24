@@ -36,8 +36,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 // Updated schema with couponCode
 const formSchema = z.object({
-    firstName: z.string().min(2, "First name must be at least 2 characters").max(255),
-    lastName: z.string().min(2, "Last name must be at least 2 characters").max(255),
+    fullName: z.string().min(2, "Full name must be at least 5 characters").max(255),
     email: z.string().email("Invalid email address"),
     services: z.string().min(2, "Please select a service"),
     type: z.enum(["Basic", "Advanced", "Enterprise"], { // Updated to only Basic, Advanced, Enterprise
@@ -52,8 +51,7 @@ export default function ContactForm() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            firstName: "",
-            lastName: "",
+            fullName: "",
             email: "",
             services: "",
             type: undefined,
@@ -107,7 +105,7 @@ export default function ContactForm() {
                 },
             });
 
-            toast(`Thanks ${values.firstName} for contacting us, our team will contact you soon! ❤️${discountApplied ? " Coupon applied successfully!" : ""}`);
+            toast(`Thanks ${values.fullName} for contacting us, our team will contact you soon! ❤️${discountApplied ? " Coupon applied successfully!" : ""}`);
             form.reset();
             if (!discountApplied) setCouponMessage("");
         } catch (error) {
@@ -177,29 +175,15 @@ export default function ContactForm() {
             <CardHeader className="text-primary text-2xl"></CardHeader>
             <CardContent>
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="grid w-full gap-4">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="grid w-full gap-y-1">
                         <FormField
                             control={form.control}
-                            name="firstName"
+                            name="fullName"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>First Name</FormLabel>
+                                    <FormLabel>Full Name</FormLabel>
                                     <FormControl>
                                         <Input placeholder="abc" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-
-                        <FormField
-                            control={form.control}
-                            name="lastName"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Last Name</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="xyz" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -275,7 +259,7 @@ export default function ContactForm() {
                                 <FormItem>
                                     <FormLabel>Message</FormLabel>
                                     <FormControl>
-                                        <Textarea rows={5} placeholder="Your message..." {...field} />
+                                        <Textarea rows={1} placeholder="Your message..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -313,7 +297,6 @@ export default function ContactForm() {
                     </form>
                 </Form>
             </CardContent>
-            <CardFooter></CardFooter>
         </Card>
     )
 }

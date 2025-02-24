@@ -48,8 +48,8 @@ const routeList: RouteProps[] = [
 const servicesList: RouteProps[] = [
   { href: "/WebDevelopment", label: "Web Development" },
   { href: "/DigitalMarketing", label: "Digital Marketing" },
-  { href: "/UIUXGD", label: "Social Media Marketing" }, 
-  { href: "/SocialMediaManagement", label: "UI/UX & Graphic Design" },
+  { href: "/SocialMediaManagement", label: "Social Media Marketing" }, 
+  { href: "/UIUXGD", label: "UI/UX & Graphic Design" },
   { href: "/AiChatBot", label: "Ai ChatBot Integration" },
   { href: "/AppDevelopment", label: "App Development" },
 ];
