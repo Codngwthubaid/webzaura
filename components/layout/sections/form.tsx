@@ -73,7 +73,7 @@ export default function ContactForm() {
                     "Content-Type": "application/json",
                 },
             });
-
+            console.log(response);
             toast.success(`Thanks ${values.fullName} for contacting us! We'll get back to you soon!`);
             reset();
         } catch (error) {
