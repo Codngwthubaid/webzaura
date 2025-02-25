@@ -12,6 +12,7 @@ import { LensDemo } from '@/components/layout/sections/services';
 import { MarqueeDemo } from '@/components/layout/sections/sponsers';
 import { FooterSection } from '@/components/layout/sections/footer';
 import BottomGravity from '@/components/animations/bottomGravity';
+import { TestimonialSection } from '@/components/layout/sections/testimonial';
 
 
 const Page = () => {
@@ -61,6 +62,7 @@ const Page = () => {
       <BenefitSection />
       <LensDemo />
       <FeaturesSection />
+      <TestimonialSection />
       <PricingSection />
       <ContactSection />
       <FAQSection />

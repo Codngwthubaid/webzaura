@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "lib/dbConnect.js",
     "pages/api/reviews.js",
-    "pages/api/FormDB.js",
+    "pages/api/contact.js",
     "models/ReviewSchema.js"
   ],
   "exclude": [
